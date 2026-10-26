@@ -1,0 +1,23 @@
+{
+  "RecordedAt": "2026-10-26T23:50:56.493635+05:00",
+  "PMICVersion": "1.0.1847.0",
+  "USBAFlashOnPoweredHub": "PASS_ENUMERATION_AND_VOLUME_VISIBLE",
+  "FlashModel": "Kingston DataTraveler 3.0 USB Device",
+  "FlashFilesReadOrWrittenForAcceptanceTest": false,
+  "SSDReplugOnSameHubUSBC": "FAIL_DESCRIPTOR_CODE43",
+  "UnknownNodeDisappearReturnDuringSSDOnlyReplug": {
+    "Gone": "2026-10-26T23:29:29.3011856+05:00",
+    "ReturnedWithCode43": "2026-10-26T23:29:34.3691327+05:00",
+    "HubStayedPresent": true
+  },
+  "SameSSDAndCableDirectOnNotebook": "PASS_OWNER_REPORT",
+  "NotebookPoweredHubAndSSD": "PENDING_OWNER_ACTION",
+  "AdditionalWorkingFlashRecovery": {
+    "VerifiedFiles": 35,
+    "OfflinePreview": "PASS",
+    "ActualOfflineApplyTested": false
+  },
+  "Interpretation": "USB-A storage can enumerate through the powered hub, while the USB-C SSD branch fails. Notebook direct enumeration is reported successful. Neither test alone proves a specific hub, cable, power budget, host transport or media cause. Direct tablet battery-powered OTG failure remains a separate unresolved result.",
+  "NewKernelDriverInstalledDuringCrossControls": false,
+  "GoalComplete": false
+}

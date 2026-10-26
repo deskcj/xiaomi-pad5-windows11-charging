@@ -1,0 +1,167 @@
+{
+  "Version": "1.0.1847.0",
+  "Context": "Powered hub returned after failed direct SSD test",
+  "Outcome": "CHARGING_AND_HUB_PRESENT_DOWNSTREAM_DEVICE_DESCRIPTOR_FAILED_CODE43",
+  "PMIC": {
+    "At": "2026-10-26T23:24:08.1627493+05:00",
+    "PMICVersion": "1.0.1847.0",
+    "ExpectedImageSHA256": "314BBF81ED5263388EFCD8316E0CC8C030894B98B7348089C35D6174E55685B3",
+    "Mode": "Capture",
+    "DeviceOpened": true,
+    "CaptureCompleted": true,
+    "ReadOnly": true,
+    "RegisterWritesImplemented": false,
+    "Values": {
+      "TYPEC_STATE": {
+        "Address": "0x1509",
+        "Value": 35,
+        "Hex": "0x23"
+      },
+      "TYPEC_MISC": {
+        "Address": "0x150B",
+        "Value": 169,
+        "Hex": "0xA9"
+      },
+      "TYPEC_MODE": {
+        "Address": "0x1544",
+        "Value": 16,
+        "Hex": "0x10"
+      },
+      "TYPEC_SINK_STATUS": {
+        "Address": "0x1506",
+        "Value": 4,
+        "Hex": "0x04"
+      },
+      "TYPEC_SOURCE_STATUS": {
+        "Address": "0x1508",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "OTG_COMMAND": {
+        "Address": "0x1140",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "OTG_STATUS": {
+        "Address": "0x110D",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "OTG_CONFIG": {
+        "Address": "0x1153",
+        "Value": 32,
+        "Hex": "0x20"
+      },
+      "APSD_STATUS": {
+        "Address": "0x1307",
+        "Value": 1,
+        "Hex": "0x01"
+      },
+      "APSD_RESULT": {
+        "Address": "0x1308",
+        "Value": 1,
+        "Hex": "0x01"
+      },
+      "POWER_PATH_STATUS": {
+        "Address": "0x130B",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "USBIN_INT_RT": {
+        "Address": "0x1310",
+        "Value": 16,
+        "Hex": "0x10"
+      },
+      "USBIN_OPTIONS": {
+        "Address": "0x1358",
+        "Value": 192,
+        "Hex": "0xC0"
+      },
+      "USBIN_ICL": {
+        "Address": "0x1370",
+        "Value": 96,
+        "Hex": "0x60"
+      }
+    },
+    "Decoded": {
+      "CCAttached": true,
+      "PowerRole": "SINK",
+      "AttachStateBit5": true,
+      "OTGCommandEnabled": false,
+      "TypeCDisabled": false,
+      "SinkOnly": false,
+      "SourceOnly": false,
+      "TrySink": true,
+      "TrySource": false,
+      "InheritedFix20WouldForceSource": false
+    },
+    "Finished": "2026-10-26T23:24:08.2725934+05:00"
+  },
+  "IndependentRole": {
+    "At": "2026-10-26T23:24:08.4465363+05:00",
+    "Mode": "Capture",
+    "PMICSHA256": "314BBF81ED5263388EFCD8316E0CC8C030894B98B7348089C35D6174E55685B3",
+    "IOCTL": "0x802A0FA4",
+    "LogicalSlot": 1,
+    "InputBytes": 4,
+    "OutputBytes": 8,
+    "ExpectedCallbackRVA": "0x88F0",
+    "DeviceOpened": true,
+    "IOCTLSent": true,
+    "RegisterWritesImplemented": false,
+    "AdministrativeElevationRequested": false,
+    "RawStatus": 0,
+    "DecodedRole": "SINK",
+    "OpenWin32Error": 0,
+    "IoctlWin32Error": 0,
+    "ReturnedBytes": 8,
+    "RawResponseHex": "0000000002000000",
+    "RawRole": 2
+  },
+  "ScopedChildRestart": {
+    "At": "2026-10-26T23:25:51.8065631+05:00",
+    "Target": "USB\\VID_0000&PID_0002\\6&BC7810&0&4",
+    "RootHubRestart": false,
+    "HostControllerRestart": false,
+    "ForcedRemoval": false,
+    "RebootIssued": false,
+    "Operation": "PNPUTIL_RESTART_EXACT_FAILED_CHILD",
+    "Before": [
+      {
+        "KeyName": "DEVPKEY_Device_ProblemCode",
+        "Data": 43
+      },
+      {
+        "KeyName": "DEVPKEY_Device_ProblemStatus",
+        "Data": 0
+      },
+      {
+        "KeyName": "DEVPKEY_Device_Parent",
+        "Data": "USB\\VID_1A86&PID_8095\\5&fb19d4e&0&1"
+      },
+      {
+        "KeyName": "DEVPKEY_Device_LocationPaths",
+        "Data": null
+      }
+    ],
+    "NativeExit": 0,
+    "After": [
+      {
+        "Status": "OK",
+        "FriendlyName": "Generic USB Hub",
+        "InstanceId": "USB\\VID_1A86&PID_8095\\5&FB19D4E&0&1"
+      },
+      {
+        "Status": "Error",
+        "FriendlyName": "Unknown USB Device (Device Descriptor Request Failed)",
+        "InstanceId": "USB\\VID_0000&PID_0002\\6&BC7810&0&4"
+      }
+    ],
+    "KnownSSDPresent": false,
+    "HVolumePresent": false,
+    "Finished": "2026-10-26T23:26:05.9233423+05:00"
+  },
+  "RestartOutcome": "REQUEST_ACCEPTED_STORAGE_NOT_RECOVERED",
+  "Limit": "Descriptor failed before VID/PID identification. Association with the SSD is to be verified by removing only the SSD while observing the unknown child. Not proof of SSD media failure.",
+  "GoalComplete": false
+}
