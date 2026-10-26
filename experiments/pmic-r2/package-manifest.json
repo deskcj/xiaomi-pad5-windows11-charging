@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "name": "candidate-fix20r2",
+  "status": "EXPERIMENTAL_NOT_HARDWARE_TESTED",
+  "version": "1.0.1844.0",
+  "hardwareId": "ACPI\\QCOM05E5",
+  "signerThumbprint": "F38EDD5C105095C8342556158CE66253F045965D",
+  "miniclassRequired": "1.0.1680.0",
+  "legacyUnmodifiedBinary": false,
+  "legacyUnmodifiedCode": false,
+  "files": [
+    {
+      "path": "package/qcpmicext8150.cat",
+      "sha256": "B035056A9386D022415DB3C00CBE1C16B498386258308D079897A9FB64F84757",
+      "bytes": 2513
+    },
+    {
+      "path": "package/qcpmicext8150.inf",
+      "sha256": "B5B279EFBABF127C892BAAF917339DB2CF04D920B3A9C697CB4B0B00CBCC88F5",
+      "bytes": 4336
+    },
+    {
+      "path": "package/qcpmicext8150.sys",
+      "sha256": "5257CD32AAD6591113B191D45183CDC6BB397DDB4FD7B2580A9B70AECC80A474",
+      "bytes": 63344
+    }
+  ],
+  "installed": false,
+  "supportedLogicalSlots": [
+    0,
+    1
+  ],
+  "note": "Guard repair only; logical slot 1 keeps the legacy role path; not a fast-charge or seamless-handover claim"
+}
