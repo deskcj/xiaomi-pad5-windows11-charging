@@ -19,7 +19,7 @@ Microsoft describes the [UcmTcpciCx policy/client boundary](https://learn.micros
 
 ## R1 logical-port readiness limitation
 
-R1 checks the context pointer for slot 0 before delegating other indices to the legacy path. A four-case ARM64 check of the exact installed signed SYS reproduces a conditional defect: if slot 0 is absent while slot 1 is ready, a valid slot-1 request returns `0x61` without reaching the legacy role write. Whether slot 0 was absent in the live failing session is unknown; this is not yet a proven explanation of the hardware failure. The earlier 1,624 tests used uniform context readiness and did not cover this mixed-readiness case. Before another PMIC release, readiness must be validated for the selected supported slot, and mixed states added to the tests. Moving the Chinese full-byte state heuristic onto index 1 is not justified by this finding. [Counterexample](../evidence/r1-port-guard-counterexample.json).
+R1 checks the context pointer for slot 0 before delegating other indices to the legacy path. A four-case ARM64 check of the exact installed signed SYS reproduces a conditional defect: if slot 0 is absent while slot 1 is ready, a valid slot-1 request returns `0x61` without reaching the legacy role write. Whether slot 0 was absent in the live failing session is unknown; this is not yet a proven explanation of the hardware failure. The earlier 1,624 tests used uniform context readiness and did not cover this mixed-readiness case. Before another PMIC release, readiness must be validated for the selected supported slot, and mixed states added to the tests. Correction after inspecting the original entry again: CBZ x1 at 0x2654 selects role zero without an index-zero restriction. R1/r2 unintentionally narrowed that entry; [r3 restores it for the selected ready slot](PMIC-R3.md). The heuristic itself remains unvalidated. [Counterexample](../evidence/r1-port-guard-counterexample.json).
 
 ## Reproduced lock leak in the Type-C binary
 
@@ -46,3 +46,7 @@ Next work must observe the actual ownership and ordering of OTG, Type-C role and
 ## PMIC r2 follow-up
 
 The selected-slot guard has now been repaired and covered by mixed-readiness tests. R2 / 1844 is activated as oem53.inf. Its first Windows boot passed, but charging was absent after connector changes while storage remained available. This does not establish that the guard caused the physical hub failure. [Separate r2 report](PMIC-R2.md).
+
+## R3 follow-up and correction
+
+The original role-zero condition was mis-transcribed in r1/r2. R3 / 1845 is activated, pending first restart. The Type-C lock candidate is still not installed. [Full correction and limits](PMIC-R3.md).

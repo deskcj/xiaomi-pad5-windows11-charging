@@ -1,0 +1,131 @@
+{
+  "cases": 12,
+  "AllPassed": true,
+  "OriginalFix20RoleZeroNotRestrictedToIndexZero": true,
+  "R2IncorrectlyBypassesRoleZeroReadOnIndexOne": true,
+  "R3RestoresRoleZeroEntryOnIndexOne": true,
+  "ExecutionStopsBeforeFirstHardwareAccess": true,
+  "KernelDriverLoaded": false,
+  "Results": [
+    {
+      "binary": "originalFix20",
+      "logicalIndex": 0,
+      "role": 0,
+      "firstPmicCall": {
+        "kind": "READ",
+        "SID": 2,
+        "register": "0x1509"
+      }
+    },
+    {
+      "binary": "originalFix20",
+      "logicalIndex": 0,
+      "role": 1,
+      "firstPmicCall": {
+        "kind": "MASKED_WRITE",
+        "SID": 2,
+        "register": "0x1544"
+      }
+    },
+    {
+      "binary": "originalFix20",
+      "logicalIndex": 1,
+      "role": 0,
+      "firstPmicCall": {
+        "kind": "READ",
+        "SID": 2,
+        "register": "0x1509"
+      }
+    },
+    {
+      "binary": "originalFix20",
+      "logicalIndex": 1,
+      "role": 1,
+      "firstPmicCall": {
+        "kind": "MASKED_WRITE",
+        "SID": 2,
+        "register": "0x1544"
+      }
+    },
+    {
+      "binary": "r2",
+      "logicalIndex": 0,
+      "role": 0,
+      "firstPmicCall": {
+        "kind": "READ",
+        "SID": 2,
+        "register": "0x1509"
+      }
+    },
+    {
+      "binary": "r2",
+      "logicalIndex": 0,
+      "role": 1,
+      "firstPmicCall": {
+        "kind": "MASKED_WRITE",
+        "SID": 2,
+        "register": "0x1544"
+      }
+    },
+    {
+      "binary": "r2",
+      "logicalIndex": 1,
+      "role": 0,
+      "firstPmicCall": {
+        "kind": "MASKED_WRITE",
+        "SID": 2,
+        "register": "0x1544"
+      }
+    },
+    {
+      "binary": "r2",
+      "logicalIndex": 1,
+      "role": 1,
+      "firstPmicCall": {
+        "kind": "MASKED_WRITE",
+        "SID": 2,
+        "register": "0x1544"
+      }
+    },
+    {
+      "binary": "r3",
+      "logicalIndex": 0,
+      "role": 0,
+      "firstPmicCall": {
+        "kind": "READ",
+        "SID": 2,
+        "register": "0x1509"
+      }
+    },
+    {
+      "binary": "r3",
+      "logicalIndex": 0,
+      "role": 1,
+      "firstPmicCall": {
+        "kind": "MASKED_WRITE",
+        "SID": 2,
+        "register": "0x1544"
+      }
+    },
+    {
+      "binary": "r3",
+      "logicalIndex": 1,
+      "role": 0,
+      "firstPmicCall": {
+        "kind": "READ",
+        "SID": 2,
+        "register": "0x1509"
+      }
+    },
+    {
+      "binary": "r3",
+      "logicalIndex": 1,
+      "role": 1,
+      "firstPmicCall": {
+        "kind": "MASKED_WRITE",
+        "SID": 2,
+        "register": "0x1544"
+      }
+    }
+  ]
+}

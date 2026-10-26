@@ -1,0 +1,23 @@
+{
+  "At": "2026-10-26T21:01:35.6195241+05:00",
+  "Mode": "Capture",
+  "PMICSHA256": "5257CD32AAD6591113B191D45183CDC6BB397DDB4FD7B2580A9B70AECC80A474",
+  "IOCTL": "0x802A0FA4",
+  "LogicalSlot": 1,
+  "InputBytes": 4,
+  "OutputBytes": 8,
+  "ExpectedCallbackRVA": "0x88F0",
+  "DeviceOpened": true,
+  "IOCTLSent": true,
+  "RegisterWritesImplemented": false,
+  "AdministrativeElevationRequested": false,
+  "RawStatus": 0,
+  "DecodedRole": "UNATTACHED",
+  "OpenWin32Error": 0,
+  "IoctlWin32Error": 0,
+  "ReturnedBytes": 8,
+  "RawResponseHex": "0000000003000000",
+  "RawRole": 3,
+  "Note": "API-derived role on PMIC1844 with hub/storage present and power API offline; not a direct VBUS measurement or proof of the hardware failure cause",
+  "ProcessWasElevated": true
+}

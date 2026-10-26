@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "name": "candidate-fix20r3",
+  "status": "EXPERIMENTAL_NOT_HARDWARE_TESTED",
+  "version": "1.0.1845.0",
+  "hardwareId": "ACPI\\QCOM05E5",
+  "signerThumbprint": "F38EDD5C105095C8342556158CE66253F045965D",
+  "miniclassRequired": "1.0.1680.0",
+  "legacyUnmodifiedBinary": false,
+  "legacyUnmodifiedCode": false,
+  "files": [
+    {
+      "path": "package/qcpmicext8150.cat",
+      "sha256": "F0B508F50DEF620222FE4A0CC05D266E2AB64492D72EE6C8C170EB4A4D9B6B28",
+      "bytes": 2513
+    },
+    {
+      "path": "package/qcpmicext8150.inf",
+      "sha256": "D68A56C95C4DDF251161068811C3EBD85859E58976BC2F84C4654D5838E7776F",
+      "bytes": 4336
+    },
+    {
+      "path": "package/qcpmicext8150.sys",
+      "sha256": "E2789EE5E1D0703B1B38216244677A62D6F10C42B664EB8BBAC3ADA467A4FD60",
+      "bytes": 63328
+    }
+  ],
+  "installed": false,
+  "supportedLogicalSlots": [
+    0,
+    1
+  ],
+  "note": "Restores original fix20 role-zero branch for selected ready slot 1; inherited heuristic unvalidated; not a fast-charge or seamless-handover claim"
+}
