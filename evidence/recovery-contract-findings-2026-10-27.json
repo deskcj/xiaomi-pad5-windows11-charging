@@ -1,0 +1,371 @@
+{
+  "scope": "STATIC_REVIEW_AND_PROPOSED_TRANSITION_CONTRACT_ONLY",
+  "newDriverBuilt": false,
+  "installed": false,
+  "newTestsPerformed": false,
+  "emulationPerformed": false,
+  "hardwareRead": false,
+  "hardwareWrite": false,
+  "rebootIssued": false,
+  "fullChargingFixProven": false,
+  "batteryManagerSHA256": "3659a20de0606aa7283ea3197a1c212e28bfec212c838914f19d74be629453a3",
+  "androidELFSHA256": "fb34578dd6704109363a32caa29937b16b27336c34c721cc02bd41fddf83bde46",
+  "findings": [
+    {
+      "id": "PARALLEL-01",
+      "status": "DEFAULT_DISABLED_AND_NO_ARCHIVED_OVERRIDE_FOUND",
+      "constructorRVA": "0x16cb0",
+      "featureZeroStoreRVA": "0x16dfc",
+      "configFieldOffset": "0x208",
+      "loaderRVA": "0x1f510",
+      "path": "Services/qcbattmngr/ParallelCharging",
+      "value": "FeatureEnable",
+      "archiveSHA256": "5550a5835bce7d6b2d7d757f3c55a910b902f04cf782693dcedcf1a1b18727b2",
+      "archiveConfigurationKeys": [
+        {
+          "suffix": "WDF",
+          "exists": false
+        },
+        {
+          "suffix": "Platform",
+          "exists": false
+        },
+        {
+          "suffix": "ParallelCharging",
+          "exists": false
+        },
+        {
+          "suffix": "ParallelCharging\\ThermalBalancing",
+          "exists": false
+        }
+      ],
+      "currentRuntimeValueMeasured": false,
+      "otherPumpDriversExcluded": false
+    },
+    {
+      "id": "RECOVERY-01",
+      "status": "BATTERY_EVENT_INFRASTRUCTURE_CONFIRMED_STATIC",
+      "events": [
+        {
+          "name": "ChargerInhibit",
+          "callbackRVA": "0xe590",
+          "eventID": 11,
+          "eventRVA": "0x29380"
+        },
+        {
+          "name": "UsbUv",
+          "callbackRVA": "0xe6f0",
+          "eventID": 13,
+          "eventRVA": "0x29780"
+        }
+      ],
+      "eventDispatcherRVA": "0xa1c8",
+      "workerRVA": "0x9490",
+      "workerEventCount": 17,
+      "stateDispatchRVA": "0xb200",
+      "states1to9EventHandlerRVA": "0xbf50",
+      "registeredPolicyCallbackSlotRVA": "0x28a48",
+      "registrationRVA": "0xce48",
+      "selectorContextOffset": "0x9c0",
+      "selectorEquals1": {
+        "policyCallbackRVA": "0x149c0",
+        "updateCallbackRVA": "0x146a0"
+      },
+      "otherSelector": {
+        "policyCallbackRVA": "0xdb10",
+        "updateCallbackRVA": "0xdac0"
+      },
+      "selectorSources": [
+        {
+          "kind": "ACPI package",
+          "name": "BMNR",
+          "element": 0,
+          "parserRVA": "0x4148"
+        },
+        {
+          "kind": "Registry override",
+          "path": "Services/qcbattmngr/WDF",
+          "value": "SelectPlatform",
+          "loaderRVA": "0x4d08"
+        }
+      ],
+      "archivedACPIBMNRValueEstablished": false,
+      "activePlatformPathProven": false,
+      "runtimeRecoverySuccessProven": false,
+      "priorTypeCFaultAlertGapStillOpen": true
+    },
+    {
+      "id": "PUMP-01",
+      "status": "ANDROID_REQUESTED_ENABLE_NOT_SUFFICIENT_PROOF_OF_CHARGING",
+      "setPropertyVA": "ffffff8008cd1bd8",
+      "readModeVA": "ffffff8008cd26e8",
+      "readStatusCallVA": "ffffff8008cd2710",
+      "statusUseVA": "ffffff8008cd2714",
+      "readStatusReturnCheckedBeforeUse": false,
+      "enablePathAlwaysReturnsZeroInSource": true,
+      "actualI2CFailureObserved": false,
+      "hardwareVariantIdentifiedThisStage": false
+    },
+    {
+      "id": "CONTRACT-01",
+      "status": "DOCUMENTED_API_LIMIT_NOT_PROVEN_INSTALLED_CALLSITE_DEFECT",
+      "UcmTcpciStopEndsPDContractAndTypeCConnection": true,
+      "StopStartCountsAsContinuousIO": false,
+      "StopOnS0IdleD0ExitPermitted": false,
+      "proposedSeparateAttachmentAndPowerGenerationsImplemented": false
+    }
+  ],
+  "newAndroidFunctions": [
+    {
+      "name": "ln8000_update_opmode",
+      "VA": "ffffff8008cd26e8"
+    },
+    {
+      "name": "ln8000_charger_set_property",
+      "VA": "ffffff8008cd1bd8"
+    }
+  ],
+  "functionalCases": [
+    {
+      "id": "B01",
+      "scenario": "Холодный запуск без аксессуаров",
+      "expected": "Порт готов к последующему подключению любого поддерживаемого устройства",
+      "context": "Статический пробел порядка готовности; см. BOOT-01",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "B02",
+      "scenario": "Запуск с уже вставленной прямой зарядкой",
+      "expected": "Питание определяется автоматически, процент корректен",
+      "context": "Полный запуск с подключённым блоком не принят",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "B03",
+      "scenario": "Запуск с хабом, зарядкой и SSD",
+      "expected": "После загрузки доступны зарядка и SSD; переставлять хаб не требуется",
+      "context": "Исторически зависело от порядка подключения",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "B04",
+      "scenario": "Запуск с хабом и SSD без зарядки",
+      "expected": "Хаб и SSD работают от планшета при достаточном бюджете питания",
+      "context": "Возможности конкретного хаба и переход Source не подтверждены",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "B05",
+      "scenario": "Запуск с прямой флешкой / SSD",
+      "expected": "USB-хост и питание устройства поднимаются без повторного втыкания",
+      "context": "Для USB-C SSD наблюдались ошибки дескриптора",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "B06",
+      "scenario": "Перезагрузка с аксессуарами",
+      "expected": "Нет BSOD и зависания; подключённые устройства восстанавливаются автоматически",
+      "context": "Нет принятой новой сборки; один успешный старт недостаточен",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "C01",
+      "scenario": "Вставить прямую зарядку в работающий планшет",
+      "expected": "Фактический приём питания, правильный статус, автоматическое согласование",
+      "context": "Раньше были как успехи, так и отказы",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "C02",
+      "scenario": "Вставить хаб с зарядкой и SSD",
+      "expected": "SSD доступен одновременно с приёмом питания",
+      "context": "Есть прежние разовые успехи, стабильность не доказана",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "C03",
+      "scenario": "Подключить хаб и SSD без зарядки",
+      "expected": "Планшет выдаёт допустимое питание и видит накопитель",
+      "context": "Зафиксирована потеря накопителя без внешнего блока",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "C04",
+      "scenario": "Вставить прямой накопитель после зарядки",
+      "expected": "Приём питания прекращается, планшет становится источником для USB и видит устройство",
+      "context": "Исторически встречались OTG-off и Code43",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "C05",
+      "scenario": "Вынуть хаб и подключить прямую зарядку",
+      "expected": "Зарядка начинается без перезапуска стека/Windows",
+      "context": "Бывало, что зарядка не возвращалась",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "C06",
+      "scenario": "После прямой зарядки вернуть хаб с зарядкой и SSD",
+      "expected": "Оба устройства работают; предыдущая прямая зарядка не является обязательной подготовкой",
+      "context": "Исторически прямая зарядка иногда помогала хабу",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "C07",
+      "scenario": "После прямого накопителя вернуть весь комплект в хаб",
+      "expected": "Согласованные роли и работа обоих устройств без перезагрузки",
+      "context": "Полная последовательность не принята",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "C08",
+      "scenario": "Обычная USB-A флешка и USB-C SSD",
+      "expected": "Каждый поддерживаемый накопитель корректно определяется на своём порту/кабеле",
+      "context": "USB-A работала, USB-C SSD с тем же кабелем определялся на ноутбуке; причины отличаются",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "C09",
+      "scenario": "Подключение USB-C обеими ориентациями",
+      "expected": "Обе ориентации исправного кабеля одинаково работоспособны",
+      "context": "Полная проверка отсутствует; VCONN и ориентация учитываются отдельно",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "C10",
+      "scenario": "Удалить только накопитель из питаемого хаба",
+      "expected": "Зарядка продолжает работать, хаб остаётся доступным",
+      "context": "Полная приёмка отсутствует",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "P01",
+      "scenario": "Удалить только зарядку из хаба",
+      "expected": "Если питание хаба не обрывается, накопитель остаётся тем же работающим устройством",
+      "context": "**Отдельная аппаратно зависимая цель**; владелец сообщил о потере SSD и в Android",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "P02",
+      "scenario": "Снятие зарядки всё же перезапустило хаб",
+      "expected": "После восстановления питания устройства снова определяются автоматически без перезагрузки Windows",
+      "context": "Это восстановление после обрыва, а не выполнение P01",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "P03",
+      "scenario": "Вернуть зарядку в работающий от планшета хаб",
+      "expected": "Планшет принимает питание, данные продолжают работать при поддерживаемом непрерывном переходе",
+      "context": "Были возвраты зарядки, но также застревание без неё",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "P04",
+      "scenario": "Краткое пропадание внешнего питания / дребезг",
+      "expected": "Нет зависшего Source/Sink; восстановление следует реальному электрическому состоянию",
+      "context": "Старый таймер Source не должен включать OTG после смены роли",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "P05",
+      "scenario": "Цепочка всех перечисленных перестановок",
+      "expected": "Каждый следующий режим работает независимо от предыдущих; нет накопления ошибочного состояния",
+      "context": "Исторически последовательности приводили к отказу",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "D01",
+      "scenario": "Копирование при снятии только зарядки",
+      "expected": "При непрерывном питании нет USB-reset, переопределения диска, ошибок I/O; содержимое сохранено",
+      "context": "**P01 не подтверждён. Испытания записи сейчас запрещены**",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "D02",
+      "scenario": "Хаб физически отключён целиком",
+      "expected": "Отсоединение распознано; новый аксессуар работает; активная запись не объявляется сохранённой задним числом",
+      "context": "Продолжить I/O через вынутый кабель невозможно",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "S01",
+      "scenario": "Сон и пробуждение с любым комплектом",
+      "expected": "Устройства и питание возвращаются автоматически, старые callbacks не управляют новым подключением",
+      "context": "Не проверено; учесть ограничения UcmTcpci Stop при S0 Idle",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "S02",
+      "scenario": "Гибернация и Fast Startup",
+      "expected": "Корректное восстановление отдельно от холодного старта",
+      "context": "Не проверено; не приравнивать к обычной перезагрузке",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "E01",
+      "scenario": "Слабый блок, перегрузка, временный сбой PMIC",
+      "expected": "Безопасное ограничение с понятной причиной; после устранения — автоматическое восстановление",
+      "context": "IRQ-storm путь Windows отправляет suspend; восстановление требует доразбора",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "E02",
+      "scenario": "Ошибки чтения/команд",
+      "expected": "Ошибка не превращается в успех, нулевое напряжение или фиктивное отключение",
+      "context": "Неполный двухканальный ABI блокирует старые fix2/fix3; requestedEnable помпы и подтверждённый opmode различаются",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "E03",
+      "scenario": "Временный запрет зарядки снят, режим батареи не менялся",
+      "expected": "Фактический приём питания восстанавливается; сохранённая копия battery manager не скрывает чужую запись",
+      "context": "Найдены два писателя801B0FE4 и пропуск команды в17EE8 при совпадении с кэшем; сценарий статический",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "G01",
+      "scenario": "Процент и статус батареи",
+      "expected": "Достоверные процент/наличие питания/приём тока, без ложного «заряжается» по одному VBUS",
+      "context": "В текущем переводе PowerStatus используется детектор VBUS, не измерение тока",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "G02",
+      "scenario": "Полная батарея, температурные ограничения",
+      "expected": "Статус объясняет штатную остановку заряда; нулевой ток при 100% не объявляется поломкой",
+      "context": "Не проверено; защиты сохраняются",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "G03",
+      "scenario": "Обычная и быстрая зарядка",
+      "expected": "Напряжение и ток соответствуют реальному согласованию PD либо QC и ограничениям устройства; быстрый режим подтверждён фактическим режимом подходящей помпы, если она используется",
+      "context": "Старые замеры содержат PD через хаб и HVDCP3 напрямую; нынешний Apple-блок ими не идентифицирован. Generic ParallelCharging не равен готовой поддержке LN8000",
+      "candidateStatus": "NOT_VERIFIED"
+    },
+    {
+      "id": "G04",
+      "scenario": "Пересчёт заданного тока в регистр PMIC",
+      "expected": "Правильные единицы, шаг, границы и отсутствие усечения/переполнения; заданный предел отделён от измеренного тока",
+      "context": "В PMIC1840 путь1C28 умножает вход на1000 и усекает до байта; для1370 Android использует шаг50мА",
+      "candidateStatus": "NOT_VERIFIED"
+    }
+  ],
+  "implementationGates": [
+    "K01",
+    "K02",
+    "K03",
+    "K04",
+    "K05",
+    "K06",
+    "K07",
+    "K08",
+    "K09",
+    "K10",
+    "K11",
+    "K12",
+    "K13",
+    "K14"
+  ],
+  "nextStaticStep": "Find archived ACPI BMNR or firmware profile to identify the selected battery algorithm; complete state transitions and minimally coordinated ABI changes across owner, TCPCI and PMIC encoding. No tests/install."
+}
