@@ -1,0 +1,99 @@
+{
+  "scope": "STATIC_ANALYSIS_ONLY_NO_NEW_DRIVER_TESTS",
+  "backendSHA256": "be9850ce5ab8a9e5ead615de592ff8177154bde9496320910210dc503b2b46e9",
+  "newTestsPerformed": false,
+  "emulationPerformed": false,
+  "newDriverBuilt": false,
+  "installed": false,
+  "hardwareReadsPerformed": false,
+  "hardwareWritesPerformed": false,
+  "rebootIssued": false,
+  "chargingFixProven": false,
+  "archivedCapabilities": {
+    "DeviceCap1": 25021,
+    "DeviceCap2": 3,
+    "StdInCap": 0,
+    "StdOutCap": 127
+  },
+  "archivedCapabilitiesSourceSHA256": "5550a5835bce7d6b2d7d757f3c55a910b902f04cf782693dcedcf1a1b18727b2",
+  "findings": [
+    {
+      "id": "SINK_CONTROL_COMMANDS_NOT_IMPLEMENTED",
+      "status": "CONFIRMED_STATIC_CONFIGURATION_AND_HANDLER_MISMATCH",
+      "handlerRVA": "0x69d0",
+      "unhandledCommandBytes": [
+        "0x44",
+        "0x55"
+      ],
+      "explicitCommandBytes": [
+        "0x66",
+        "0x77",
+        "0x99"
+      ],
+      "deviceCap1SinkControlBit": 2,
+      "archivedBitSet": true,
+      "defaultDeviceCap1RVA": "0x144ac",
+      "registryLoadRVA": "0x169d4",
+      "virtualCapabilityRegister": "0x24",
+      "capabilityContextOffset": "0x254",
+      "hardwareOccurrenceProven": false
+    },
+    {
+      "id": "FAULT_ALERT_NOT_GENERATED_BY_STATUS_CHANGE",
+      "status": "CONFIRMED_IN_IDENTIFIED_PRODUCER_PATHS",
+      "OCPHandlerRVA": "0x5480",
+      "OVPHandlerRVA": "0x57f0",
+      "faultUpdateRVA": "0x4c48",
+      "faultStatusRegister": "0x1f",
+      "faultAlertMask": "0x200",
+      "deltaBuilderRVA": "0xfad8",
+      "deltaBuilderOnlyGeneratesCCAndPower": true,
+      "previousFaultCacheRVA": "0x1a819",
+      "previousFaultIsCompared": false,
+      "WindowsCanReadFaultThroughOtherStatusRequests": true,
+      "liveFaultReproduced": false
+    },
+    {
+      "id": "VBUS_DETECTION_NOT_PROOF_OF_CHARGE_CURRENT",
+      "status": "CONFIRMED_STATUS_ENCODING_WITH_MEASUREMENT_LIMITATION",
+      "powerStatusBuilderRVA": "0x49c0",
+      "sinkStatusUsesVBUSDetector": true,
+      "historicalR5SnapshotsContain1340Suspend": false
+    },
+    {
+      "id": "GHIDRA_F178_RETURN_STORAGE_CORRECTED",
+      "status": "ANALYSIS_METADATA_CORRECTION_NOT_BINARY_DEFECT",
+      "beforeCustomReturn": "w19:4",
+      "afterReturn": "w0:4",
+      "successReturnInstructionRVA": "0xf2c4",
+      "driverBinaryModified": false
+    }
+  ],
+  "newAndroidFunctions": [
+    {
+      "name": "smblib_set_usb_suspend",
+      "VA": "ffffff8008c98828"
+    },
+    {
+      "name": "smblib_set_icl_current",
+      "VA": "ffffff8008c99ad0"
+    },
+    {
+      "name": "smblib_get_prop_input_current_settled",
+      "VA": "ffffff8008c9eb20"
+    },
+    {
+      "name": "smblib_set_prop_pd_current_max",
+      "VA": "ffffff8008c9f270"
+    },
+    {
+      "name": "smblib_set_prop_pd_active",
+      "VA": "ffffff8008ca0120"
+    }
+  ],
+  "limitations": [
+    "Archived configuration, not a new live capability measurement.",
+    "No proof that historical failures traversed these code paths.",
+    "No new build or electrical/USB/boot validation."
+  ]
+}
