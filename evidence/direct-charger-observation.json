@@ -1,0 +1,64 @@
+{
+  "CandidateVersion": "1.0.1843.0",
+  "InstalledSysSHA256": "52B631FC7DA75D3CB3BFA9F9FAC6E6220AAEEF30AD297D76891BE42AD5FABA15",
+  "OwnerReportsHubSafelyEjectedAndChargerConnectedDirectly": true,
+  "AdapterDescription": "Owner reports original Apple USB-C adapter; exact model and cable unverified",
+  "FirstDirectACDetection": "2026-10-26T18:32:05.2864823+05:00",
+  "ObservationEnd": "2026-10-26T18:35:52.9474602+05:00",
+  "Samples": 226,
+  "BatteryPercent": 100,
+  "ReportedRemainingEnergyStart_mWh": 33746,
+  "ReportedRemainingEnergyEnd_mWh": 33746,
+  "ACStatusTransitions": [
+    {
+      "At": "2026-10-26T18:32:05.2864823+05:00",
+      "ACLineStatus": 1,
+      "Charging": 1,
+      "Discharging": 0
+    },
+    {
+      "At": "2026-10-26T18:32:29.5734686+05:00",
+      "ACLineStatus": 0,
+      "Charging": 0,
+      "Discharging": 1
+    },
+    {
+      "At": "2026-10-26T18:32:31.5976401+05:00",
+      "ACLineStatus": 1,
+      "Charging": 1,
+      "Discharging": 0
+    },
+    {
+      "At": "2026-10-26T18:32:32.6069392+05:00",
+      "ACLineStatus": 0,
+      "Charging": 0,
+      "Discharging": 1
+    },
+    {
+      "At": "2026-10-26T18:32:34.6381537+05:00",
+      "ACLineStatus": 1,
+      "Charging": 1,
+      "Discharging": 0
+    },
+    {
+      "At": "2026-10-26T18:32:36.6530290+05:00",
+      "ACLineStatus": 0,
+      "Charging": 0,
+      "Discharging": 1
+    },
+    {
+      "At": "2026-10-26T18:32:47.7866994+05:00",
+      "ACLineStatus": 1,
+      "Charging": 1,
+      "Discharging": 0
+    }
+  ],
+  "LastContinuousOnlineSeconds": 185.2,
+  "PMICAndTypeCAndHostProblemSamples": 0,
+  "ContinuousUptime": true,
+  "CableWasUntouchedDuringTransitions": null,
+  "Acceptance": "PENDING_PHYSICAL_ACTION_CLARIFICATION_AND_FURTHER_OBSERVATION",
+  "EnergyGainEstablished": false,
+  "Limitation": "SOC remained 100%; reported rate changes sign and is not an external power measurement. AC transitions cannot yet be attributed to the driver or a physical cable action.",
+  "DriverChangedForThisTest": false
+}

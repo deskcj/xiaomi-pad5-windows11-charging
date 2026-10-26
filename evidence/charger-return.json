@@ -1,0 +1,10 @@
+{
+  "CandidateVersion": "1.0.1843.0",
+  "Action": "Owner returned only charger to hub, without detaching hub or restarting Windows",
+  "HubReturnedAt": "2026-10-26T18:05:56.2633531+05:00",
+  "ACReturnedAt": "2026-10-26T18:05:57.2855024+05:00",
+  "StorageReturnedAt": "2026-10-26T18:06:00.3148010+05:00",
+  "ContinuousUptimeAcrossRecordedEdge": true,
+  "ChargerRemovalStillFailed": true,
+  "RootCauseProven": false
+}

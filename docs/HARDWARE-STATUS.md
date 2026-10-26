@@ -33,3 +33,13 @@ The root cause is not proven: no Windows PMIC-register readback or physical VBUS
 In the [official Android implementation](https://github.com/MiCode/Xiaomi_Kernel_OpenSource/blob/71b6effd2dfa8f703dd1ea17acd1323b2fd3cf6c/drivers/power/supply/qcom/smb5-lib.c), USB-host notification enables OTG VBUS separately from the Type-C role configuration; the regulator enable/disable routines explicitly update the OTG bit. The [register definitions](https://github.com/MiCode/Xiaomi_Kernel_OpenSource/blob/71b6effd2dfa8f703dd1ea17acd1323b2fd3cf6c/drivers/power/supply/qcom/smb5-reg.h) separate 0x1140 OTG control from 0x1544 Type-C role configuration. This supports examining that boundary, but does not prove Windows failed at that exact write or authorize blindly enabling OTG into an externally powered link.
 
 Next analysis must locate Windows' existing VBUS-enable/disable callbacks and their role-transition notifications, compare them with saved Android measurements, and establish external-VBUS/CC state and error paths before changing the policy. Do not call this release Android-equivalent or fully stable.
+
+## Charger return and direct connection
+
+Returning only the charger restored the hub at 18:05:56, external-power indication at 18:05:57 and SSD at 18:06:00 without a restart. The charger-removal failure remains unresolved. See [return evidence](../evidence/charger-return.json).
+
+The owner then safely ejected the external storage and connected the same charger directly. External power was first recorded at 18:32:05. The log subsequently recorded several AC/charge-state transitions, last returning online at 18:32:47. As of 2026-10-26T18:35:52.9474602+05:00, it had remained online for 185.2 seconds. Whether the cable was physically moved during those transitions is awaiting the owner's clarification; direct charging is not marked as a stable pass.
+
+SOC was 100% throughout this observation, so it cannot establish battery energy gain. No PMIC, Type-C or host problem codes were observed, and uptime remained continuous. The active SYS hash was rechecked and no driver changed for this test. Logging and working notes are on the internal disk, independent of the disconnected hub. See [direct observation](../evidence/direct-charger-observation.json).
+
+The [nabu-charger comparison](NABU-CHARGER-REVIEW.md) records why its LN8000/Quick Charge driver is useful research but cannot be installed as a validated combined fix on this ACPI/PMIC configuration.
