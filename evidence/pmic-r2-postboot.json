@@ -1,0 +1,62 @@
+{
+  "ObservedAt": "2026-10-26T20:33:01.811302+05:00",
+  "Package": "candidate-fix20r2",
+  "Version": "1.0.1844.0",
+  "INF": "oem53.inf",
+  "FirstKernelBootAfterActivationObserved": true,
+  "KernelBootAt": "2026-10-26T20:20:35.6577446+05:00",
+  "ExpectedImageAndBinding": true,
+  "PMICProblemCode": 0,
+  "BatteryMiniclassVersion": "1.0.1680.0",
+  "OwnerReportedBootWithoutHubThenConnected": true,
+  "KernelBootWithoutHubControlledByAgent": false,
+  "OwnerReportedSequence": [
+    "Removing only charger from hub also removed storage.",
+    "Storage alone directly connected to tablet enumerated on two insertions.",
+    "Direct charger failed to be detected on two insertions.",
+    "Powered hub without storage also failed to charge, including charger reinsertion.",
+    "Adding storage to hub enumerated storage but charging remained absent.",
+    "Removing charger from hub caused storage to disappear then return.",
+    "Final setup: hub with storage and charger, storage visible but charging absent."
+  ],
+  "PhysicalSequenceInstrumented": false,
+  "NativeObservation": {
+    "Start": "2026-10-26T20:28:25.8924590+05:00",
+    "End": "2026-10-26T20:31:25.0617563+05:00",
+    "Samples": 90,
+    "AllSamplesACOffline": true,
+    "AllSamplesChargingFalse": true,
+    "AllSamplesDischargingTrue": true,
+    "AllSamplesHubAndStoragePresent": true,
+    "InitialBatteryPercent": 100,
+    "FinalBatteryPercent": 99,
+    "LastReportedBatteryRate_mW": -3196,
+    "ExternalAdapterPowerMeasured": false
+  },
+  "FirstBootResult": "WINDOWS_SESSION_REACHED_EXPECTED_PMIC_BINDING",
+  "ChargingAndPowerHandoverResult": "FAIL",
+  "RootCauseProven": false,
+  "FastChargingEstablished": false,
+  "TypeCLockfixInstalled": false,
+  "NoNewDriverInstalledThisTurn": true,
+  "NoControllerResetPerformed": true,
+  "SelectedSystemEventsSinceBoot": [
+    {
+      "Id": 219,
+      "Provider": "Microsoft-Windows-Kernel-PnP"
+    },
+    {
+      "Id": 219,
+      "Provider": "Microsoft-Windows-Kernel-PnP"
+    },
+    {
+      "Id": 219,
+      "Provider": "Microsoft-Windows-Kernel-PnP"
+    },
+    {
+      "Id": 153,
+      "Provider": "Microsoft-Windows-Kernel-Boot"
+    }
+  ],
+  "NewBugcheckInSelectedSystemEvents": false
+}
