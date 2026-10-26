@@ -1,0 +1,84 @@
+{
+  "scope": "STATIC_ANALYSIS_ONLY_NO_NEW_TESTS",
+  "backendSHA256": "be9850ce5ab8a9e5ead615de592ff8177154bde9496320910210dc503b2b46e9",
+  "newTestsPerformed": false,
+  "newBuildProduced": false,
+  "installed": false,
+  "hardwareReadsPerformed": false,
+  "hardwareWritesPerformed": false,
+  "rebootIssued": false,
+  "chargingFixProven": false,
+  "BSODFreedomProven": false,
+  "findings": [
+    {
+      "id": "STALE_SOURCE_TIMER",
+      "status": "CONFIRMED_CODE_PATH_HARDWARE_OCCURRENCE_UNPROVEN",
+      "timerContextOffset": "0x230",
+      "callbackRVA": "0x4ed0",
+      "sourceCommandRVA": "0x69d0",
+      "enableCommand": "0x77",
+      "disableCommand": "0x66",
+      "delay100ns": -1000000,
+      "delayMilliseconds": 100,
+      "VBUSThresholdCode": 32,
+      "VBUSCodeStepMicrovolts": 25000,
+      "disablePathCancelsTimer": false,
+      "timerChecksRequestGeneration": false,
+      "timerRequestsOTGEnableEvenAfterMeasurementError": true,
+      "physicalOTGEnableAfterCancelObserved": false
+    },
+    {
+      "id": "WORKER_STOP_NOT_JOINED",
+      "status": "CONFIRMED_STOP_PATH_NO_JOIN_CRASH_CAUSE_UNPROVEN",
+      "threadRVA": "0xfe40",
+      "startRVA": "0x103a8",
+      "stopRVA": "0x107a8",
+      "stopWaitsForThreadTermination": false,
+      "stopZerosClosedThreadHandle": false,
+      "stopContextLifetimeSafetyProven": false
+    },
+    {
+      "id": "RECOVERY_GAP",
+      "status": "CONFIRMED_LOOP_IGNORES_DISPATCH_STATUS",
+      "callRVA": "0x100a0",
+      "nextInstructionRVA": "0x100a4",
+      "waitTimeout": null,
+      "allRetriesAbsent": false,
+      "genericRetryAfterAnyFailureGuaranteed": false
+    },
+    {
+      "id": "MULTIPLE_ALERT_PRODUCERS",
+      "status": "IDENTIFIED_PATHS_CONCURRENT_LIVE_OVERLAP_UNPROVEN",
+      "producers": [
+        "system thread 0xfe40 -> 0x10c68",
+        "passive timer 0x4ed0 -> 0x8af8 when context+0x2f4 == 2"
+      ],
+      "timerAutomaticallySerializesSystemThread": false,
+      "liveInterleavingObserved": false
+    }
+  ],
+  "newAndroidFunctions": [
+    {
+      "name": "kick_sm",
+      "VA": "ffffff8008a9d098"
+    },
+    {
+      "name": "usbpd_sm",
+      "VA": "ffffff8008a9eb00"
+    },
+    {
+      "name": "phy_sig_received",
+      "VA": "ffffff8008aa3d00"
+    },
+    {
+      "name": "phy_msg_received",
+      "VA": "ffffff8008aa3e28"
+    }
+  ],
+  "limitations": [
+    "No new driver tests, emulation, builds or hardware operations.",
+    "Static control flow is not evidence that the historical fault traversed it.",
+    "Timer member scan cannot exclude arbitrary aliased pointer accesses.",
+    "Long Android function assembly listing is capped at 1000 instructions; decompilation covers its bounded body."
+  ]
+}
