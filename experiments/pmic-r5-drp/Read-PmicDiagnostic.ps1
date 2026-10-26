@@ -70,7 +70,7 @@ if($Capture){
   $client=[PmicDiagnosticRead20261026]::new('\\?\'+$encoded.Substring(4));$result.DeviceOpened=$true;$result.Mode='Capture'
   foreach($name in $registers.Keys){$value=$client.Read([uint16]$registers[$name]);$result.Values[$name]=[ordered]@{Address=('0x{0:X4}' -f $registers[$name]);Value=[int]$value;Hex=('0x{0:X2}' -f $value)}}
   $misc=$result.Values.TYPEC_MISC.Value;$mode=$result.Values.TYPEC_MODE.Value;$state=$result.Values.TYPEC_STATE.Value
-  $result.Decoded=[ordered]@{CCAttached=([bool]($misc -band 1));PowerRole=if(!($misc -band 1)){'UNATTACHED'}elseif($misc -band 0x40){'SOURCE'}else{'SINK'};AttachStateBit5=([bool]($state -band 0x20));OTGCommandEnabled=([bool]($result.Values.OTG_COMMAND.Value -band 1));TypeCDisabled=([bool]($mode -band 1));SinkOnly=([bool]($mode -band 2));SourceOnly=([bool]($mode -band 4));TrySink=([bool]($mode -band 0x10));TrySource=([bool]($mode -band 0x20));InheritedFix20WouldForceSource=($state -ge 5 -and $state -le 34)}
+  $result.Decoded=[ordered]@{CCAttached=([bool]($misc -band 1));PowerRole=if(!($misc -band 1)){'UNATTACHED'}elseif($misc -band 0x40){'SOURCE'}else{'SINK'};AttachStateBit5=([bool]($state -band 0x20));OTGCommandEnabled=([bool]($result.Values.OTG_COMMAND.Value -band 1));TypeCDisabled=([bool]($mode -band 1));SinkOnly=([bool]($mode -band 2));SourceOnly=([bool]($mode -band 4));TrySink=([bool]($mode -band 0x10));TrySource=([bool]($mode -band 0x08));InheritedFix20WouldForceSource=($state -ge 5 -and $state -le 34)}
   $result.CaptureCompleted=$true;$result.Finished=Get-Date -Format o
  }catch{$result.Error=$_.Exception.Message;$result.CaptureCompleted=$false}
  finally{if($client){$client.Dispose()}}
