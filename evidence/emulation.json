@@ -1,0 +1,13 @@
+{
+  "candidate": "qcpmicext8150_unsigned.sys",
+  "sha256": "4ee17b4cef98248676a4cba6a0152574dd4ce9df40e086ccb31e0cf03cf9c9ea",
+  "passedARM64Cases": 1624,
+  "nativeUnwindFixtures": 93,
+  "all256StateBytesCovered": true,
+  "additionalASLRBases": 3,
+  "preservedNonvolatileRegisters": true,
+  "stackRestored": true,
+  "x18Untouched": true,
+  "hardwareTesting": false,
+  "remainingLimitation": "Legacy fix20 role heuristic and other VCONN changes retained; PD, hub hotplug, real charging and Windows boot not tested."
+}

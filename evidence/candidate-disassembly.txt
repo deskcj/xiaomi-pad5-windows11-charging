@@ -1,0 +1,45 @@
+14000 sub sp, sp, #0x10
+14004 sub sp, sp, #0x10
+14008 adrp x8, #0
+1400c add x9, x8, #0
+14010 strb wzr, [sp]
+14014 mov x8, #0xd548
+14018 ldr x8, [x9, x8]
+1401c cbnz x8, #0x1402c
+14020 mov w0, #0x61
+14024 add sp, sp, #0x20
+14028 ret 
+1402c stp x19, x30, [sp, #0x10]
+14030 cbnz w0, #0x1409c
+14034 cbnz w1, #0x1409c
+14038 ldr w19, [x8]
+1403c mov x2, sp
+14040 mov w1, #0x1509
+14044 mov w0, w19
+14048 bl #0xb858
+1404c cbnz w0, #0x140a0
+14050 ldrb w8, [sp]
+14054 add w8, w8, #0xfb
+14058 uxtb w8, w8
+1405c cmp w8, #0x1d
+14060 b.hi #0x1407c
+14064 mov w1, #4
+14068 mov w0, #0
+1406c bl #0x140ac
+14070 ldp x19, x30, [sp, #0x10]
+14074 add sp, sp, #0x20
+14078 ret 
+1407c mov w3, #0
+14080 mov w2, #1
+14084 mov w1, #0x1140
+14088 mov w0, w19
+1408c bl #0xb948
+14090 cbnz w0, #0x140a0
+14094 mov w1, #0
+14098 mov w0, #0
+1409c bl #0x140ac
+140a0 ldp x19, x30, [sp, #0x10]
+140a4 add sp, sp, #0x20
+140a8 ret 
+140ac cmp w1, #4
+140b0 b #0x8ac4

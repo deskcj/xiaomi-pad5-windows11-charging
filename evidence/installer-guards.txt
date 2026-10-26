@@ -1,0 +1,23 @@
+{
+  "Mode": "Stage",
+  "Package": "candidate-fix20r1",
+  "Status": "EXPERIMENTAL_NOT_HARDWARE_TESTED",
+  "TargetVersion": "1.0.1843.0",
+  "CurrentPublishedInf": "oem92.inf",
+  "CurrentVersion": "1.0.1840.0",
+  "CurrentImageSHA256": "533C3A555E111D4B12B657D026C92D63D5170D57297432D03BDAF3BE96C7886A",
+  "BatteryVersion": "1.0.1680.0",
+  "CatalogTrusted": true,
+  "RequiresTestMode": true,
+  "AutomaticRestart": false,
+  "DeviceRemoval": false,
+  "HostModeChanges": false
+}
+{
+  "TamperedPackageRejectedBeforeSystemProbe": true,
+  "StageWithoutExperimentFlagRejected": true,
+  "LiveWindowsRestoreRejected": true,
+  "StagePerformed": false,
+  "ActivationPerformed": false,
+  "OfflineApplyTested": false
+}

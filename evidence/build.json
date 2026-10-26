@@ -1,0 +1,164 @@
+{
+  "status": "EXPERIMENTAL_NOT_HARDWARE_TESTED",
+  "inputFix20SHA256": "9955517922e3a0d13287034616c08f8dbad1322c248954477a144073f5f606d2",
+  "inputStockSHA256": "533c3a555e111d4b12b657d026c92d63d5170d57297432d03bdaf3be96c7886a",
+  "objectSHA256": "ec9c98defe842f7152103dc8208969f549f8492bf5c18bdcd510785a8b407fd6",
+  "outputSHA256": "4ee17b4cef98248676a4cba6a0152574dd4ce9df40e086ccb31e0cf03cf9c9ea",
+  "outputBytes": 60928,
+  "hookRVA": "0x14000",
+  "legacyStubRVA": "0x140ac",
+  "restoredRanges": [
+    [
+      "0x1348",
+      "0x135c"
+    ],
+    [
+      "0x2648",
+      "0x26b0"
+    ],
+    [
+      "0xa880",
+      "0xa898"
+    ],
+    [
+      "0xadb0",
+      "0xadb8"
+    ]
+  ],
+  "newSections": [
+    {
+      "name": ".ncode",
+      "rva": "0x14000",
+      "virtualSize": 180,
+      "rawSize": 512,
+      "flags": "0x60000020"
+    },
+    {
+      "name": ".nmeta",
+      "rva": "0x15000",
+      "virtualSize": 1176,
+      "rawSize": 1536,
+      "flags": "0x40000040"
+    }
+  ],
+  "compilerRuntimeFunctionRecords": 5,
+  "exceptionDirectoryRVA": "0x15048",
+  "exceptionDirectorySize": 1104,
+  "relocations": [
+    {
+      "section": ".text$mn",
+      "offset": "0x8",
+      "kind": 4,
+      "symbol": "__ImageBase",
+      "target": "0x0"
+    },
+    {
+      "section": ".text$mn",
+      "offset": "0xc",
+      "kind": 6,
+      "symbol": "__ImageBase",
+      "target": "0x0"
+    },
+    {
+      "section": ".text$mn",
+      "offset": "0x48",
+      "kind": 3,
+      "symbol": "PmicReadByte",
+      "target": "0xb858"
+    },
+    {
+      "section": ".text$mn",
+      "offset": "0x6c",
+      "kind": 3,
+      "symbol": "LegacySetRole",
+      "target": "0x140ac"
+    },
+    {
+      "section": ".text$mn",
+      "offset": "0x8c",
+      "kind": 3,
+      "symbol": "PmicMaskedWrite",
+      "target": "0xb948"
+    },
+    {
+      "section": ".text$mn",
+      "offset": "0x9c",
+      "kind": 3,
+      "symbol": "LegacySetRole",
+      "target": "0x140ac"
+    },
+    {
+      "section": ".pdata",
+      "offset": "0x0",
+      "kind": 2,
+      "symbol": "$LN15",
+      "target": "0x14000"
+    },
+    {
+      "section": ".pdata",
+      "offset": "0x4",
+      "kind": 2,
+      "symbol": "$unwind$RepairSetRole",
+      "target": "0x15000"
+    },
+    {
+      "section": ".pdata",
+      "offset": "0x8",
+      "kind": 2,
+      "symbol": "$LN15",
+      "target": "0x14000"
+    },
+    {
+      "section": ".pdata",
+      "offset": "0xc",
+      "kind": 2,
+      "symbol": "$unwind$0$RepairSetRole",
+      "target": "0x1500c"
+    },
+    {
+      "section": ".pdata",
+      "offset": "0x10",
+      "kind": 2,
+      "symbol": "$LN15",
+      "target": "0x14000"
+    },
+    {
+      "section": ".pdata",
+      "offset": "0x14",
+      "kind": 2,
+      "symbol": "$unwind$1$RepairSetRole",
+      "target": "0x1501c"
+    },
+    {
+      "section": ".pdata",
+      "offset": "0x18",
+      "kind": 2,
+      "symbol": "$LN15",
+      "target": "0x14000"
+    },
+    {
+      "section": ".pdata",
+      "offset": "0x1c",
+      "kind": 2,
+      "symbol": "$unwind$2$RepairSetRole",
+      "target": "0x15028"
+    },
+    {
+      "section": ".pdata",
+      "offset": "0x20",
+      "kind": 2,
+      "symbol": "$LN15",
+      "target": "0x14000"
+    },
+    {
+      "section": ".pdata",
+      "offset": "0x24",
+      "kind": 2,
+      "symbol": "$unwind$3$RepairSetRole",
+      "target": "0x15038"
+    }
+  ],
+  "newImports": false,
+  "preservesLegacyFix20RoleHeuristic": true,
+  "hardwareInstallPerformed": false
+}

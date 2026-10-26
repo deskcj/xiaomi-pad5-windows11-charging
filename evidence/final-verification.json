@@ -1,0 +1,61 @@
+{
+  "status": "EXPERIMENTAL_NOT_HARDWARE_TESTED",
+  "version": "1.0.1843.0",
+  "signedSYS": {
+    "path": "package/qcpmicext8150.sys",
+    "sha256": "52B631FC7DA75D3CB3BFA9F9FAC6E6220AAEEF30AD297D76891BE42AD5FABA15",
+    "bytes": 63320
+  },
+  "ARM64": {
+    "candidate": "qcpmicext8150_unsigned.sys",
+    "sha256": "4ee17b4cef98248676a4cba6a0152574dd4ce9df40e086ccb31e0cf03cf9c9ea",
+    "passedARM64Cases": 1624,
+    "nativeUnwindFixtures": 93,
+    "all256StateBytesCovered": true,
+    "additionalASLRBases": 3,
+    "preservedNonvolatileRegisters": true,
+    "stackRestored": true,
+    "x18Untouched": true,
+    "hardwareTesting": false,
+    "remainingLimitation": "Legacy fix20 role heuristic and other VCONN changes retained; PD, hub hotplug, real charging and Windows boot not tested."
+  },
+  "NativeUnwind": {
+    "nativeARM64UnwindCases": 93,
+    "failures": 0,
+    "kernelDriverLoaded": false,
+    "mappedDriverMemoryExecutable": false
+  },
+  "sourceSHA256": {
+    "src/role_repair.c": "398cf9e4f02c55f7e8a34eb3883993e7ec086c9fad395450b1234c457e387c4b",
+    "tools/build_patch.py": "57223cc6747eba0dbeedd0bb602b5b163b72b39c667fd3e27f87c10e40bac9fe",
+    "Install-PmicPackage.ps1": "02e3f9f2e4700e51ba57927cabb334d3f99fc93b6d6c6076c45e0efa3200ef19",
+    "Restore-ExperimentOffline.ps1": "d611774a42ec6e6a745a13d8fa2a859a0e21a69eb9740eecddddc84174c1099a",
+    "tests/test_candidate.py": "0667b940683a538e3a292b489acda460944a9e26f5c1340012da31de7e140eda",
+    "tests/native_unwind.c": "36a9d72f75637b9b9c789ce70e4c7fe24d4a3d3cecf5831dca8eef3969321e58"
+  },
+  "catalogMembershipVerified": true,
+  "mappedSectionsOfSignedAndEmulatedImagesIdentical": true,
+  "PS51InspectPassed": true,
+  "backupFilesVerified": 65,
+  "liveDriverFilesUnchanged": 65,
+  "StagePerformed": false,
+  "ActivatePerformed": false,
+  "offlineRecoveryApplyTested": false,
+  "productionMicrosoftSignature": false,
+  "hardwareBootAndChargingTests": "PENDING",
+  "githubPublication": "PREPARED_FOR_PUBLICATION",
+  "archives": [
+    {
+      "file": "fix20r1-experimental-1.0.1843.0.zip",
+      "sha256": "80d119171dfaa08434695b803dc77333bcad666253f6ffdcaca46da89d77d450",
+      "bytes": 40575,
+      "status": "EXPERIMENTAL_NOT_HARDWARE_TESTED"
+    },
+    {
+      "file": "fix20-legacy-installer-1.0.1840.20.zip",
+      "sha256": "902f36517d7ac66be51af822cffbe8e4ed572c06c1a48048ca6928a7faaea387",
+      "bytes": 38368,
+      "status": "EXPERIMENTAL_NOT_HARDWARE_TESTED"
+    }
+  ]
+}

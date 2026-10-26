@@ -1,0 +1,262 @@
+{
+  "fix20SHA256": "9955517922e3a0d13287034616c08f8dbad1322c248954477a144073f5f606d2",
+  "currentDiskBaselineSHA256": "533c3a555e111d4b12b657d026c92d63d5170d57297432d03bdaf3be96c7886a",
+  "literalChecks": [
+    {
+      "reader": "0xa594",
+      "target": "0xa880",
+      "width": 8,
+      "expected": 122070,
+      "stock": 122070,
+      "fix20": 5945358444226674752
+    },
+    {
+      "reader": "0xa59c",
+      "target": "0xa888",
+      "width": 8,
+      "expected": 1000000,
+      "stock": 1000000,
+      "fix20": 10664528518907428867
+    },
+    {
+      "reader": "0xa644",
+      "target": "0xa890",
+      "width": 8,
+      "expected": 488281,
+      "stock": 488281,
+      "fix20": 1729346459741978688
+    },
+    {
+      "reader": "0xad18",
+      "target": "0xadb0",
+      "width": 8,
+      "expected": 488281,
+      "stock": 488281,
+      "fix20": 1729380828070281250
+    }
+  ],
+  "emulationCases": [
+    {
+      "case": "successful-attached-read",
+      "read_status": 0,
+      "sample": 5,
+      "caller_index": 0,
+      "global_ready": true,
+      "writes": [
+        {
+          "sid": 2,
+          "register": "0x1544",
+          "mask": 23,
+          "value": 4
+        }
+      ],
+      "return_w0": 0,
+      "final_pc": "0x400000",
+      "error": null,
+      "trace": [
+        {
+          "rva": "0x2690",
+          "w0": 0,
+          "w1": 5385,
+          "x9": "0xdeadbeef"
+        },
+        {
+          "rva": "0x2658",
+          "w0": 0,
+          "w1": 4,
+          "x9": "0xdeadbeef"
+        },
+        {
+          "rva": "0x8b08",
+          "w0": 0,
+          "w1": 4,
+          "x9": "0xdeadbeef"
+        },
+        {
+          "rva": "0x8b24",
+          "w0": 0,
+          "w1": 5444,
+          "x9": "0x0"
+        },
+        {
+          "rva": "0x8b28",
+          "w0": 0,
+          "w1": 5444,
+          "x9": "0x0"
+        }
+      ]
+    },
+    {
+      "case": "failed-read-output-unchanged",
+      "read_status": 109,
+      "sample": 0,
+      "caller_index": 0,
+      "global_ready": true,
+      "writes": [
+        {
+          "sid": 2,
+          "register": "0x1140",
+          "mask": 1,
+          "value": 0
+        }
+      ],
+      "return_w0": 97,
+      "final_pc": "0x400000",
+      "error": null,
+      "trace": [
+        {
+          "rva": "0x2690",
+          "w0": 109,
+          "w1": 5385,
+          "x9": "0xdeadbeef"
+        },
+        {
+          "rva": "0x2658",
+          "w0": 2,
+          "w1": 4416,
+          "x9": "0xdeadbeef"
+        }
+      ]
+    },
+    {
+      "case": "successful-detached-read",
+      "read_status": 0,
+      "sample": 0,
+      "caller_index": 0,
+      "global_ready": true,
+      "writes": [
+        {
+          "sid": 2,
+          "register": "0x1140",
+          "mask": 1,
+          "value": 0
+        }
+      ],
+      "return_w0": 97,
+      "final_pc": "0x400000",
+      "error": null,
+      "trace": [
+        {
+          "rva": "0x2690",
+          "w0": 0,
+          "w1": 5385,
+          "x9": "0xdeadbeef"
+        },
+        {
+          "rva": "0x2658",
+          "w0": 2,
+          "w1": 4416,
+          "x9": "0xdeadbeef"
+        }
+      ]
+    },
+    {
+      "case": "successful-read-nonzero-caller-index",
+      "read_status": 0,
+      "sample": 5,
+      "caller_index": 1,
+      "global_ready": true,
+      "writes": [
+        {
+          "sid": 2,
+          "register": "0x1544",
+          "mask": 23,
+          "value": 4
+        }
+      ],
+      "return_w0": 0,
+      "final_pc": "0x400000",
+      "error": null,
+      "trace": [
+        {
+          "rva": "0x2690",
+          "w0": 0,
+          "w1": 5385,
+          "x9": "0xdeadbeef"
+        },
+        {
+          "rva": "0x2658",
+          "w0": 0,
+          "w1": 4,
+          "x9": "0xdeadbeef"
+        },
+        {
+          "rva": "0x8b08",
+          "w0": 0,
+          "w1": 4,
+          "x9": "0xdeadbeef"
+        },
+        {
+          "rva": "0x8b24",
+          "w0": 0,
+          "w1": 5444,
+          "x9": "0x0"
+        },
+        {
+          "rva": "0x8b28",
+          "w0": 0,
+          "w1": 5444,
+          "x9": "0x0"
+        }
+      ]
+    },
+    {
+      "case": "null-global-clobbered-x9-zero",
+      "read_status": 0,
+      "sample": 5,
+      "caller_index": 0,
+      "global_ready": false,
+      "writes": [],
+      "return_w0": 97,
+      "final_pc": "0x400000",
+      "error": null,
+      "trace": [
+        {
+          "rva": "0x2690",
+          "w0": 0,
+          "w1": 5385,
+          "x9": "0x0"
+        },
+        {
+          "rva": "0x2658",
+          "w0": 0,
+          "w1": 4,
+          "x9": "0x0"
+        }
+      ]
+    },
+    {
+      "case": "null-global-clobbered-x9-nonzero",
+      "read_status": 0,
+      "sample": 5,
+      "caller_index": 0,
+      "global_ready": false,
+      "writes": [
+        {
+          "sid": 2,
+          "register": "0x1544",
+          "mask": 23,
+          "value": 16
+        }
+      ],
+      "return_w0": 0,
+      "final_pc": "0x400000",
+      "error": null,
+      "trace": [
+        {
+          "rva": "0x2690",
+          "w0": 0,
+          "w1": 5385,
+          "x9": "0x1"
+        },
+        {
+          "rva": "0x2658",
+          "w0": 0,
+          "w1": 4,
+          "x9": "0x1"
+        }
+      ]
+    }
+  ],
+  "scope": "ARM64 instruction execution with mocked SPMI I/O; proves software control-flow/calling-convention defects under permitted ABI outcomes, not occurrence or timing on physical hardware; no real PMIC writes."
+}
