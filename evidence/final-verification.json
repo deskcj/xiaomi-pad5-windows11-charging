@@ -43,7 +43,7 @@
   "offlineRecoveryApplyTested": false,
   "productionMicrosoftSignature": false,
   "hardwareBootAndChargingTests": "PENDING",
-  "githubPublication": "PREPARED_FOR_PUBLICATION",
+  "githubPublication": "PUBLISHED",
   "archives": [
     {
       "file": "fix20r1-experimental-1.0.1843.0.zip",
@@ -57,5 +57,9 @@
       "bytes": 38368,
       "status": "EXPERIMENTAL_NOT_HARDWARE_TESTED"
     }
-  ]
+  ],
+  "githubRepository": "https://github.com/deskcj/xiaomi-pad5-windows11-charging",
+  "initialPublicationCommit": "3747cfd8510a59a4f023cfe115e0246a82d2d3e1",
+  "remoteFilesVerified": 29,
+  "downloadedArchivesSHA256Verified": true
 }
