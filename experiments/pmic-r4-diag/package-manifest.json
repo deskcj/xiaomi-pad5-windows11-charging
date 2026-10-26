@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "name": "candidate-fix20r4-diag",
+  "status": "EXPERIMENTAL_NOT_HARDWARE_TESTED",
+  "version": "1.0.1846.0",
+  "hardwareId": "ACPI\\QCOM05E5",
+  "signerThumbprint": "F38EDD5C105095C8342556158CE66253F045965D",
+  "miniclassRequired": "1.0.1680.0",
+  "legacyUnmodifiedBinary": false,
+  "legacyUnmodifiedCode": false,
+  "files": [
+    {
+      "path": "package/qcpmicext8150.cat",
+      "sha256": "606E7DA3B12A4C3923250EA94496946E347823AA04C76E955A5A82A53EB7AC0D",
+      "bytes": 2509
+    },
+    {
+      "path": "package/qcpmicext8150.inf",
+      "sha256": "8656A50B2B9048A6CEF7A5CB5BF95E2D62FD6CD1D054E1F37A1114037231C81F",
+      "bytes": 4336
+    },
+    {
+      "path": "package/qcpmicext8150.sys",
+      "sha256": "D17D1B5796653AA9BC03F288B419E441A27FFE143F276091C7E4106F721611D8",
+      "bytes": 63328
+    }
+  ],
+  "installed": false,
+  "supportedLogicalSlots": [
+    0,
+    1
+  ],
+  "note": "Read-only diagnostic extension; role behavior retained from r3; not a charging fix"
+}

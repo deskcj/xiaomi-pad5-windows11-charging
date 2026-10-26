@@ -1,0 +1,75 @@
+{
+  "At": "2026-10-26T21:48:02.5508001+05:00",
+  "Version": "1.0.1845.0",
+  "INF": "oem138.inf",
+  "FirstBootPassed": true,
+  "InitialPoweredHubChargingPassed": true,
+  "ChargerOnlyRemoveReturnResult": "FAIL",
+  "OwnerFinalState": "Storage visible; charging absent",
+  "NativeTransitions": [
+    {
+      "At": "2026-10-26T21:36:59.7120741+05:00",
+      "ACLineStatus": "1",
+      "Charging": "1",
+      "Discharging": "0",
+      "Hub_CMRC": "0",
+      "Storage_CMRC": "0"
+    },
+    {
+      "At": "2026-10-26T21:40:26.1933038+05:00",
+      "ACLineStatus": "0",
+      "Charging": "0",
+      "Discharging": "1",
+      "Hub_CMRC": "0",
+      "Storage_CMRC": "0"
+    },
+    {
+      "At": "2026-10-26T21:40:29.2402942+05:00",
+      "ACLineStatus": "0",
+      "Charging": "0",
+      "Discharging": "1",
+      "Hub_CMRC": "0",
+      "Storage_CMRC": "13"
+    },
+    {
+      "At": "2026-10-26T21:40:30.2417921+05:00",
+      "ACLineStatus": "0",
+      "Charging": "0",
+      "Discharging": "1",
+      "Hub_CMRC": "0",
+      "Storage_CMRC": "0"
+    },
+    {
+      "At": "2026-10-26T21:40:39.3603625+05:00",
+      "ACLineStatus": "0",
+      "Charging": "0",
+      "Discharging": "1",
+      "Hub_CMRC": "0",
+      "Storage_CMRC": "13"
+    },
+    {
+      "At": "2026-10-26T21:40:40.3702311+05:00",
+      "ACLineStatus": "0",
+      "Charging": "0",
+      "Discharging": "1",
+      "Hub_CMRC": "0",
+      "Storage_CMRC": "0"
+    }
+  ],
+  "BaselineRole": {
+    "At": "2026-10-26T21:36:03.4175169+05:00",
+    "Role": "SINK"
+  },
+  "ObservedSourceRoleInterval": {
+    "First": "2026-10-26T21:40:33.8199715+05:00",
+    "Last": "2026-10-26T21:48:01.1919386+05:00",
+    "Samples": 223,
+    "AllSource": true
+  },
+  "RolePersistedAsSourceAfterOwnerReportedReplug": true,
+  "ExactPhysicalPlugTimesMeasured": false,
+  "WhyRoleDidNotReturnToSinkProven": false,
+  "PMICWriteRequestsIssuedByDiagnosticProbe": false,
+  "StorageContinuityPassed": false,
+  "FastChargingEstablished": false
+}
