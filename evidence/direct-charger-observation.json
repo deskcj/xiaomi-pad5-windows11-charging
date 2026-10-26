@@ -4,8 +4,8 @@
   "OwnerReportsHubSafelyEjectedAndChargerConnectedDirectly": true,
   "AdapterDescription": "Owner reports original Apple USB-C adapter; exact model and cable unverified",
   "FirstDirectACDetection": "2026-10-26T18:32:05.2864823+05:00",
-  "ObservationEnd": "2026-10-26T18:35:52.9474602+05:00",
-  "Samples": 226,
+  "ObservationEnd": "2026-10-26T18:40:04.8483579+05:00",
+  "Samples": 475,
   "BatteryPercent": 100,
   "ReportedRemainingEnergyStart_mWh": 33746,
   "ReportedRemainingEnergyEnd_mWh": 33746,
@@ -53,12 +53,13 @@
       "Discharging": 0
     }
   ],
-  "LastContinuousOnlineSeconds": 185.2,
+  "LastContinuousOnlineSeconds": 437.1,
   "PMICAndTypeCAndHostProblemSamples": 0,
   "ContinuousUptime": true,
-  "CableWasUntouchedDuringTransitions": null,
-  "Acceptance": "PENDING_PHYSICAL_ACTION_CLARIFICATION_AND_FURTHER_OBSERVATION",
+  "OwnerReportsNoFurtherCableActionsAfterInsertion": true,
+  "ExactPhysicalInsertionTimeIndependentlyCaptured": false,
+  "Acceptance": "DIRECT_AC_STATUS_INSTABILITY_OBSERVED",
   "EnergyGainEstablished": false,
-  "Limitation": "SOC remained 100%; reported rate changes sign and is not an external power measurement. AC transitions cannot yet be attributed to the driver or a physical cable action.",
+  "Limitation": "SOC remained 100%; reported rate changes sign and is not an external power measurement. No VBUS waveform or PMIC readback was captured; AC status transitions do not prove physical power loss or identify a driver defect.",
   "DriverChangedForThisTest": false
 }
