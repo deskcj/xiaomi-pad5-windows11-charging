@@ -1,0 +1,305 @@
+{
+  "SourceSHA256": "7c63f4a4b8a9ee0f49b427b6ac94867d2475e02f85d92d5fbcfe4a8aa1804067",
+  "CandidateSHA256": "b9009ea46680e7d919d51a7a82f8ff5a68dce3045c6aa944bfebc24b7424c661",
+  "CandidateFile": "qcusbctcpm8150-lockfix1-UNSIGNED-NOT-INSTALLED.sys",
+  "Signed": false,
+  "Installed": false,
+  "InstructionPatches": [
+    {
+      "rva": "0x8f5c",
+      "before": "4a030018",
+      "after": "55030018",
+      "beforeInstruction": "ldr w10, #0x8fc4",
+      "afterInstruction": "ldr w21, #0x8fc4"
+    },
+    {
+      "rva": "0x8f60",
+      "before": "f5030a2a",
+      "after": "9f1a01b9",
+      "beforeInstruction": "mov w21, w10",
+      "afterInstruction": "str wzr, [x20, #0x118]"
+    },
+    {
+      "rva": "0x8f78",
+      "before": "e5030a2a",
+      "after": "e503152a",
+      "beforeInstruction": "mov w5, w10",
+      "afterInstruction": "mov w5, w21"
+    },
+    {
+      "rva": "0x90ec",
+      "before": "4a030018",
+      "after": "55030018",
+      "beforeInstruction": "ldr w10, #0x9154",
+      "afterInstruction": "ldr w21, #0x9154"
+    },
+    {
+      "rva": "0x90f0",
+      "before": "f5030a2a",
+      "after": "9f1a01b9",
+      "beforeInstruction": "mov w21, w10",
+      "afterInstruction": "str wzr, [x20, #0x118]"
+    },
+    {
+      "rva": "0x9108",
+      "before": "e5030a2a",
+      "after": "e503152a",
+      "beforeInstruction": "mov w5, w10",
+      "afterInstruction": "mov w5, w21"
+    }
+  ],
+  "ComparedOriginalAndCandidateCases": 576,
+  "ReadyAfterNotReadySequences": 8,
+  "ASLRBases": 3,
+  "PreservedNonvolatileRegisters": true,
+  "PreservedX18": true,
+  "StackRestored": true,
+  "ExistingBusyOwnerPreserved": true,
+  "ErrorStatusAndTracePreserved": true,
+  "UnwindImportRelocationLoadConfigAndIATUnchanged": true,
+  "SectionLayoutUnchanged": true,
+  "HardwareTested": false,
+  "RootCauseOfObservedHubLossProven": false,
+  "NativeUnwindFixturesPrepared": 318,
+  "Limitation": "A narrowly scoped lock-release research candidate. Does not change PMIC/OTG/PD policy or fix existing callback-error masking. Emulation cannot establish actual boot/power/concurrency safety.",
+  "Reproductions": [
+    {
+      "binary": "original",
+      "initialMethod": "read",
+      "retryMethod": "read",
+      "initial": {
+        "status": 3221225858,
+        "lock": 1,
+        "calls": [],
+        "messages": [
+          {
+            "id": 158,
+            "status": 3221225858
+          }
+        ]
+      },
+      "retryAfterReady": {
+        "status": 3221225488,
+        "lock": 1,
+        "calls": [],
+        "messages": [
+          {
+            "id": 156,
+            "status": 3221225488
+          }
+        ]
+      }
+    },
+    {
+      "binary": "original",
+      "initialMethod": "read",
+      "retryMethod": "write",
+      "initial": {
+        "status": 3221225858,
+        "lock": 1,
+        "calls": [],
+        "messages": [
+          {
+            "id": 158,
+            "status": 3221225858
+          }
+        ]
+      },
+      "retryAfterReady": {
+        "status": 3221225488,
+        "lock": 1,
+        "calls": [],
+        "messages": [
+          {
+            "id": 159,
+            "status": 3221225488
+          }
+        ]
+      }
+    },
+    {
+      "binary": "original",
+      "initialMethod": "write",
+      "retryMethod": "read",
+      "initial": {
+        "status": 3221225858,
+        "lock": 2,
+        "calls": [],
+        "messages": [
+          {
+            "id": 161,
+            "status": 3221225858
+          }
+        ]
+      },
+      "retryAfterReady": {
+        "status": 3221225488,
+        "lock": 2,
+        "calls": [],
+        "messages": [
+          {
+            "id": 156,
+            "status": 3221225488
+          }
+        ]
+      }
+    },
+    {
+      "binary": "original",
+      "initialMethod": "write",
+      "retryMethod": "write",
+      "initial": {
+        "status": 3221225858,
+        "lock": 2,
+        "calls": [],
+        "messages": [
+          {
+            "id": 161,
+            "status": 3221225858
+          }
+        ]
+      },
+      "retryAfterReady": {
+        "status": 3221225488,
+        "lock": 2,
+        "calls": [],
+        "messages": [
+          {
+            "id": 159,
+            "status": 3221225488
+          }
+        ]
+      }
+    },
+    {
+      "binary": "candidate",
+      "initialMethod": "read",
+      "retryMethod": "read",
+      "initial": {
+        "status": 3221225858,
+        "lock": 0,
+        "calls": [],
+        "messages": [
+          {
+            "id": 158,
+            "status": 3221225858
+          }
+        ]
+      },
+      "retryAfterReady": {
+        "status": 0,
+        "lock": 0,
+        "calls": [
+          {
+            "kind": "read",
+            "register": 80,
+            "length": 1,
+            "buffer": 1073754112
+          }
+        ],
+        "messages": []
+      }
+    },
+    {
+      "binary": "candidate",
+      "initialMethod": "read",
+      "retryMethod": "write",
+      "initial": {
+        "status": 3221225858,
+        "lock": 0,
+        "calls": [],
+        "messages": [
+          {
+            "id": 158,
+            "status": 3221225858
+          }
+        ]
+      },
+      "retryAfterReady": {
+        "status": 0,
+        "lock": 0,
+        "calls": [
+          {
+            "kind": "write",
+            "register": 80,
+            "length": 1,
+            "buffer": 1073754112
+          }
+        ],
+        "messages": []
+      }
+    },
+    {
+      "binary": "candidate",
+      "initialMethod": "write",
+      "retryMethod": "read",
+      "initial": {
+        "status": 3221225858,
+        "lock": 0,
+        "calls": [],
+        "messages": [
+          {
+            "id": 161,
+            "status": 3221225858
+          }
+        ]
+      },
+      "retryAfterReady": {
+        "status": 0,
+        "lock": 0,
+        "calls": [
+          {
+            "kind": "read",
+            "register": 80,
+            "length": 1,
+            "buffer": 1073754112
+          }
+        ],
+        "messages": []
+      }
+    },
+    {
+      "binary": "candidate",
+      "initialMethod": "write",
+      "retryMethod": "write",
+      "initial": {
+        "status": 3221225858,
+        "lock": 0,
+        "calls": [],
+        "messages": [
+          {
+            "id": 161,
+            "status": 3221225858
+          }
+        ]
+      },
+      "retryAfterReady": {
+        "status": 0,
+        "lock": 0,
+        "calls": [
+          {
+            "kind": "write",
+            "register": 80,
+            "length": 1,
+            "buffer": 1073754112
+          }
+        ],
+        "messages": []
+      }
+    }
+  ],
+  "NativeUnwind": {
+    "nativeARM64UnwindCases": 318,
+    "failures": 0,
+    "kernelDriverLoaded": false,
+    "mappedDriverMemoryExecutable": false
+  },
+  "OriginalNativeUnwind": {
+    "nativeARM64UnwindCases": 318,
+    "failures": 0,
+    "kernelDriverLoaded": false,
+    "mappedDriverMemoryExecutable": false
+  },
+  "GhidraPatchedHelpersVerified": true,
+  "ValidationHistory": "Initial native harness omitted rebasing emulated stack pointers used as FP. Corrected harness passes original and candidate; no driver was loaded for these tests."
+}

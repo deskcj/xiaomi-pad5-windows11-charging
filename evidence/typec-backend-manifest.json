@@ -1,0 +1,10 @@
+{
+  "HardwareID": "QCOM0582",
+  "Service": "qcpmictcc",
+  "Version": "1.0.1680.0",
+  "Inf": "oem214.inf",
+  "SHA256": "BE9850CE5AB8A9E5EAD615DE592FF8177154BDE9496320910210DC503B2B46E9",
+  "Bytes": 115808,
+  "TypeCBackendInterface": "8e863b1d-b0a2-4044-89a8-ea31318e3229",
+  "ProtocolInterface": "151cc35b-90e7-4798-a7ed-e156de92a049"
+}

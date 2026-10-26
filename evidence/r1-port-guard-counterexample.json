@@ -1,0 +1,51 @@
+{
+  "SourceSYSMatchesInstalledR1": true,
+  "ARM64CounterexampleCasesPassed": 4,
+  "ConditionalIndexSpecificReadinessDefectReproduced": true,
+  "LiveSlot0ReadinessKnown": false,
+  "RootCauseOfObservedHubLossProven": false,
+  "Interpretation": "R1 checks slot 0 before delegating other indices; a ready slot 1 can be falsely rejected. The real backend uses logical index 1. Do not infer that slot 0 was absent on the live tablet or shift the unvalidated role heuristic to index 1.",
+  "CandidateModifiedOrInstalled": false,
+  "HardwareIOPerformed": false,
+  "Cases": [
+    {
+      "slot0Present": false,
+      "slot1Present": true,
+      "selectedIndex": 1,
+      "role": 1,
+      "returnCode": 97,
+      "mockedPMICWrites": []
+    },
+    {
+      "slot0Present": true,
+      "slot1Present": true,
+      "selectedIndex": 1,
+      "role": 1,
+      "returnCode": 0,
+      "mockedPMICWrites": [
+        [
+          2,
+          5444,
+          23,
+          2
+        ]
+      ]
+    },
+    {
+      "slot0Present": false,
+      "slot1Present": true,
+      "selectedIndex": 0,
+      "role": 1,
+      "returnCode": 97,
+      "mockedPMICWrites": []
+    },
+    {
+      "slot0Present": false,
+      "slot1Present": true,
+      "selectedIndex": 1,
+      "role": 0,
+      "returnCode": 97,
+      "mockedPMICWrites": []
+    }
+  ]
+}

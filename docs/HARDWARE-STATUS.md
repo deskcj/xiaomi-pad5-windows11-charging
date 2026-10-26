@@ -43,3 +43,7 @@ The owner then safely ejected the external storage and connected the same charge
 SOC was 100% throughout this observation, so it cannot establish battery energy gain. No PMIC, Type-C or host problem codes were observed, and uptime remained continuous. The active SYS hash was rechecked and no driver changed for this test. Logging and working notes are on the internal disk, independent of the disconnected hub. See [direct observation](../evidence/direct-charger-observation.json).
 
 The [nabu-charger comparison](NABU-CHARGER-REVIEW.md) records why its LN8000/Quick Charge driver is useful research but cannot be installed as a validated combined fix on this ACPI/PMIC configuration.
+
+## Return after the direct-charger trial
+
+The owner restored the powered hub and SSD without reboot. AC and hub returned at 18:42:27, SSD at 18:42:31; a matching 32 KiB uncached read passed. The logger completed at 18:58:25 with both present. [Evidence](../evidence/powered-hub-return-after-direct.json). Static investigation then identified and emulated a separate Type-C readiness-lock defect; its unsigned research candidate has not been installed. See [power handover analysis](POWER-HANDOVER.md).

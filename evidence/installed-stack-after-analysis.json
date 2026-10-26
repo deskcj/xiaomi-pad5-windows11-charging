@@ -1,0 +1,42 @@
+{
+  "At": "2026-10-26T19:31:14.9829946+05:00",
+  "Bindings": [
+    {
+      "HardwareID": "QCOM05E5",
+      "Service": "qcpmicext",
+      "INF": "oem50.inf",
+      "Version": "1.0.1843.0",
+      "Sys": "qcpmicext8150.sys",
+      "SHA256": "52B631FC7DA75D3CB3BFA9F9FAC6E6220AAEEF30AD297D76891BE42AD5FABA15"
+    },
+    {
+      "HardwareID": "QCOM052D",
+      "Service": "qcbattminiclass",
+      "INF": "oem143.inf",
+      "Version": "1.0.1680.0",
+      "Sys": "qcbattminiclass8150.sys",
+      "SHA256": "7F7ECE18BF7ED43827E9E331274C4DA15A765B615B886DB8BE3209B9144FF4C4"
+    },
+    {
+      "HardwareID": "QCOM057D",
+      "Service": "qcusbctcpm",
+      "INF": "oem110.inf",
+      "Version": "1.0.1680.0",
+      "Sys": "qcusbctcpm8150.sys",
+      "SHA256": "7C63F4A4B8A9EE0F49B427B6AC94867D2475E02F85D92D5FBCFE4A8AA1804067"
+    },
+    {
+      "HardwareID": "QCOM0582",
+      "Service": "qcpmictcc",
+      "INF": "oem214.inf",
+      "Version": "1.0.1680.0",
+      "Sys": "qcpmictcc8150.sys",
+      "SHA256": "BE9850CE5AB8A9E5EAD615DE592FF8177154BDE9496320910210DC503B2B46E9"
+    }
+  ],
+  "PMIC1843StillActive": true,
+  "TypeCLockResearchCandidateInstalled": false,
+  "FastChargeEstablished": false,
+  "CurrentAdapterProtocolEstablished": false,
+  "ReportedBatteryPowerIsNotAdapterInputMeasurement": true
+}

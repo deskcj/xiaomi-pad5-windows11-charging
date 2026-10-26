@@ -1,0 +1,33 @@
+{
+  "OriginalPMICSHA256": "533C3A555E111D4B12B657D026C92D63D5170D57297432D03BDAF3BE96C7886A",
+  "AuditedSPMISHA256": "203ED9CA47359E66B2F421739DBD9EC679D2C24B17EF4B5ECF176A96847D1B15",
+  "OriginalTypeCSHA256": "7c63f4a4b8a9ee0f49b427b6ac94867d2475e02f85d92d5fbcfe4a8aa1804067",
+  "OriginalOTGHandlerRVA": "0x7dd0",
+  "OTGSetRequest": "0x801c0fac",
+  "OTGRegister": "0x1140",
+  "OTGMask": 1,
+  "OriginalRoleHandlerRVA": "0x8ac0",
+  "RoleRegister": "0x1544",
+  "OriginalRoleMask": 7,
+  "TypeCReadHelperRVA": "0x8e38",
+  "TypeCWriteHelperRVA": "0x8fc8",
+  "SPMIProbeOpened": false,
+  "SPMIProbeWin32Error": 31,
+  "SPMIRegisterReadsObtained": 0,
+  "SPMIGrantIOCTLUsed": false,
+  "PMICRegisterWritesPerformedForThisInvestigation": false,
+  "RootCauseOfObservedHubLossProven": false,
+  "UninterruptedStorageIOWhileChangingAdapterPowerRequired": true,
+  "AndroidControlTestOnIdenticalHubPending": false,
+  "AndroidControlTestOwnerReportsStorageLost": true,
+  "TypeCBackend": {
+    "HardwareID": "QCOM0582",
+    "Service": "qcpmictcc",
+    "Version": "1.0.1680.0",
+    "Inf": "oem214.inf",
+    "SHA256": "BE9850CE5AB8A9E5EAD615DE592FF8177154BDE9496320910210DC503B2B46E9",
+    "Bytes": 115808,
+    "TypeCBackendInterface": "8e863b1d-b0a2-4044-89a8-ea31318e3229",
+    "ProtocolInterface": "151cc35b-90e7-4798-a7ed-e156de92a049"
+  }
+}

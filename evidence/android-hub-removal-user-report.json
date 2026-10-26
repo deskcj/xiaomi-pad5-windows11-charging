@@ -1,0 +1,12 @@
+{
+  "Context": "Owner response to question explicitly about prior Android behavior",
+  "SamePhysicalHub": true,
+  "OnlyChargerRemoved": true,
+  "StorageDisappeared": true,
+  "HubStayedPhysicallyConnected": true,
+  "HubRemainedEnumerated": null,
+  "InstrumentedLogForThisTransition": false,
+  "PhysicalVBUSMeasurement": false,
+  "RecollectionOfPastTest": true,
+  "ExactTimingEstablished": false
+}

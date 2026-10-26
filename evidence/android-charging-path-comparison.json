@@ -1,0 +1,94 @@
+{
+  "HistoricalCaptures": [
+    {
+      "Scenario": "20260926_060711_nocable-70pct",
+      "Samples": 3,
+      "bat_status": [
+        "Discharging"
+      ],
+      "usb_real_type": [
+        "Unknown"
+      ],
+      "usb_pd_active": [
+        "0"
+      ],
+      "usb_typec_mode": [
+        "Nothing attached"
+      ],
+      "ln_enabled": [
+        "0"
+      ],
+      "bms_cap": [
+        "70"
+      ],
+      "USBVoltageRangeReported_uV": [
+        0,
+        0
+      ]
+    },
+    {
+      "Scenario": "20260926_060928_direct-70pct",
+      "Samples": 62,
+      "bat_status": [
+        "Charging",
+        "Discharging"
+      ],
+      "usb_real_type": [
+        "USB_DCP",
+        "USB_HVDCP_3",
+        "Unknown"
+      ],
+      "usb_pd_active": [
+        "0"
+      ],
+      "usb_typec_mode": [
+        "Nothing attached",
+        "Source attached (high current)"
+      ],
+      "ln_enabled": [
+        "0",
+        "1"
+      ],
+      "bms_cap": [
+        "70",
+        "71",
+        "72",
+        "73",
+        "74",
+        "75"
+      ],
+      "USBVoltageRangeReported_uV": [
+        0,
+        9108216
+      ]
+    },
+    {
+      "Scenario": "20260926_061447_hub-70pct",
+      "Samples": 31,
+      "bat_status": [
+        "Charging"
+      ],
+      "usb_real_type": [
+        "USB_PD"
+      ],
+      "usb_pd_active": [
+        "1"
+      ],
+      "usb_typec_mode": [
+        "Source attached (high current)"
+      ],
+      "ln_enabled": [
+        "0"
+      ],
+      "bms_cap": [
+        "77"
+      ],
+      "USBVoltageRangeReported_uV": [
+        8539488,
+        8545326
+      ]
+    }
+  ],
+  "SameAdapterAsCurrentAppleSupplyEstablished": false,
+  "ContinuousStorageIODuringAdapterRemovalEstablished": false
+}
