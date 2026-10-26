@@ -1,0 +1,15 @@
+{
+  "candidate": "qcpmicext8150_unsigned.sys",
+  "sha256": "ff92ba8d2c300fed5732e751fef13c6f60e7bdca44471333aa7f0e98f949cbe5",
+  "passedARM64Cases": 3907,
+  "nativeUnwindFixtures": 115,
+  "all256StateBytesCovered": true,
+  "additionalASLRBases": 3,
+  "preservedNonvolatileRegisters": true,
+  "stackRestored": true,
+  "x18Untouched": true,
+  "hardwareTesting": false,
+  "r6RoleRequestDoesNotWriteOTG": true,
+  "r5NeverPromotesDRPToSource": true,
+  "remainingLimitation": "Role/VBUS separation only; legacy VCONN changes retained. PD, USB descriptor failures, boot and hotplug not hardware-validated."
+}

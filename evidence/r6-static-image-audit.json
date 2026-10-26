@@ -1,0 +1,86 @@
+{
+  "unsignedSHA256": "ff92ba8d2c300fed5732e751fef13c6f60e7bdca44471333aa7f0e98f949cbe5",
+  "signedSHA256": "d12114065e53f280420e632a98b6a6d5e8657250eeb214c24596ca0873b35ddf",
+  "signedMappedSectionsEqualUnsigned": true,
+  "allChecksumsValid": true,
+  "RWXSections": false,
+  "oldExecutableSectionDifferences": [
+    {
+      "rva": "0x8ac0",
+      "bytes": 4,
+      "stock": [
+        "8ac0 cmp w1, #4"
+      ],
+      "candidate": [
+        "8ac0 b #0x14000"
+      ]
+    },
+    {
+      "rva": "0x8b04",
+      "bytes": 4,
+      "stock": [
+        "8b04 mov w3, #0"
+      ],
+      "candidate": [
+        "8b04 mov w3, #0x10"
+      ]
+    },
+    {
+      "rva": "0x8b1c",
+      "bytes": 4,
+      "stock": [
+        "8b1c mov w2, #7"
+      ],
+      "candidate": [
+        "8b1c mov w2, #0x17"
+      ]
+    },
+    {
+      "rva": "0x8b80",
+      "bytes": 12,
+      "stock": [
+        "8b80 mov w2, #1",
+        "8b84 b #0x8bb8",
+        "8b88 mov w3, #1"
+      ],
+      "candidate": [
+        "8b80 mov w2, #5",
+        "8b84 b #0x8be8",
+        "8b88 mov w3, #5"
+      ]
+    },
+    {
+      "rva": "0x8b90",
+      "bytes": 4,
+      "stock": [
+        "8b90 mov w2, #1"
+      ],
+      "candidate": [
+        "8b90 mov w2, #5"
+      ]
+    },
+    {
+      "rva": "0x8be0",
+      "bytes": 4,
+      "stock": [
+        "8be0 mov w0, #0"
+      ],
+      "candidate": [
+        "8be0 b #0x14080"
+      ]
+    },
+    {
+      "rva": "0x8be8",
+      "bytes": 8,
+      "stock": [
+        "8be8 udf #0",
+        "8bec udf #0"
+      ],
+      "candidate": [
+        "8be8 mov w3, #4",
+        "8bec b #0x8bbc"
+      ]
+    }
+  ],
+  "kernelLoadPerformed": false
+}

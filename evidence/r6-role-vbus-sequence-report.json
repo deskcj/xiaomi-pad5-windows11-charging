@@ -1,0 +1,12 @@
+{
+  "candidateSHA256": "ff92ba8d2c300fed5732e751fef13c6f60e7bdca44471333aa7f0e98f949cbe5",
+  "r5CounterexampleReproduced": true,
+  "actualOriginalOTGCallbackExecuted": true,
+  "originalOTGCallbackByteIdenticalToStock": true,
+  "statefulSequences": 18,
+  "ASLRBases": 3,
+  "nonzeroX18Preserved": true,
+  "legacyVconnLeafCases": 27,
+  "kernelDriverLoaded": false,
+  "hardwareModelLimitation": "SPMI functions mocked; no CC analog, hub firmware, PD negotiation, interrupts, DMA or physical timing simulated."
+}
