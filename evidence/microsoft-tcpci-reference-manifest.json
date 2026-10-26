@@ -1,0 +1,38 @@
+[
+  {
+    "name": "I2C.cpp",
+    "commit": "bb68ed5e770bce04dc5395ec9258dafab034184d",
+    "expectedGitBlob": "dee8069cd2599f7825bde801fe954560af646091",
+    "expectedBytes": 32754,
+    "url": "https://github.com/microsoft/Windows-driver-samples/blob/bb68ed5e770bce04dc5395ec9258dafab034184d/usb/UcmTcpciCxClientSample/I2C.cpp",
+    "sha256": "51baa46d3ab6e174f8e3e811cb866eb4db571ad01efd4a98a0d196698ad5692c",
+    "gitBlobVerified": true
+  },
+  {
+    "name": "Queue.cpp",
+    "commit": "bb68ed5e770bce04dc5395ec9258dafab034184d",
+    "expectedGitBlob": "d17a789d6f41bf90c664bd5c8e79c7ba8276cad3",
+    "expectedBytes": 6037,
+    "url": "https://github.com/microsoft/Windows-driver-samples/blob/bb68ed5e770bce04dc5395ec9258dafab034184d/usb/UcmTcpciCxClientSample/Queue.cpp",
+    "sha256": "27521d1063fa14340850e3ebd6f90e9c584e1fea9b0531052548c97fd7caea86",
+    "gitBlobVerified": true
+  },
+  {
+    "name": "PortControllerInterface.cpp",
+    "commit": "bb68ed5e770bce04dc5395ec9258dafab034184d",
+    "expectedGitBlob": "a8aff83d2098df16e50ebc92c54b5e13454392dd",
+    "expectedBytes": 14939,
+    "url": "https://github.com/microsoft/Windows-driver-samples/blob/bb68ed5e770bce04dc5395ec9258dafab034184d/usb/UcmTcpciCxClientSample/PortControllerInterface.cpp",
+    "sha256": "ad36a8e99d59d89c39ce63c61afd6a6e383fdbe9a9369395765b0d3581bbe3e6",
+    "gitBlobVerified": true
+  },
+  {
+    "name": "README.md",
+    "commit": "bb68ed5e770bce04dc5395ec9258dafab034184d",
+    "expectedGitBlob": "6b0b602a59970a1f5444223bb98d22c303720fa6",
+    "expectedBytes": 10020,
+    "url": "https://github.com/microsoft/Windows-driver-samples/blob/bb68ed5e770bce04dc5395ec9258dafab034184d/usb/UcmTcpciCxClientSample/README.md",
+    "sha256": "e515ffa41ab5246139373ab1891b88dc09c9dd96d22708fcec7934f12157482e",
+    "gitBlobVerified": true
+  }
+]

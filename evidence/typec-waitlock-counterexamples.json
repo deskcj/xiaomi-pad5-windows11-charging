@@ -1,0 +1,202 @@
+[
+  {
+    "traceEnabled": false,
+    "entry": "0x11a40",
+    "acquireStatus": 0,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 0
+      },
+      {
+        "operation": "release",
+        "ownedByThisCall": true
+      }
+    ],
+    "flagsBefore": "0100",
+    "flagsAfter": "0101"
+  },
+  {
+    "traceEnabled": true,
+    "entry": "0x11a40",
+    "acquireStatus": 0,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 0
+      },
+      {
+        "operation": "release",
+        "ownedByThisCall": true
+      }
+    ],
+    "flagsBefore": "0100",
+    "flagsAfter": "0101"
+  },
+  {
+    "traceEnabled": false,
+    "entry": "0x11a40",
+    "acquireStatus": 258,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 258
+      },
+      {
+        "operation": "release",
+        "ownedByThisCall": false
+      }
+    ],
+    "flagsBefore": "0100",
+    "flagsAfter": "0101"
+  },
+  {
+    "traceEnabled": true,
+    "entry": "0x11a40",
+    "acquireStatus": 258,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 258
+      },
+      {
+        "operation": "release",
+        "ownedByThisCall": false
+      }
+    ],
+    "flagsBefore": "0100",
+    "flagsAfter": "0101"
+  },
+  {
+    "traceEnabled": false,
+    "entry": "0x11a40",
+    "acquireStatus": 3221225473,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 3221225473
+      }
+    ],
+    "flagsBefore": "0100",
+    "flagsAfter": "0100"
+  },
+  {
+    "traceEnabled": true,
+    "entry": "0x11a40",
+    "acquireStatus": 3221225473,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 3221225473
+      }
+    ],
+    "flagsBefore": "0100",
+    "flagsAfter": "0100"
+  },
+  {
+    "traceEnabled": false,
+    "entry": "0x11c00",
+    "acquireStatus": 0,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 0
+      },
+      {
+        "operation": "release",
+        "ownedByThisCall": true
+      }
+    ],
+    "flagsBefore": "0101",
+    "flagsAfter": "0000"
+  },
+  {
+    "traceEnabled": true,
+    "entry": "0x11c00",
+    "acquireStatus": 0,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 0
+      },
+      {
+        "operation": "release",
+        "ownedByThisCall": true
+      }
+    ],
+    "flagsBefore": "0101",
+    "flagsAfter": "0000"
+  },
+  {
+    "traceEnabled": false,
+    "entry": "0x11c00",
+    "acquireStatus": 258,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 258
+      },
+      {
+        "operation": "release",
+        "ownedByThisCall": false
+      }
+    ],
+    "flagsBefore": "0101",
+    "flagsAfter": "0000"
+  },
+  {
+    "traceEnabled": true,
+    "entry": "0x11c00",
+    "acquireStatus": 258,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 258
+      },
+      {
+        "operation": "release",
+        "ownedByThisCall": false
+      }
+    ],
+    "flagsBefore": "0101",
+    "flagsAfter": "0000"
+  },
+  {
+    "traceEnabled": false,
+    "entry": "0x11c00",
+    "acquireStatus": 3221225473,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 3221225473
+      }
+    ],
+    "flagsBefore": "0101",
+    "flagsAfter": "0101"
+  },
+  {
+    "traceEnabled": true,
+    "entry": "0x11c00",
+    "acquireStatus": 3221225473,
+    "events": [
+      {
+        "operation": "acquire",
+        "timeout100ns": 300000000,
+        "result": 3221225473
+      }
+    ],
+    "flagsBefore": "0101",
+    "flagsAfter": "0101"
+  }
+]

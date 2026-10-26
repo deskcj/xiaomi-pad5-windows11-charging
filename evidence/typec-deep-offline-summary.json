@@ -1,0 +1,32 @@
+{
+  "status": "OFFLINE_RESEARCH_NOT_DEPLOYMENT_READY",
+  "livePMIC": "1840/oem92",
+  "liveUSBTypeC": "1680/oem110",
+  "originalTypeCSHA256": "7c63f4a4b8a9ee0f49b427b6ac94867d2475e02f85d92d5fbcfe4a8aa1804067",
+  "transportFix2SHA256": "5b4432837a00db454a04aad2cc01ea1018d312988a057aa1fb82630882fa9e24",
+  "safetyFix3SHA256": "8a233f2e44aa811a1b48e463e22eab5e302ffbecc08ebdc8a377a81f1e6d1ca8",
+  "transportPairCases": 1260,
+  "transportBackendErrorCounterexamples": 168,
+  "readinessRetrySequences": 8,
+  "fullSmallCallbackPairCases": 144,
+  "allFiveGuardPrefixPairCases": 270,
+  "stackPoisonPatterns": 3,
+  "ASLRBases": 3,
+  "nativeUnwind": {
+    "native-waitlock-unwind-report.txt": 344,
+    "native-transport-unwind-report.txt": 518
+  },
+  "nativeFailures": 0,
+  "fullStartupCleanupSuccessLifecycleVerified": false,
+  "hardwareCauseProven": false,
+  "installed": false,
+  "signed": false,
+  "installerIncluded": false,
+  "hardwareRegisterWrites": false,
+  "physicalTestsPerformed": false,
+  "rebootIssued": false,
+  "completeChargingHubFixClaimed": false,
+  "register1550LegacyVconnLabelCorrected": true,
+  "existingWindowsPDPolicyEngineIdentified": true,
+  "MicrosoftSampleFilesGitBlobVerified": 4
+}

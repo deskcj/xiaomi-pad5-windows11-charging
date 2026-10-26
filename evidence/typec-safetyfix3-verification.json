@@ -1,0 +1,119 @@
+{
+  "baseTransportFixSHA256": "5b4432837a00db454a04aad2cc01ea1018d312988a057aa1fb82630882fa9e24",
+  "candidateSHA256": "8a233f2e44aa811a1b48e463e22eab5e302ffbecc08ebdc8a377a81f1e6d1ca8",
+  "newInstructionPatches": [
+    {
+      "rva": "0xfb14",
+      "before": "mov w8, #0xa300",
+      "after": "mov x8, #-0xa300"
+    },
+    {
+      "rva": "0xfb18",
+      "before": "movk w8, #0x11e1, lsl #16",
+      "after": "movk x8, #0xee1e, lsl #16"
+    },
+    {
+      "rva": "0xfb1c",
+      "before": "str w8, [sp]",
+      "after": "str x8, [sp]"
+    },
+    {
+      "rva": "0xfbb4",
+      "before": "tbz w0, #0x1f, #0xfbf4",
+      "after": "cbz w0, #0xfbf4"
+    },
+    {
+      "rva": "0x10200",
+      "before": "mov w8, #0xa300",
+      "after": "mov x8, #-0xa300"
+    },
+    {
+      "rva": "0x10204",
+      "before": "movk w8, #0x11e1, lsl #16",
+      "after": "movk x8, #0xee1e, lsl #16"
+    },
+    {
+      "rva": "0x10208",
+      "before": "str w8, [sp, #0x10]",
+      "after": "str x8, [sp, #0x10]"
+    },
+    {
+      "rva": "0x102a8",
+      "before": "tbz w19, #0x1f, #0x102ec",
+      "after": "cbz w19, #0x102ec"
+    },
+    {
+      "rva": "0x11174",
+      "before": "mov w8, #0xa300",
+      "after": "mov x8, #-0xa300"
+    },
+    {
+      "rva": "0x11178",
+      "before": "movk w8, #0x11e1, lsl #16",
+      "after": "movk x8, #0xee1e, lsl #16"
+    },
+    {
+      "rva": "0x1117c",
+      "before": "str w8, [sp, #0x10]",
+      "after": "str x8, [sp, #0x10]"
+    },
+    {
+      "rva": "0x111f4",
+      "before": "tbz w0, #0x1f, #0x11238",
+      "after": "cbz w0, #0x11238"
+    },
+    {
+      "rva": "0x11a58",
+      "before": "mov w8, #0xa300",
+      "after": "mov x8, #-0xa300"
+    },
+    {
+      "rva": "0x11a5c",
+      "before": "movk w8, #0x11e1, lsl #16",
+      "after": "movk x8, #0xee1e, lsl #16"
+    },
+    {
+      "rva": "0x11a60",
+      "before": "str w8, [sp, #0x10]",
+      "after": "str x8, [sp, #0x10]"
+    },
+    {
+      "rva": "0x11b0c",
+      "before": "tbz w0, #0x1f, #0x11b50",
+      "after": "cbz w0, #0x11b50"
+    },
+    {
+      "rva": "0x11c18",
+      "before": "mov w8, #0xa300",
+      "after": "mov x8, #-0xa300"
+    },
+    {
+      "rva": "0x11c1c",
+      "before": "movk w8, #0x11e1, lsl #16",
+      "after": "movk x8, #0xee1e, lsl #16"
+    },
+    {
+      "rva": "0x11c20",
+      "before": "str w8, [sp, #0x10]",
+      "after": "str x8, [sp, #0x10]"
+    },
+    {
+      "rva": "0x11ccc",
+      "before": "tbz w0, #0x1f, #0x11d10",
+      "after": "cbz w0, #0x11d10"
+    }
+  ],
+  "waitLockCallSitesPatched": 5,
+  "timeoutIsRelative30s": true,
+  "timeoutWrittenAsFull64Bits": true,
+  "stackPoisonPatterns": 3,
+  "successRequiresSTATUS_SUCCESS": true,
+  "pairedCallbackCases": 144,
+  "timeoutOwnershipCounterexamples": 36,
+  "nativeWaitCallbackFixtures": 344,
+  "transportHelpersByteIdenticalToFix2": true,
+  "kernelDriverInstalled": false,
+  "hardwareCauseProven": false,
+  "allFiveCallerPathsEmulated": false,
+  "callerCoverage": "Two small callbacks fully emulated; startup/cleanup workers have structural patch checks, pending full lifecycle modeling."
+}

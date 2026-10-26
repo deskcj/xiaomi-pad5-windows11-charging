@@ -1,0 +1,341 @@
+[
+  {
+    "method": "read",
+    "traceEnabled": false,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "read",
+        "register": 26,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "read",
+    "traceEnabled": true,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "read",
+        "register": 26,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [
+      {
+        "id": 157,
+        "status": 3221225473
+      }
+    ],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "write",
+    "traceEnabled": false,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "write",
+        "register": 26,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "write",
+    "traceEnabled": true,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "write",
+        "register": 26,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [
+      {
+        "id": 160,
+        "status": 3221225473
+      }
+    ],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "set-role",
+    "traceEnabled": false,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "write",
+        "register": 26,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "set-role",
+    "traceEnabled": true,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "write",
+        "register": 26,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [
+      {
+        "id": 81,
+        "status": 74
+      },
+      {
+        "id": 160,
+        "status": 3221225473
+      }
+    ],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "set-power",
+    "traceEnabled": false,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "write",
+        "register": 28,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "set-power",
+    "traceEnabled": true,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "write",
+        "register": 28,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [
+      {
+        "id": 85,
+        "status": 74
+      },
+      {
+        "id": 160,
+        "status": 3221225473
+      }
+    ],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "transmit",
+    "traceEnabled": false,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "write",
+        "register": 80,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "transmit",
+    "traceEnabled": true,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "write",
+        "register": 80,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [
+      {
+        "id": 93,
+        "status": 74
+      },
+      {
+        "id": 160,
+        "status": 3221225473
+      }
+    ],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "command",
+    "traceEnabled": false,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "write",
+        "register": 35,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "command",
+    "traceEnabled": true,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "write",
+        "register": 35,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [
+      {
+        "id": 126,
+        "status": 153
+      },
+      {
+        "id": 160,
+        "status": 3221225473
+      }
+    ],
+    "virtualRole": 10,
+    "outputInformation": null,
+    "outputStatusHex": "a5a5a5"
+  },
+  {
+    "method": "get-status",
+    "traceEnabled": false,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "read",
+        "register": 29,
+        "length": 1,
+        "status": 3221225473
+      },
+      {
+        "kind": "read",
+        "register": 30,
+        "length": 1,
+        "status": 3221225473
+      },
+      {
+        "kind": "read",
+        "register": 31,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [],
+    "virtualRole": 10,
+    "outputInformation": 3,
+    "outputStatusHex": "000000"
+  },
+  {
+    "method": "get-status",
+    "traceEnabled": true,
+    "status": 0,
+    "lock": 0,
+    "calls": [
+      {
+        "kind": "read",
+        "register": 29,
+        "length": 1,
+        "status": 3221225473
+      },
+      {
+        "kind": "read",
+        "register": 30,
+        "length": 1,
+        "status": 3221225473
+      },
+      {
+        "kind": "read",
+        "register": 31,
+        "length": 1,
+        "status": 3221225473
+      }
+    ],
+    "trace": [
+      {
+        "id": 157,
+        "status": 3221225473
+      },
+      {
+        "id": 157,
+        "status": 3221225473
+      },
+      {
+        "id": 157,
+        "status": 3221225473
+      },
+      {
+        "id": 3435973836,
+        "status": 0
+      }
+    ],
+    "virtualRole": 10,
+    "outputInformation": 3,
+    "outputStatusHex": "000000"
+  }
+]

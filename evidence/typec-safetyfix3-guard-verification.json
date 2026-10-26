@@ -1,0 +1,11 @@
+{
+  "pairedGuardPrefixCases": 270,
+  "timeoutWithoutOwnershipCounterexamples": 90,
+  "allFiveAcquireGuardsEmulated": true,
+  "ASLRBases": 3,
+  "stackPoisonPatterns": 3,
+  "protectedBodyOnTimeout": false,
+  "fullLifecycleAfterSuccessfulAcquireExecuted": false,
+  "failureExitsRestoreStackAndNonvolatile": true,
+  "hardwareTested": false
+}

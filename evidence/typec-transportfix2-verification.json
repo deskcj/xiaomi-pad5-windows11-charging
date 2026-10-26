@@ -1,0 +1,81 @@
+{
+  "sourceSHA256": "7c63f4a4b8a9ee0f49b427b6ac94867d2475e02f85d92d5fbcfe4a8aa1804067",
+  "candidateSHA256": "5b4432837a00db454a04aad2cc01ea1018d312988a057aa1fb82630882fa9e24",
+  "candidateBytes": 70144,
+  "instructionPatches": [
+    {
+      "rva": "0x8f5c",
+      "before": "ldr w10, #0x8fc4",
+      "after": "ldr w21, #0x8fc4"
+    },
+    {
+      "rva": "0x8f60",
+      "before": "mov w21, w10",
+      "after": "str wzr, [x20, #0x118]"
+    },
+    {
+      "rva": "0x8f78",
+      "before": "mov w5, w10",
+      "after": "mov w5, w21"
+    },
+    {
+      "rva": "0x90ec",
+      "before": "ldr w10, #0x9154",
+      "after": "ldr w21, #0x9154"
+    },
+    {
+      "rva": "0x90f0",
+      "before": "mov w21, w10",
+      "after": "str wzr, [x20, #0x118]"
+    },
+    {
+      "rva": "0x9108",
+      "before": "mov w5, w10",
+      "after": "mov w5, w21"
+    },
+    {
+      "rva": "0x8f20",
+      "before": "adrp x8, #0xc000",
+      "after": "adr x9, #0xc108"
+    },
+    {
+      "rva": "0x8f24",
+      "before": "add x9, x8, #0x108",
+      "after": "ldr x8, [x9]"
+    },
+    {
+      "rva": "0x8f28",
+      "before": "ldr x8, [x8, #0x108]",
+      "after": "mov w21, w5"
+    },
+    {
+      "rva": "0x90b0",
+      "before": "adrp x8, #0xc000",
+      "after": "adr x9, #0xc108"
+    },
+    {
+      "rva": "0x90b4",
+      "before": "add x9, x8, #0x108",
+      "after": "ldr x8, [x9]"
+    },
+    {
+      "rva": "0x90b8",
+      "before": "ldr x8, [x8, #0x108]",
+      "after": "mov w21, w5"
+    }
+  ],
+  "pairedActualARM64Cases": 1260,
+  "backendErrorCounterexamples": 168,
+  "retrySequences": 8,
+  "nativeUnwindFixtures": 518,
+  "ASLRBases": 3,
+  "x18AndNonvolatilePreserved": true,
+  "existingLockOwnerPreserved": true,
+  "failedGetStatusNotPublishedAsValid": true,
+  "kernelDriverInstalled": false,
+  "kernelDriverLoaded": false,
+  "hardwareRegistersWritten": false,
+  "hardwareCauseProven": false,
+  "fullChargingFixClaimed": false,
+  "limitation": "WDF/backend/WPP mocked. Does not simulate USB PHY, PD wire timing or actual hub/SSD."
+}
