@@ -1,0 +1,137 @@
+{
+  "Version": "1.0.1847.0",
+  "Test": "SSD connected directly to tablet without hub or charger after safe eject",
+  "UserReport": "SSD not detected",
+  "Outcome": "FAIL_DIRECT_USB_STORAGE",
+  "Registers": {
+    "At": "2026-10-26T23:17:42.0783747+05:00",
+    "PMICVersion": "1.0.1847.0",
+    "ExpectedImageSHA256": "314BBF81ED5263388EFCD8316E0CC8C030894B98B7348089C35D6174E55685B3",
+    "Mode": "Capture",
+    "DeviceOpened": true,
+    "CaptureCompleted": true,
+    "ReadOnly": true,
+    "RegisterWritesImplemented": false,
+    "Values": {
+      "TYPEC_STATE": {
+        "Address": "0x1509",
+        "Value": 5,
+        "Hex": "0x05"
+      },
+      "TYPEC_MISC": {
+        "Address": "0x150B",
+        "Value": 192,
+        "Hex": "0xC0"
+      },
+      "TYPEC_MODE": {
+        "Address": "0x1544",
+        "Value": 16,
+        "Hex": "0x10"
+      },
+      "TYPEC_SINK_STATUS": {
+        "Address": "0x1506",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "TYPEC_SOURCE_STATUS": {
+        "Address": "0x1508",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "OTG_COMMAND": {
+        "Address": "0x1140",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "OTG_STATUS": {
+        "Address": "0x110D",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "OTG_CONFIG": {
+        "Address": "0x1153",
+        "Value": 32,
+        "Hex": "0x20"
+      },
+      "APSD_STATUS": {
+        "Address": "0x1307",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "APSD_RESULT": {
+        "Address": "0x1308",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "POWER_PATH_STATUS": {
+        "Address": "0x130B",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "USBIN_INT_RT": {
+        "Address": "0x1310",
+        "Value": 38,
+        "Hex": "0x26"
+      },
+      "USBIN_OPTIONS": {
+        "Address": "0x1358",
+        "Value": 192,
+        "Hex": "0xC0"
+      },
+      "USBIN_ICL": {
+        "Address": "0x1370",
+        "Value": 0,
+        "Hex": "0x00"
+      }
+    },
+    "Decoded": {
+      "CCAttached": false,
+      "PowerRole": "UNATTACHED",
+      "AttachStateBit5": false,
+      "OTGCommandEnabled": false,
+      "TypeCDisabled": false,
+      "SinkOnly": false,
+      "SourceOnly": false,
+      "TrySink": true,
+      "TrySource": false,
+      "InheritedFix20WouldForceSource": true
+    },
+    "Finished": "2026-10-26T23:17:42.1663090+05:00"
+  },
+  "IndependentRole": {
+    "At": "2026-10-26T23:17:42.3108362+05:00",
+    "Mode": "Capture",
+    "PMICSHA256": "314BBF81ED5263388EFCD8316E0CC8C030894B98B7348089C35D6174E55685B3",
+    "IOCTL": "0x802A0FA4",
+    "LogicalSlot": 1,
+    "InputBytes": 4,
+    "OutputBytes": 8,
+    "ExpectedCallbackRVA": "0x88F0",
+    "DeviceOpened": true,
+    "IOCTLSent": true,
+    "RegisterWritesImplemented": false,
+    "AdministrativeElevationRequested": false,
+    "RawStatus": 0,
+    "DecodedRole": "UNATTACHED",
+    "OpenWin32Error": 0,
+    "IoctlWin32Error": 0,
+    "ReturnedBytes": 8,
+    "RawResponseHex": "0000000003000000",
+    "RawRole": 3
+  },
+  "NativeSample": {
+    "At": "2026-10-26T23:17:41.7306670+05:00",
+    "ACLineStatus": "0",
+    "Charging": "0",
+    "Discharging": "1",
+    "BatteryPercent": "86",
+    "Hub_CMRC": "13",
+    "Storage_CMRC": "13",
+    "Host_CMRC": "0",
+    "TypeC_CMRC": "0"
+  },
+  "Observation": "CC unattached and OTG command off; USB host and Type-C devnodes remain present, SSD absent",
+  "CausalityLimit": "This shows the failure also occurs without the hub. A PMIC register snapshot does not prove which software layer failed to request source/VBUS. Android nabu also initializes Try.SNK, so Try.SNK alone is not established as the cause.",
+  "NewKernelDriverInstalledDuringTest": false,
+  "GoalComplete": false
+}
