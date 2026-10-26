@@ -1,0 +1,46 @@
+{
+  "atUTC": "2026-10-26T12:48:55.746383+00:00",
+  "status": "FIRST_WINDOWS_BOOT_PASSED_MORE_TESTS_REQUIRED",
+  "confirmedWindowsBootCount": 1,
+  "candidateVersion": "1.0.1843.0",
+  "publishedInf": "oem50.inf",
+  "pmicProblemCode": 0,
+  "signedSysSHA256": "52B631FC7DA75D3CB3BFA9F9FAC6E6220AAEEF30AD297D76891BE42AD5FABA15",
+  "batteryMiniclassVersion": "1.0.1680.0",
+  "restartAfterActivationConfirmed": true,
+  "serviceRunning": true,
+  "userReportsHubConnectedAfterWindowsLoaded": true,
+  "postBootPowerObservation": {
+    "samples": 169,
+    "firstPercent": 96,
+    "lastPercent": 97,
+    "firstReportedRemaining_mWh": 32261,
+    "lastReportedRemaining_mWh": 32666,
+    "reportedRateMin_mW": 6997,
+    "reportedRateMax_mW": 7036,
+    "conflictingChargeFlagSamples": 0,
+    "hubOrStorageMissingSamples": 0,
+    "pmicProblemSamples": 0,
+    "physicalInputPowerMeterUsed": false
+  },
+  "unbufferedStorageRead": {
+    "successfulReads": 3,
+    "bytesPerRead": 32768,
+    "matchesInternalReference": true,
+    "writePerformed": false
+  },
+  "currentBootSystemEvents": {
+    "bugcheck1001": 0,
+    "kernelPower41": 0,
+    "disk11_153_157": 0,
+    "historicallyRecurringWUDFRd219": 3
+  },
+  "automaticRunOnceCollectorExecuted": false,
+  "collectorStartedManually": true,
+  "hubHotplug": "WAITING_FOR_USER_TEST",
+  "directCharger": "PENDING",
+  "bootWithHubAttached": "PENDING",
+  "coldBoot": "PENDING",
+  "sleepWake": "PENDING",
+  "noCrashGuarantee": false
+}
