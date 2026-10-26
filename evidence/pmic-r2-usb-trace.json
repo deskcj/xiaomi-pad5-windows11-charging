@@ -1,0 +1,158 @@
+{
+  "At": "2026-10-26T20:51:42.200608+05:00",
+  "PMICVersion": "1.0.1844.0",
+  "ETLSHA256": "C0211B5D878C9517023BC81B698FE83B9EED8C000C67FBC9F47EC12DA9870904",
+  "ETLBytes": 1507328,
+  "CaptureStart": "2026-10-26T20:34:26.6282162+05:00",
+  "CaptureStop": "2026-10-26T20:44:26.8113024+05:00",
+  "CaptureStopReason": "TIME_LIMIT",
+  "EventsProcessed": 8372,
+  "EventsLost": 0,
+  "ManifestProviderEvents": {
+    "{9e814aad-3204-11d2-9a82-006008a86939}": 5,
+    "Microsoft-Windows-USB-USBHUB3": 3733,
+    "Microsoft-Windows-USB-UCX": 4013,
+    "Microsoft-Windows-USB-USBXHCI": 621
+  },
+  "UcmCxAndUcmTcpciCxEventsObserved": 0,
+  "USBPayloadKeywordsEnabled": false,
+  "TracertSchemaWarning": true,
+  "TracertRenderedTimestampOffsets": {
+    "+04:59": 8372
+  },
+  "PublicTimelineSource": "Native CSV local timestamps; ETL renderer offset anomaly not normalized or used for cross-clock latency claims",
+  "NativeObservation": {
+    "Samples": 592,
+    "First": "2026-10-26T20:34:25.3131733+05:00",
+    "Last": "2026-10-26T20:44:25.1928623+05:00",
+    "InitialPercent": "98",
+    "FinalPercent": "97",
+    "Changes": [
+      {
+        "At": "2026-10-26T20:34:25.3131733+05:00",
+        "ACLineStatus": "0",
+        "Charging": "0",
+        "Discharging": "1",
+        "Hub_CMRC": "0",
+        "Storage_CMRC": "0",
+        "Pmic_CMRC": "0",
+        "TypeC_CMRC": "0"
+      },
+      {
+        "At": "2026-10-26T20:43:04.6210288+05:00",
+        "ACLineStatus": "0",
+        "Charging": "0",
+        "Discharging": "1",
+        "Hub_CMRC": "13",
+        "Storage_CMRC": "13",
+        "Pmic_CMRC": "0",
+        "TypeC_CMRC": "0"
+      },
+      {
+        "At": "2026-10-26T20:43:31.1571433+05:00",
+        "ACLineStatus": "0",
+        "Charging": "0",
+        "Discharging": "1",
+        "Hub_CMRC": "0",
+        "Storage_CMRC": "13",
+        "Pmic_CMRC": "0",
+        "TypeC_CMRC": "0"
+      },
+      {
+        "At": "2026-10-26T20:43:32.1957391+05:00",
+        "ACLineStatus": "0",
+        "Charging": "0",
+        "Discharging": "1",
+        "Hub_CMRC": "0",
+        "Storage_CMRC": "0",
+        "Pmic_CMRC": "0",
+        "TypeC_CMRC": "0"
+      },
+      {
+        "At": "2026-10-26T20:43:58.7560631+05:00",
+        "ACLineStatus": "0",
+        "Charging": "0",
+        "Discharging": "1",
+        "Hub_CMRC": "13",
+        "Storage_CMRC": "13",
+        "Pmic_CMRC": "0",
+        "TypeC_CMRC": "0"
+      },
+      {
+        "At": "2026-10-26T20:44:08.9435583+05:00",
+        "ACLineStatus": "0",
+        "Charging": "0",
+        "Discharging": "1",
+        "Hub_CMRC": "0",
+        "Storage_CMRC": "13",
+        "Pmic_CMRC": "0",
+        "TypeC_CMRC": "0"
+      },
+      {
+        "At": "2026-10-26T20:44:10.9492129+05:00",
+        "ACLineStatus": "0",
+        "Charging": "0",
+        "Discharging": "1",
+        "Hub_CMRC": "0",
+        "Storage_CMRC": "0",
+        "Pmic_CMRC": "0",
+        "TypeC_CMRC": "0"
+      }
+    ]
+  },
+  "NativeACOfflineAllSamples": true,
+  "LatestOwnerReport": [
+    "Safely ejected storage, then connected charger; no charging.",
+    "Then removed storage and connected hub with charger; no charging.",
+    "Finally restored hub with charger and storage."
+  ],
+  "OwnerStepsMatchRequestedSingleReconnectExactly": false,
+  "ExactCableToEventMappingEstablished": false,
+  "USBHubSelectedEventCounts": {
+    "123": 3,
+    "130": 4,
+    "173": 2,
+    "179": 66
+  },
+  "USBEventMeanings": {
+    "123": "Failure during Port Change Request",
+    "130": "Hub Control Transfer Error",
+    "173": "SuperSpeed Device is Connected on the 2.0 Bus",
+    "179": "Client Initiated Recovery Action"
+  },
+  "USBRecoveryURBFunction": "0x001E / URB_FUNCTION_SYNC_RESET_PIPE_AND_CLEAR_STALL (installed WDK usb.h)",
+  "NoSuchDeviceStatus": "0xC000000E / STATUS_NO_SUCH_DEVICE (installed WDK ntstatus.h)",
+  "USBErrorsEstablishChargingRootCause": false,
+  "VendorRegisteredTraceGUIDsFoundByBinaryMatch": [
+    {
+      "file": "qcusbctcpm8150.sys",
+      "sha256": "7c63f4a4b8a9ee0f49b427b6ac94867d2475e02f85d92d5fbcfe4a8aa1804067",
+      "registeredTraceGUIDsPresent": [
+        {
+          "guid": "246e500b-1764-4427-add6-3c998b71f899",
+          "fileOffset": "0x9e88",
+          "rva": "0xb288"
+        }
+      ]
+    },
+    {
+      "file": "qcpmictcc8150.sys",
+      "sha256": "be9850ce5ab8a9e5ead615de592ff8177154bde9496320910210dc503b2b46e9",
+      "registeredTraceGUIDsPresent": [
+        {
+          "guid": "9cab7ef0-9c6f-4c3a-a5ac-ff2e59e181ec",
+          "fileOffset": "0x16af8",
+          "rva": "0x182f8"
+        }
+      ]
+    }
+  ],
+  "VendorProvidersIncludedInFirstETL": false,
+  "AdditionalElevatedTraceAttempt": "REJECTED_BY_AUTOMATIC_REVIEW",
+  "AutomaticReviewReason": "blocked by policy; no further reason supplied",
+  "AdditionalTraceActuallyStarted": false,
+  "RootCauseProven": false,
+  "NewDriverInstalledThisTurn": false,
+  "ControllerResetPerformedByAgent": false,
+  "KernelOrFirmwareSettingsChanged": false
+}
