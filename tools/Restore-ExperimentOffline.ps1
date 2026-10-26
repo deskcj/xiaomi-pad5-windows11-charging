@@ -16,6 +16,15 @@ if($record.BaselineWindowsRelativeDirectory -notmatch '^System32\\DriverStore\\F
 $targetDir=Join-Path $win $record.BaselineWindowsRelativeDirectory
 if(!(Test-Path -LiteralPath "$win\System32\config\SYSTEM") -or !(Test-Path -LiteralPath $targetDir)){throw 'Not the expected mounted offline Windows/package tree'}
 if((Get-FileHash -LiteralPath "$run\SYSTEM-before.hiv").Hash -ne $record.SYSTEMSHA256){throw 'SYSTEM snapshot hash mismatch'}
+ $restoreSYSTEMFile=$record.RestoreSYSTEMFile
+ $restoreSYSTEMHash=$record.RestoreSYSTEMSHA256
+ if(!$restoreSYSTEMFile -or !$restoreSYSTEMHash){
+  if($record.Mode -eq 'Activate'){throw 'Activate record lacks a verified pre-stage SYSTEM snapshot. Do not restore the hive containing the removed package registration.'}
+  $restoreSYSTEMFile='SYSTEM-before.hiv';$restoreSYSTEMHash=$record.SYSTEMSHA256
+ }
+ if($restoreSYSTEMFile -notin @('SYSTEM-before.hiv','SYSTEM-before-stage.hiv')){throw 'Unexpected SYSTEM restore file'}
+ if($record.Mode -eq 'Activate' -and $restoreSYSTEMFile -ne 'SYSTEM-before-stage.hiv'){throw 'Activate recovery requires the pre-stage SYSTEM snapshot'}
+ if((Get-FileHash -LiteralPath (Join-Path $run $restoreSYSTEMFile)).Hash -ne $restoreSYSTEMHash){throw 'Pre-stage SYSTEM snapshot hash mismatch'}
 if((Get-FileHash -LiteralPath "$run\BCD-before").Hash -ne $record.BCDSHA256){throw 'BCD snapshot hash mismatch'}
 if(@($record.BaselineFiles).Count -ne 3){throw 'Incomplete baseline file manifest'}
 foreach($f in $record.BaselineFiles){
@@ -23,6 +32,7 @@ foreach($f in $record.BaselineFiles){
  if((Get-FileHash -LiteralPath "$run\baseline-package\$($f.name)").Hash -ne $f.sha256){throw 'Baseline file hash mismatch'}
 }
 Write-Output "Offline Windows: $win"
+Write-Output "SYSTEM snapshot selected for restore: $restoreSYSTEMFile"
 Write-Output "Remove only the recorded experimental package: $($record.NewPublishedInf)"
 Write-Output "Restore baseline package: $($record.BaselinePublishedInf) and complete pre-experiment SYSTEM snapshot"
 Write-Output 'BCD will not be overwritten; the installer never changed BCD. Full SYSTEM restoration also reverts other system configuration changes made since its snapshot.'
@@ -47,8 +57,8 @@ foreach($f in $record.BaselineFiles){
  Copy-Item -LiteralPath "$run\baseline-package\$($f.name)" -Destination (Join-Path $targetDir $f.name) -Force
  if((Get-FileHash -LiteralPath (Join-Path $targetDir $f.name)).Hash -ne $f.sha256){throw 'Restored baseline file failed verification'}
 }
-Copy-Item -LiteralPath "$run\SYSTEM-before.hiv" -Destination "$win\System32\config\SYSTEM" -Force
-if((Get-FileHash -LiteralPath "$win\System32\config\SYSTEM").Hash -ne $record.SYSTEMSHA256){throw 'Restored SYSTEM hash mismatch'}
+Copy-Item -LiteralPath (Join-Path $run $restoreSYSTEMFile) -Destination "$win\System32\config\SYSTEM" -Force
+if((Get-FileHash -LiteralPath "$win\System32\config\SYSTEM").Hash -ne $restoreSYSTEMHash){throw 'Restored SYSTEM hash mismatch'}
 # SYSTEM.LOG1/LOG2 belong to the newer hive and must not be replayed onto the
 # restored snapshot. Preserve them in the undo directory instead of deleting.
 foreach($name in @('SYSTEM.LOG1','SYSTEM.LOG2')){

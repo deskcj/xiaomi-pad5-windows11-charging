@@ -9,3 +9,6 @@ Activate requires an external recovery destination and copies/verifies the **fre
 Restoring SYSTEM also rolls back unrelated system configuration changes after that snapshot. Do not mix driver experiments or system updates between activation and testing. Do not guess which oem*.inf to remove; abort if package identities or hashes do not match.
 
 Neither offline Apply nor an actual failed-boot recovery has been exercised in this release. Confirm the recovery transport first. Fastboot alone does not offer NTFS file access: use a previously verified recovery/Android/mass-storage method for this particular device. Do not format partitions or flash a generic image to recover a driver.
+
+
+Recovery scripts revision 2: Activate rescue contains the fresh SYSTEM-before.hiv plus SYSTEM-before-stage.hiv. Offline recovery restores the verified pre-stage hive after removing the experiment, preventing restoration of the removed package registration. The kernel SYS/INF/CAT are unchanged.

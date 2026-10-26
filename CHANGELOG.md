@@ -8,3 +8,7 @@
 - Package a separately labeled legacy fix20 with unchanged section contents, updated test signature/catalog and corrected installer.
 - Replace device-removal/pending-rename/automatic-reboot installation with Inspect / Stage / explicit Activate and full pre-experiment backups.
 - Hardware boot, charging, hub and hotplug validation remains pending.
+
+## Installer/recovery revision 2 and first installation
+
+Restore the verified pre-stage SYSTEM after removing the experiment; include the recovery helper in the external Activate rescue before touching the live binding. Four snapshot guards pass. Kernel binaries unchanged. Installation selected oem50.inf and requires reboot (3010); boot/functional tests pending.

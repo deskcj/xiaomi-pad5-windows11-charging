@@ -28,8 +28,8 @@
   "sourceSHA256": {
     "src/role_repair.c": "398cf9e4f02c55f7e8a34eb3883993e7ec086c9fad395450b1234c457e387c4b",
     "tools/build_patch.py": "57223cc6747eba0dbeedd0bb602b5b163b72b39c667fd3e27f87c10e40bac9fe",
-    "Install-PmicPackage.ps1": "02e3f9f2e4700e51ba57927cabb334d3f99fc93b6d6c6076c45e0efa3200ef19",
-    "Restore-ExperimentOffline.ps1": "d611774a42ec6e6a745a13d8fa2a859a0e21a69eb9740eecddddc84174c1099a",
+    "Install-PmicPackage.ps1": "fc3968e2688e763919af4d598d15dd79e1a70b36138cad01a040618af6e232a5",
+    "Restore-ExperimentOffline.ps1": "4fb21290dc2863f7702ef2c13e137fa8a3767d8e964d3a885b520dedf43fe87a",
     "tests/test_candidate.py": "0667b940683a538e3a292b489acda460944a9e26f5c1340012da31de7e140eda",
     "tests/native_unwind.c": "36a9d72f75637b9b9c789ce70e4c7fe24d4a3d3cecf5831dca8eef3969321e58"
   },
@@ -38,28 +38,32 @@
   "PS51InspectPassed": true,
   "backupFilesVerified": 65,
   "liveDriverFilesUnchanged": 65,
-  "StagePerformed": false,
-  "ActivatePerformed": false,
+  "StagePerformed": true,
+  "ActivatePerformed": true,
   "offlineRecoveryApplyTested": false,
   "productionMicrosoftSignature": false,
-  "hardwareBootAndChargingTests": "PENDING",
+  "hardwareBootAndChargingTests": "PENDING_REBOOT_AND_HOTPLUG",
   "githubPublication": "PUBLISHED",
   "archives": [
     {
       "file": "fix20r1-experimental-1.0.1843.0.zip",
-      "sha256": "80d119171dfaa08434695b803dc77333bcad666253f6ffdcaca46da89d77d450",
-      "bytes": 40575,
-      "status": "EXPERIMENTAL_NOT_HARDWARE_TESTED"
+      "sha256": "cabadc6a256f627250b908ec71252ee62a2a6fb0ce50b4d990fef45a9a55c5d9",
+      "bytes": 41190,
+      "status": "EXPERIMENTAL_BOOT_AND_HOTPLUG_PENDING",
+      "installerRecoveryRevision": 2
     },
     {
       "file": "fix20-legacy-installer-1.0.1840.20.zip",
-      "sha256": "902f36517d7ac66be51af822cffbe8e4ed572c06c1a48048ca6928a7faaea387",
-      "bytes": 38368,
-      "status": "EXPERIMENTAL_NOT_HARDWARE_TESTED"
+      "sha256": "b6b5e62922f33fdb7a989e163951ce0a21b93388e1be1837f201f006e20947c5",
+      "bytes": 38994,
+      "status": "EXPERIMENTAL_BOOT_AND_HOTPLUG_PENDING",
+      "installerRecoveryRevision": 2
     }
   ],
   "githubRepository": "https://github.com/deskcj/xiaomi-pad5-windows11-charging",
   "initialPublicationCommit": "3747cfd8510a59a4f023cfe115e0246a82d2d3e1",
   "remoteFilesVerified": 29,
-  "downloadedArchivesSHA256Verified": true
+  "downloadedArchivesSHA256Verified": true,
+  "installerRecoveryRevision": 2,
+  "hardwareInstallEvidence": "hardware-install.json"
 }

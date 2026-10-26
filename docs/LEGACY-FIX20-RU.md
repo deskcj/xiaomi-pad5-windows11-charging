@@ -13,3 +13,6 @@
 Stage/Activate, тестовое подписание, резервные копии и офлайн-откат работают так же, как у fix20r1. **Ничего не активировать без подготовленного доступа к recovery.** Батарея должна оставаться 1680. Пакет не является гарантированно стабильным решением и не должен рекламироваться как исправление всех USB/зарядных проблем.
 
 Публичный CER не содержит закрытого ключа. Установщик его не импортирует. При будущей установке на другую систему доверие сертификату и совместимость загрузочной политики должны быть рассмотрены отдельно; отключение проверок целостности автоматически не выполняется.
+
+
+Recovery scripts revision 2: Activate rescue contains the fresh SYSTEM-before.hiv plus SYSTEM-before-stage.hiv. Offline recovery restores the verified pre-stage hive after removing the experiment, preventing restoration of the removed package registration. The kernel SYS/INF/CAT are unchanged.

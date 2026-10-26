@@ -59,3 +59,6 @@
 По умолчанию — просмотр. Режим `-Apply` требует повышенных прав, проверяет точный экспериментальный oem*.inf, удаляет только его через офлайн DISM, возвращает пакет базы и полный SYSTEM. Он сохраняет изменяемые файлы в отдельный rescue-undo и не переписывает BCD. **Восстановление полного SYSTEM откатит и прочие настройки системы после снимка.** Реальный Apply/аварийное восстановление в этом этапе не тестировались.
 
 До начала эксперимента проверить возможность доступа к Windows-разделу с ноутбука. Гарантии отсутствия BSOD и восстановления любого отказа нет.
+
+
+Recovery scripts revision 2: Activate rescue contains the fresh SYSTEM-before.hiv plus SYSTEM-before-stage.hiv. Offline recovery restores the verified pre-stage hive after removing the experiment, preventing restoration of the removed package registration. The kernel SYS/INF/CAT are unchanged.

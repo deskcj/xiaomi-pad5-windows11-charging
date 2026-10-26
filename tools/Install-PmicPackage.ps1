@@ -109,6 +109,19 @@ try{
  $beforeDrivers=@(Get-WindowsDriver -Online|Where-Object {$_.OriginalFileName -like '*\qcpmicext8150.inf'})
  $record=[ordered]@{At=(Get-Date -Format o);Mode=$Mode;BaselinePublishedInf=$published;BaselineVersion=$version;BaselineImagePath=$rawImage;BaselineWindowsRelativeDirectory=$currentDir.Substring($env:SystemRoot.Length+1);BaselineSysSHA256=$currentHash;InstanceId=$id;BaselineDriverKey=(Prop $id 'Driver');Package=$manifest.name;NewSysSHA256=$sourceHashes['qcpmicext8150.sys'];NewPublishedInf=$null;SYSTEMSHA256=(Get-FileHash "$run\SYSTEM-before.hiv").Hash;BCDSHA256=(Get-FileHash "$run\BCD-before").Hash;NativePnPExit=$null;ActivationRequested=($Mode -eq 'Activate')}
  $record.BaselineFiles=@(Get-ChildItem -LiteralPath "$run\baseline-package" -File|ForEach-Object {[ordered]@{name=$_.Name;sha256=(Get-FileHash -LiteralPath $_.FullName).Hash}})
+ Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'Restore-ExperimentOffline.ps1') -Destination "$run\Restore-ExperimentOffline.ps1"
+ # Recovery removes the staged package through DISM. Restore a SYSTEM hive
+ # from BEFORE that package entered DriverDatabase, not the Activate snapshot
+ # which already contains its staged registration.
+ if($priorStage){
+  Copy-Item -LiteralPath (Join-Path $StagedRecoveryDirectory 'SYSTEM-before.hiv') -Destination "$run\SYSTEM-before-stage.hiv"
+  if((Get-FileHash -LiteralPath "$run\SYSTEM-before-stage.hiv").Hash -ne $priorStage.SYSTEMSHA256){throw 'Pre-stage SYSTEM backup verification failed'}
+  $record.RestoreSYSTEMFile='SYSTEM-before-stage.hiv'
+  $record.RestoreSYSTEMSHA256=$priorStage.SYSTEMSHA256
+ }else{
+  $record.RestoreSYSTEMFile='SYSTEM-before.hiv'
+  $record.RestoreSYSTEMSHA256=$record.SYSTEMSHA256
+ }
  $record|ConvertTo-Json -Depth 4|Set-Content -LiteralPath "$run\recovery-record.json" -Encoding utf8
  # Stage only first. Native PnP validates catalog membership. No live PMIC reset.
  & pnputil.exe /add-driver "$run\new-package\qcpmicext8150.inf"

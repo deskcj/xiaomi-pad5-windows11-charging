@@ -42,4 +42,8 @@
 
 Официальные Android-ориентиры: [Xiaomi nabu-r-oss](https://github.com/MiCode/Xiaomi_Kernel_OpenSource/tree/nabu-r-oss), [DTS платы](https://github.com/MiCode/Xiaomi_Kernel_OpenSource/blob/71b6effd2dfa8f703dd1ea17acd1323b2fd3cf6c/arch/arm64/boot/dts/qcom/nabu-sm8150.dtsi). Перенос C-файлов Linux в Windows напрямую не выполняется. Отдельно [архитектура Microsoft URS/UCM](https://learn.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-dual-role-driver-stack-architecture) и [Windows ARM64 unwind](https://learn.microsoft.com/en-us/cpp/build/arm64-exception-handling).
 
-Только локальные и офлайн-проверки выполнены. Ни одна новая сборка в этом этапе не установлена на планшет.
+Только локальные и офлайн-проверки выполнены. Первоначальная сборка была проверена без установки; затем начат отдельный аппаратный этап, описанный ниже.
+
+## Аппаратный этап 26 октября
+
+Пакет установлен как **oem50.inf / 1.0.1843.0**, Windows требует перезагрузку (3010). Загрузка и функциональные испытания ещё не выполнены. [Подробности этапа](docs/HARDWARE-STATUS.md). Установщик/откат обновлены до recovery revision 2; SYS/INF/CAT прежние.
