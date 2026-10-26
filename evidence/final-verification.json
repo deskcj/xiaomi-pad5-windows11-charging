@@ -42,7 +42,7 @@
   "ActivatePerformed": true,
   "offlineRecoveryApplyTested": false,
   "productionMicrosoftSignature": false,
-  "hardwareBootAndChargingTests": "PENDING_REBOOT_AND_HOTPLUG",
+  "hardwareBootAndChargingTests": "FIRST_BOOT_PASSED_CHARGER_REMOVAL_FAILED",
   "githubPublication": "PUBLISHED",
   "archives": [
     {
@@ -65,5 +65,6 @@
   "remoteFilesVerified": 29,
   "downloadedArchivesSHA256Verified": true,
   "installerRecoveryRevision": 2,
-  "hardwareInstallEvidence": "hardware-install.json"
+  "hardwareInstallEvidence": "hardware-install.json",
+  "hardwareFailureEvidence": "charger-removal-failure.json"
 }
