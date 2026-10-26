@@ -1,0 +1,16 @@
+{
+  "Version": "1.0.1847.0",
+  "INF": "oem140.inf",
+  "SignedSYS_SHA256": "314BBF81ED5263388EFCD8316E0CC8C030894B98B7348089C35D6174E55685B3",
+  "ActivationCompletedAt": "2026-10-26T22:29:50.3213546+05:00",
+  "NativePnPExit": 3010,
+  "RebootIssued": false,
+  "BootTest": "PENDING",
+  "HardwareChargingTest": "PENDING",
+  "BaselineVersion": "1.0.1846.0",
+  "BaselineINF": "oem139.inf",
+  "FullPreStageSystemCheckedByTwoParsers": true,
+  "ExternalRecoveryVerified": true,
+  "OfflineApplyTested": false,
+  "GoalComplete": false
+}

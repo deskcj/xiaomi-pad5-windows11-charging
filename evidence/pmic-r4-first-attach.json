@@ -1,0 +1,446 @@
+{
+  "Version": "1.0.1846.0",
+  "PublishedInf": "oem139.inf",
+  "ExpectedBindingAndImage": true,
+  "RestartAfterActivation": true,
+  "EstimatedBootTime": "2026-10-26T22:08:48.7947411+05:00",
+  "BootOutcome": "FIRST_BOOT_PASSED_DIAGNOSTIC_PROTOCOL_CONFIRMED",
+  "ChargerOutcome": "FIRST_POWERED_HUB_ATTACH_FAILED_SOURCE_ONLY_OTG_ENABLED",
+  "UserReport": "Connected powered hub: charging absent",
+  "BaselineWithoutHub": {
+    "At": "2026-10-26T22:14:50.2527967+05:00",
+    "PMICVersion": "1.0.1846.0",
+    "ExpectedImageSHA256": "D17D1B5796653AA9BC03F288B419E441A27FFE143F276091C7E4106F721611D8",
+    "Mode": "Capture",
+    "DeviceOpened": true,
+    "CaptureCompleted": true,
+    "ReadOnly": true,
+    "RegisterWritesImplemented": false,
+    "Values": {
+      "TYPEC_STATE": {
+        "Address": "0x1509",
+        "Value": 4,
+        "Hex": "0x04"
+      },
+      "TYPEC_MISC": {
+        "Address": "0x150B",
+        "Value": 64,
+        "Hex": "0x40"
+      },
+      "TYPEC_MODE": {
+        "Address": "0x1544",
+        "Value": 16,
+        "Hex": "0x10"
+      },
+      "TYPEC_SINK_STATUS": {
+        "Address": "0x1506",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "TYPEC_SOURCE_STATUS": {
+        "Address": "0x1508",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "OTG_COMMAND": {
+        "Address": "0x1140",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "OTG_STATUS": {
+        "Address": "0x110D",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "OTG_CONFIG": {
+        "Address": "0x1153",
+        "Value": 32,
+        "Hex": "0x20"
+      },
+      "APSD_STATUS": {
+        "Address": "0x1307",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "APSD_RESULT": {
+        "Address": "0x1308",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "POWER_PATH_STATUS": {
+        "Address": "0x130B",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "USBIN_INT_RT": {
+        "Address": "0x1310",
+        "Value": 38,
+        "Hex": "0x26"
+      },
+      "USBIN_OPTIONS": {
+        "Address": "0x1358",
+        "Value": 192,
+        "Hex": "0xC0"
+      },
+      "USBIN_ICL": {
+        "Address": "0x1370",
+        "Value": 0,
+        "Hex": "0x00"
+      }
+    },
+    "Decoded": {
+      "CCAttached": false,
+      "PowerRole": "UNATTACHED",
+      "AttachStateBit5": false,
+      "OTGCommandEnabled": false,
+      "TypeCDisabled": false,
+      "SinkOnly": false,
+      "SourceOnly": false,
+      "TrySink": true,
+      "TrySource": false,
+      "InheritedFix20WouldForceSource": false
+    },
+    "Finished": "2026-10-26T22:14:50.3748368+05:00"
+  },
+  "PoweredHubFailed": {
+    "At": "2026-10-26T22:18:17.8299113+05:00",
+    "PMICVersion": "1.0.1846.0",
+    "ExpectedImageSHA256": "D17D1B5796653AA9BC03F288B419E441A27FFE143F276091C7E4106F721611D8",
+    "Mode": "Capture",
+    "DeviceOpened": true,
+    "CaptureCompleted": true,
+    "ReadOnly": true,
+    "RegisterWritesImplemented": false,
+    "Values": {
+      "TYPEC_STATE": {
+        "Address": "0x1509",
+        "Value": 38,
+        "Hex": "0x26"
+      },
+      "TYPEC_MISC": {
+        "Address": "0x150B",
+        "Value": 201,
+        "Hex": "0xC9"
+      },
+      "TYPEC_MODE": {
+        "Address": "0x1544",
+        "Value": 4,
+        "Hex": "0x04"
+      },
+      "TYPEC_SINK_STATUS": {
+        "Address": "0x1506",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "TYPEC_SOURCE_STATUS": {
+        "Address": "0x1508",
+        "Value": 36,
+        "Hex": "0x24"
+      },
+      "OTG_COMMAND": {
+        "Address": "0x1140",
+        "Value": 1,
+        "Hex": "0x01"
+      },
+      "OTG_STATUS": {
+        "Address": "0x110D",
+        "Value": 10,
+        "Hex": "0x0A"
+      },
+      "OTG_CONFIG": {
+        "Address": "0x1153",
+        "Value": 32,
+        "Hex": "0x20"
+      },
+      "APSD_STATUS": {
+        "Address": "0x1307",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "APSD_RESULT": {
+        "Address": "0x1308",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "POWER_PATH_STATUS": {
+        "Address": "0x130B",
+        "Value": 0,
+        "Hex": "0x00"
+      },
+      "USBIN_INT_RT": {
+        "Address": "0x1310",
+        "Value": 38,
+        "Hex": "0x26"
+      },
+      "USBIN_OPTIONS": {
+        "Address": "0x1358",
+        "Value": 192,
+        "Hex": "0xC0"
+      },
+      "USBIN_ICL": {
+        "Address": "0x1370",
+        "Value": 0,
+        "Hex": "0x00"
+      }
+    },
+    "Decoded": {
+      "CCAttached": true,
+      "PowerRole": "SOURCE",
+      "AttachStateBit5": true,
+      "OTGCommandEnabled": true,
+      "TypeCDisabled": false,
+      "SinkOnly": false,
+      "SourceOnly": true,
+      "TrySink": false,
+      "TrySource": false,
+      "InheritedFix20WouldForceSource": false
+    },
+    "Finished": "2026-10-26T22:18:17.9224507+05:00"
+  },
+  "IndependentRoleGetter": {
+    "At": "2026-10-26T22:18:18.0803271+05:00",
+    "Mode": "Capture",
+    "PMICSHA256": "D17D1B5796653AA9BC03F288B419E441A27FFE143F276091C7E4106F721611D8",
+    "IOCTL": "0x802A0FA4",
+    "LogicalSlot": 1,
+    "InputBytes": 4,
+    "OutputBytes": 8,
+    "ExpectedCallbackRVA": "0x88F0",
+    "DeviceOpened": true,
+    "IOCTLSent": true,
+    "RegisterWritesImplemented": false,
+    "AdministrativeElevationRequested": false,
+    "RawStatus": 0,
+    "DecodedRole": "SOURCE",
+    "OpenWin32Error": 0,
+    "IoctlWin32Error": 0,
+    "ReturnedBytes": 8,
+    "RawResponseHex": "0000000001000000",
+    "RawRole": 1
+  },
+  "RegisterTransitions": [
+    {
+      "At": "2026-10-26T22:15:50.8117436+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x04",
+        "TYPEC_MISC": "0x40",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:16:06.7126607+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x04",
+        "TYPEC_MISC": "0x00",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:16:12.1173253+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x04",
+        "TYPEC_MISC": "0x40",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:16:22.6556177+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x04",
+        "TYPEC_MISC": "0x00",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:16:27.9550267+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x01",
+        "TYPEC_MISC": "0x40",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:16:33.1952492+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x01",
+        "TYPEC_MISC": "0x00",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:16:38.4509735+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x04",
+        "TYPEC_MISC": "0x00",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:16:43.9397855+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x01",
+        "TYPEC_MISC": "0x00",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:16:49.2548666+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x04",
+        "TYPEC_MISC": "0x40",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:17:05.3203896+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x01",
+        "TYPEC_MISC": "0x40",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:17:10.6459317+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x01",
+        "TYPEC_MISC": "0x00",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:17:16.0626109+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x04",
+        "TYPEC_MISC": "0x40",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:17:26.7288113+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x01",
+        "TYPEC_MISC": "0x00",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:17:32.2055979+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x01",
+        "TYPEC_MISC": "0x40",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:17:37.5750350+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x08",
+        "TYPEC_MISC": "0xC8",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:17:43.1130028+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x07",
+        "TYPEC_MISC": "0x88",
+        "TYPEC_MODE": "0x10",
+        "OTG_COMMAND": "0x00",
+        "OTG_STATUS": "0x00",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "UNATTACHED"
+    },
+    {
+      "At": "2026-10-26T22:17:49.5973761+05:00",
+      "Values": {
+        "TYPEC_STATE": "0x26",
+        "TYPEC_MISC": "0xC9",
+        "TYPEC_MODE": "0x04",
+        "OTG_COMMAND": "0x01",
+        "OTG_STATUS": "0x0A",
+        "POWER_PATH_STATUS": "0x00",
+        "USBIN_ICL": "0x00"
+      },
+      "Role": "SOURCE"
+    }
+  ],
+  "CausalityLimit": "No hook-call trace. The unvalidated fix20 full-byte heuristic would force SOURCE for transient state 0x07; the role setter origin is not proven by a 5-second register sample. No continuous-storage or fast-charge success claimed.",
+  "GoalComplete": false
+}

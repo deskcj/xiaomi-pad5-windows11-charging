@@ -1,6 +1,6 @@
 # Xiaomi Pad 5 nabu — Windows 11 ARM64 charging / USB investigation
 
-**r3/1845 загрузилась и заряжала, но цикл снятия/возврата зарядки FAIL: роль осталась SOURCE. Установлена диагностическая r4/1846; её первый Restart pending. Стабильность ещё не достигнута.**
+**r4/1846 загрузилась, чтение PMIC работает; первое подключение powered-хаба FAIL: SOURCE-only/OTG включён. Установлена r5/1847 без подмены DRP → SOURCE; первый Restart pending. Зарядка ещё не исправлена.**
 
 Исследование нестабильной зарядки, USB-C-хаба и накопителей на Xiaomi Pad 5 (nabu). Цель — восстановление после подключения/отключения без перезагрузок. Этот репозиторий не объявляет задачу решённой.
 
@@ -8,7 +8,8 @@
 
 | Пакет | Что изменено | Состояние |
 |---|---|---|
-| [fix20r4-diag 1.0.1846.0](downloads/nabu-pmic-fix20r4-diag-1846-experimental.zip) | Чтение 14 регистров; поведение зарядки r3 сохранено | 3907 role + 882 diagnostic + 19 dispatcher + 333 unwind; первый Restart pending — [отчёт](docs/PMIC-R4-DIAGNOSTICS.md) |
+| [fix20r5-drp 1.0.1847.0](downloads/nabu-pmic-fix20r5-drp-1847-experimental.zip) | Убрана подмена DRP → SOURCE по полному байту 1509; диагностика сохранена | 3907 role + 882 diagnostic + 19 dispatcher + 307 unwind; установлен, первый Restart pending — [отчёт](docs/PMIC-R5-DRP.md) |
+| [fix20r4-diag 1.0.1846.0](downloads/nabu-pmic-fix20r4-diag-1846-experimental.zip) | Чтение 14 регистров; поведение зарядки r3 сохранено | 3907 role + 882 diagnostic + 19 dispatcher + 333 unwind; загрузка/диагностика PASS, первое подключение хаба — зарядка FAIL — [отчёт](docs/PMIC-R4-DIAGNOSTICS.md) |
 | [fix20r3 1.0.1845.0](downloads/nabu-pmic-fix20r3-1845-experimental.zip) | Возвращён путь role=0 для фактического logical index 1; guard/ABI сохранены | 3907 ARM64 + 172 unwind; первая загрузка PASS, цикл зарядки FAIL — [отчёт](docs/PMIC-R3.md) |
 | [fix20r2 1.0.1844.0](downloads/nabu-pmic-fix20r2-1844-experimental.zip) | Исправлен guard выбранного логического порта; сохранены все COFF unwind-секции | 2072 ARM64 + 130 native unwind; oem53: первая загрузка прошла, зарядка после переключений FAIL — [подробности](docs/PMIC-R2.md) |
 | [fix20r1 1.0.1843.0](downloads/fix20r1-experimental-1.0.1843.0.zip) | Исправлены конкретные дефекты измерений, ABI и обработки ошибок fix20 | 1 624 сценария ARM64 + 93 unwind; первая загрузка прошла; отключение зарядки от хаба — FAIL |

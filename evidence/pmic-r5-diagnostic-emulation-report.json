@@ -1,0 +1,11 @@
+{
+  "sha256": "314bbf81ed5263388efcd8316e0cc8c030894b98b7348089c35d6174e55685b3",
+  "DiagnosticCallbackCases": 882,
+  "OriginalDispatcherIntegrationCases": 19,
+  "WhitelistRegisters": 14,
+  "PMICWriteAttempts": 0,
+  "NativeUnwindFixtures": 307,
+  "RolePolicyChangedFromR3": true,
+  "DiagnosticProtocolUnchangedFromR4": true,
+  "KernelDriverLoaded": false
+}
