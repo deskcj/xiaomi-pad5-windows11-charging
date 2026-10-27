@@ -1,0 +1,20 @@
+{
+  "candidate": "qcpmicext8150_unsigned.sys",
+  "sha256": "21ab666be66cf17e7364d6d56793a243a3f51da15d7bcf7641b4bc99da806c6d",
+  "encodingSpecSHA256": "572dabdfebf4b44723baf1bf2dcc3cefe865c7acb3407a6c4c0efa1a32cc378d",
+  "passedArithmeticARM64Cases": 266156,
+  "passedFullSetterARM64Cases": 259,
+  "allUnsigned16BitInputsPerField": true,
+  "random32BitCasesPerField": 1000,
+  "nativeUnwindFixtures": 1081,
+  "additionalASLRBases": 3,
+  "simulatedTransportIsActual4AC8WdfCall": true,
+  "actual5C78ReplyValidationExercised": true,
+  "nullPointersAndTransportVendorLengthErrors": true,
+  "preservedNonvolatileAndX18": true,
+  "helperMemoryAccesses": 0,
+  "hardwareIOPerformed": false,
+  "kernelDriverLoaded": false,
+  "bootTested": false,
+  "hotplugFixed": false
+}

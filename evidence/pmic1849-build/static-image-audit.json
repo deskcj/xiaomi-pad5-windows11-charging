@@ -1,0 +1,35 @@
+{
+  "unsignedSHA256": "21ab666be66cf17e7364d6d56793a243a3f51da15d7bcf7641b4bc99da806c6d",
+  "signedSHA256": "441d764844dbdb84742152a432a92bbfbd51c1ac870a90b7ef90e849fe1a38cc",
+  "signedMappedSectionsEqualUnsigned": true,
+  "rebuildByteIdentical": true,
+  "oldSectionsDifferOnlyAt": [
+    {
+      "rva": "0x1cc8",
+      "stock": "mul w8, w8, w9",
+      "candidate": "bl #0x14000"
+    },
+    {
+      "rva": "0x1ce8",
+      "stock": "mul w8, w8, w9",
+      "candidate": "bl #0x14018"
+    },
+    {
+      "rva": "0x1d08",
+      "stock": "mul w8, w8, w9",
+      "candidate": "bl #0x14040"
+    },
+    {
+      "rva": "0x1d28",
+      "stock": "mul w8, w8, w9",
+      "candidate": "bl #0x14058"
+    }
+  ],
+  "newCodeBytes": 112,
+  "entryPointImportsLoadConfigUnwindRelocationsPreserved": true,
+  "INFOnlyDriverVersionChanged": true,
+  "RWX": false,
+  "kernelLoaded": false,
+  "bootTested": false,
+  "fullHotplugFix": false
+}

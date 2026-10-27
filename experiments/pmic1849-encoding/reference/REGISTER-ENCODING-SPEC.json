@@ -1,0 +1,72 @@
+{
+  "scope": "STATIC_SOURCE_EXTRACTION_NOT_TEST_OR_HARDWARE_CONFIGURATION",
+  "profile": "smb5_pm8150b_params",
+  "parameters": [
+    {
+      "name": "fcc",
+      "register": "0x1061",
+      "unit": "microamp",
+      "sourceRegisterMacro": "CHGR_FAST_CHARGE_CURRENT_CFG_REG",
+      "min_u": 0,
+      "max_u": 8000000,
+      "step_u": 50000,
+      "encoding": "(clamp(value_u,min_u,max_u)-min_u)/step_u with integer division"
+    },
+    {
+      "name": "fv",
+      "register": "0x1070",
+      "unit": "microvolt",
+      "sourceRegisterMacro": "CHGR_FLOAT_VOLTAGE_CFG_REG",
+      "min_u": 3600000,
+      "max_u": 4790000,
+      "step_u": 10000,
+      "encoding": "(clamp(value_u,min_u,max_u)-min_u)/step_u with integer division"
+    },
+    {
+      "name": "usb_icl",
+      "register": "0x1370",
+      "unit": "microamp",
+      "sourceRegisterMacro": "USBIN_CURRENT_LIMIT_CFG_REG",
+      "min_u": 0,
+      "max_u": 5000000,
+      "step_u": 50000,
+      "encoding": "(clamp(value_u,min_u,max_u)-min_u)/step_u with integer division"
+    },
+    {
+      "name": "dc_icl",
+      "register": "0x118c",
+      "unit": "microamp",
+      "sourceRegisterMacro": "DCDC_CFG_REF_MAX_PSNS_REG",
+      "min_u": 0,
+      "max_u": 1200000,
+      "step_u": 40000,
+      "encoding": "(clamp(value_u,min_u,max_u)-min_u)/step_u with integer division"
+    },
+    {
+      "name": "otg_cl",
+      "register": "0x1152",
+      "unit": "microamp",
+      "sourceRegisterMacro": "DCDC_OTG_CURRENT_LIMIT_CFG_REG",
+      "min_u": 500000,
+      "max_u": 2000000,
+      "step_u": 500000,
+      "encoding": "(clamp(value_u,min_u,max_u)-min_u)/step_u with integer division"
+    }
+  ],
+  "boardSourceLimits": {
+    "usb-icl-ua": 3000000,
+    "fcc-max-ua": 5900000,
+    "fv-max-uv": 4470000,
+    "non-fcc-fv-max-uv": 4450000
+  },
+  "boardLimitsAreNotCurrentChargerContract": true,
+  "sourceSHA256": {
+    "qpnp-smb5-nabu.c": "cd07cf4e12272329d4e2dcd063e4cdb10a36cd7386d470f0b240d0b5bf656837",
+    "smb5-reg.h": "b8b18004ed51b875a9b14028dde2f72b415c9237d719de4ff7eb89e7a660c836",
+    "nabu-sm8150.dtsi": "2b5d0100492d2bbf88c672bc92f0d001e60c20876bd97819b9a62ca1da445027"
+  },
+  "118cIsOTGCurrentLimit": false,
+  "OTGCurrentLimitRegister": "0x1152",
+  "driverBuilt": false,
+  "hardwareAccess": false
+}
