@@ -1,0 +1,120 @@
+{
+  "scope": "STATIC_AML_AND_DRIVER_ANALYSIS_WITH_READ_ONLY_OS_CACHED_METADATA",
+  "osCachedMetadataReadPerformed": true,
+  "AMLExecuted": false,
+  "hardwareBusAccess": false,
+  "PMICReads": false,
+  "PMICWrites": false,
+  "registryWrites": false,
+  "driverBuilt": false,
+  "driverInstalled": false,
+  "driverTestsRun": false,
+  "emulationRun": false,
+  "rebootIssued": false,
+  "chargingFixProven": false,
+  "capturedAt": "2026-10-27T07:41:51.1765216+05:00",
+  "oldDSDT": {
+    "sourceSHA256": "c97a46c5e7cb9fcaeea9cd9543ba2ba8806f493175e3956f97e08044b9d4e3d3",
+    "bytes": 390074,
+    "checksumMod256": 0,
+    "packageInitialElements": [
+      1,
+      0,
+      1,
+      0,
+      "CUST_PMIC"
+    ],
+    "allLocatedCopiesMatch": true
+  },
+  "currentOSCachedDSDT": {
+    "sourceSHA256": "b4eeefa8758fed3935b68080407273a0f2e121c223c864999c399fe92835d2b6",
+    "bytes": 324590,
+    "checksumMod256": 0,
+    "methodOffset": "0x78c",
+    "methodEndOffset": "0x7bc",
+    "deviceName": "PMBT",
+    "hardwareID": "QCOM0531",
+    "packageInitialElements": [
+      1,
+      0,
+      1,
+      0,
+      "CUST_PMIC"
+    ],
+    "firstFourElementsConstantWithinMethod": true
+  },
+  "DSDTChangedSinceOldArchive": true,
+  "packageValuesEqual": true,
+  "currentOverrideKeys": [
+    {
+      "Suffix": "WDF",
+      "Exists": false
+    },
+    {
+      "Suffix": "ParallelCharging",
+      "Exists": false
+    },
+    {
+      "Suffix": "Platform",
+      "Exists": false
+    }
+  ],
+  "platformSelection": {
+    "status": "CURRENT_CONFIGURATION_SELECTS_ALGORITHM_1",
+    "parserRVA": "0x4148",
+    "selectorContextOffset": "0x9c0",
+    "registrationRVA": "0xce48",
+    "updateSlotRVA": "0x28a40",
+    "updateTargetRVA": "0x146a0",
+    "eventPolicySlotRVA": "0x28a48",
+    "eventPolicyTargetRVA": "0x149c0",
+    "updateDispatchRVA": "0xd218",
+    "runtimeContextRead": false,
+    "historicalFailureBranchObserved": false
+  },
+  "configuredImages": [
+    {
+      "service": "qcbattmngr",
+      "bytes": 179296,
+      "FileVersion": "1.0.10660.0000",
+      "SHA256": "3659A20DE0606AA7283EA3197A1C212E28BFEC212C838914F19D74BE629453A3",
+      "matchesDisassembledArchive": true
+    },
+    {
+      "service": "qcpmicext",
+      "bytes": 66664,
+      "FileVersion": "1.0.1680.0000",
+      "SHA256": "533C3A555E111D4B12B657D026C92D63D5170D57297432D03BDAF3BE96C7886A",
+      "matchesDisassembledArchive": true
+    },
+    {
+      "service": "qcpmictcc",
+      "bytes": 115808,
+      "FileVersion": "1.0.1680.0000",
+      "SHA256": "BE9850CE5AB8A9E5EAD615DE592FF8177154BDE9496320910210DC503B2B46E9",
+      "matchesDisassembledArchive": true
+    },
+    {
+      "service": "qcusbctcpm",
+      "bytes": 77920,
+      "FileVersion": "1.0.1680.0000",
+      "SHA256": "7C63F4A4B8A9EE0F49B427B6AC94867D2475E02F85D92D5FBCFE4A8AA1804067",
+      "matchesDisassembledArchive": true
+    },
+    {
+      "service": "qcbattminiclass",
+      "bytes": 57952,
+      "FileVersion": "1.0.1680.0000",
+      "SHA256": "7F7ECE18BF7ED43827E9E331274C4DA15A765B615B886DB8BE3209B9144FF4C4",
+      "matchesDisassembledArchive": true
+    }
+  ],
+  "versionCaveat": "INF package version and PE FileVersion differ for qcbattmngr and qcpmicext; SHA256 identifies the actual code.",
+  "acceptanceCases": 32,
+  "acceptanceStatus": "ALL_NOT_VERIFIED_FOR_NEW_DRIVER",
+  "limits": [
+    "Configured image files and static ACPI selection are confirmed; loaded kernel context was not read.",
+    "No hardware reproduction or validation of an improved driver.",
+    "Continuous SSD I/O requires uninterrupted electrical power to hub/SSD."
+  ]
+}
