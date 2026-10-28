@@ -1,0 +1,262 @@
+{
+  "date": "2026-10-28",
+  "scope": "Read-only OS metadata, Ghidra and offline actual PE integration",
+  "currentStack": {
+    "pmic": "1849/oem141",
+    "backend": "1851/oem92",
+    "client": "1851/oem142",
+    "batteryManager": "10731/oem144",
+    "miniclass": "1680/oem143",
+    "pepPEVersion": "2140"
+  },
+  "steadyOSPower": {
+    "Samples": 45,
+    "ACValues": [
+      1
+    ],
+    "FlagValues": [
+      9
+    ],
+    "PercentValues": [
+      90
+    ],
+    "HardwareIOCTLUsed": false,
+    "PhysicalCableChangesRequested": false
+  },
+  "newCrash": {
+    "dump": "102726-10640-01.dmp",
+    "sha256": "C1E2461C0DC563CEF08056AE5083FFC219C0B707CAB2262898DC12A22FD8AA34",
+    "bugcheck": "0x7E",
+    "exception": "0xC0000005",
+    "clientRVA": "0x8ABC",
+    "nullRegister": "X19",
+    "readAddress": "0x80",
+    "callerBackendRVA": "0xE108",
+    "workerRepairDispatchRVA": "0x21380",
+    "realFaultObservedInDump": true,
+    "exactReasonForBadContextOrHandleProven": false,
+    "systemAndDumpWallClockDisagree": true
+  },
+  "offlinePEPProvider": {
+    "scope": "OFFLINE_ACTUAL_PEP_AND_TCPM_PROVIDER_WITH_MOCKED_PLATFORM_DDI",
+    "pepSHA256": "39fafcd60536c7d36dd95187dc9f51bfc4af661b614bce4a5e9ec0729fe24e01",
+    "clientStockSHA256": "7c63f4a4b8a9ee0f49b427b6ac94867d2475e02f85d92d5fbcfe4a8aa1804067",
+    "installedClientProviderBytesIdentical": true,
+    "providerGuid": "bc289d6f-6a67-4c83-b84f-68e05f68998a",
+    "scenarios": [
+      {
+        "case": "first-flag1-before-any-flag0",
+        "providerPC": "0x2e84",
+        "stringPointer": 0,
+        "observed": "actual provider reads NULL string in zero-initialized PEP packet",
+        "runtimeOrderingObserved": false
+      },
+      {
+        "case": "actual-provider-name",
+        "name": "USBHOST",
+        "providerReturns": [
+          3221225485
+        ],
+        "providerCalls": 1
+      },
+      {
+        "case": "actual-provider-name",
+        "name": "\\_SB.URS0",
+        "providerReturns": [
+          0
+        ],
+        "providerCalls": 1
+      },
+      {
+        "case": "actual-provider-name",
+        "name": "\\_SB.URS1",
+        "providerReturns": [
+          0
+        ],
+        "providerCalls": 1
+      },
+      {
+        "case": "retained-buffer-interface-lifetime",
+        "cycles": 1,
+        "realReferenceCalls": 1,
+        "realDereferenceCalls": 0,
+        "providerReferenceByte": 1,
+        "liveBuffers": 1
+      },
+      {
+        "case": "retained-buffer-interface-lifetime",
+        "cycles": 10,
+        "realReferenceCalls": 10,
+        "realDereferenceCalls": 0,
+        "providerReferenceByte": 10,
+        "liveBuffers": 1
+      },
+      {
+        "case": "retained-buffer-interface-lifetime",
+        "cycles": 256,
+        "realReferenceCalls": 256,
+        "realDereferenceCalls": 0,
+        "providerReferenceByte": 0,
+        "liveBuffers": 1
+      },
+      {
+        "case": "power-after-removal",
+        "providerCalledWithoutTarget": true,
+        "providerReturned": [
+          0
+        ],
+        "safetyOfSuchCallsProven": false
+      },
+      {
+        "case": "unmodified-pep-uaf-with-real-provider",
+        "observed": "use-after-free at 0x42000008"
+      }
+    ],
+    "newSYSProduced": false,
+    "kernelExecuted": false,
+    "hardwareMMIOExecuted": false,
+    "concurrencyVerified": false,
+    "fixReadyForInstallation": false
+  },
+  "offlineLateAlert": {
+    "scope": "OFFLINE_REAL_BACKEND_AND_CLIENT1851_WITH_MOCKED_WDF",
+    "backendSHA256": "7cc45346517c7dbe65ca0fbe68ee8d2f38cfc2168e2e6a038182998a4aae9737",
+    "clientSHA256": "b2197b3733ab4abaed22447d5d4efcd74f0c603fcd441e0056d3d4a32bf10229",
+    "cases": [
+      {
+        "readyBeforeCallback": 0,
+        "contextAlive": false,
+        "callbackPublished": false,
+        "clearReadyDuringLookup": false,
+        "calls": [],
+        "fault": null,
+        "readyAtEnd": 0
+      },
+      {
+        "readyBeforeCallback": 0,
+        "contextAlive": false,
+        "callbackPublished": true,
+        "clearReadyDuringLookup": false,
+        "calls": [],
+        "fault": null,
+        "readyAtEnd": 0
+      },
+      {
+        "readyBeforeCallback": 0,
+        "contextAlive": true,
+        "callbackPublished": false,
+        "clearReadyDuringLookup": false,
+        "calls": [],
+        "fault": null,
+        "readyAtEnd": 0
+      },
+      {
+        "readyBeforeCallback": 0,
+        "contextAlive": true,
+        "callbackPublished": true,
+        "clearReadyDuringLookup": false,
+        "calls": [],
+        "fault": null,
+        "readyAtEnd": 0
+      },
+      {
+        "readyBeforeCallback": 1,
+        "contextAlive": false,
+        "callbackPublished": false,
+        "clearReadyDuringLookup": false,
+        "calls": [],
+        "fault": null,
+        "readyAtEnd": 1
+      },
+      {
+        "readyBeforeCallback": 1,
+        "contextAlive": false,
+        "callbackPublished": true,
+        "clearReadyDuringLookup": false,
+        "calls": [
+          "typed-context"
+        ],
+        "fault": {
+          "clientRVA": "0x8abc",
+          "X19": 0,
+          "readAddress": "0x80"
+        },
+        "readyAtEnd": 1
+      },
+      {
+        "readyBeforeCallback": 1,
+        "contextAlive": true,
+        "callbackPublished": false,
+        "clearReadyDuringLookup": false,
+        "calls": [],
+        "fault": null,
+        "readyAtEnd": 1
+      },
+      {
+        "readyBeforeCallback": 1,
+        "contextAlive": true,
+        "callbackPublished": true,
+        "clearReadyDuringLookup": false,
+        "calls": [
+          "typed-context",
+          "class-alert"
+        ],
+        "fault": null,
+        "readyAtEnd": 1
+      },
+      {
+        "readyBeforeCallback": 1,
+        "contextAlive": false,
+        "callbackPublished": true,
+        "clearReadyDuringLookup": true,
+        "calls": [
+          "typed-context"
+        ],
+        "fault": {
+          "clientRVA": "0x8abc",
+          "X19": 0,
+          "readAddress": "0x80"
+        },
+        "readyAtEnd": 0
+      }
+    ],
+    "matchesObservedCrashInstructionAndReadAddress": true,
+    "causeOfContextDestructionOrOriginalBadHandleProven": false,
+    "simultaneousCPUsExecuted": false,
+    "kernelDriverLoaded": false,
+    "newSYSProduced": false,
+    "hardwareIO": false,
+    "installed": false
+  },
+  "androidFunctionsByteMatched": [
+    {
+      "name": "smblib_get_prop_usb_present",
+      "address": "0xffffff8008c99720",
+      "size": 160,
+      "target": "va:ffffff8008c99720",
+      "sha256": "00540195609df912f9786873a4d80f730aff9a566f7f5959a69e977f1a0eccfe"
+    },
+    {
+      "name": "smblib_get_prop_usb_online",
+      "address": "0xffffff8008c9b180",
+      "size": 536,
+      "target": "va:ffffff8008c9b180",
+      "sha256": "33e628ee2a1fd9edb01456022b6d2076ca41923a64e8950ceccc377a673212a5"
+    },
+    {
+      "name": "smblib_get_prop_batt_status",
+      "address": "0xffffff8008c9acc8",
+      "size": 1208,
+      "target": "va:ffffff8008c9acc8",
+      "sha256": "3eb6c3aadfb9a1973a0799242c957407d46ea472b2847a061f0d4019866ed246"
+    }
+  ],
+  "ownerAndroidCorrection": "Same SSD is unsupported on Android; flash drive works. No Android test performed.",
+  "installed": false,
+  "newSYSProduced": false,
+  "deviceResetPerformed": false,
+  "rebootIssued": false,
+  "PMICHardwareIOCTLUsed": false,
+  "kernelExecutedByTests": false,
+  "fullChargingFixProven": false
+}
