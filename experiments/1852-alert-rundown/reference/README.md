@@ -1,0 +1,1 @@
+Original Qualcomm SYS/INF are not distributed in this source experiment. Use the pinned reference files from the local Charging project. Laboratory PEP also requires next-pep/reference/qcpep8150.sys, SHA25639fafcd60536c7d36dd95187dc9f51bfc4af661b614bce4a5e9ec0729fe24e01. See manifests and source assertions. No package here is ready for installation.

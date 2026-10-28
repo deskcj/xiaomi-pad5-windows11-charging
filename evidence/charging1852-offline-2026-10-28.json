@@ -1,0 +1,246 @@
+{
+  "updatedAt": "2026-10-28T18:57:54.136373+05:00",
+  "status": "1852_CLIENT_BUILT_OFFLINE_PEP_REPAIR_IN_LAB",
+  "client": {
+    "version": "1.0.1852.0",
+    "unsignedSHA256": "511ddea9fc1a27922303a5e89fe7fb8ab92dbf5292acdc696a1f9c24be3cfd90",
+    "signedSHA256": "2e0c05be242b938a3047cdb798a162e67b0e090b5826241963713b5c6b63079e",
+    "coverage": {
+      "transport": 3528,
+      "originalCleanup": 90,
+      "originalD0Exit": 270,
+      "alertLifecycle": 96,
+      "nativeUnwind": 1416
+    },
+    "installed": false,
+    "hardwareTested": false,
+    "initialAlertReplayProven": false,
+    "physicalSMPTested": false,
+    "manifest": {
+      "schema": 1,
+      "name": "SK-Charging-1852-alert-rundown",
+      "driverVersion": "1.0.1852.0",
+      "hardwareId": "ACPI\\QCOM057D",
+      "status": "TEST_SIGNED_OFFLINE_QA_PASSED_HARDWARE_BLOCKED",
+      "files": [
+        {
+          "path": "package/qcusbctcpm8150.cat",
+          "sha256": "E2193DE630517688E1E5B7C230B1934B36C46948B19F3F2C170D700D98959100",
+          "bytes": 2543
+        },
+        {
+          "path": "package/qcusbctcpm8150.inf",
+          "sha256": "9EE947549BD3EA443C466BB07CB2032281FFDE0238DFC4428BE677A9792C83CF",
+          "bytes": 4934
+        },
+        {
+          "path": "package/qcusbctcpm8150.sys",
+          "sha256": "2E0C05BE242B938A3047CDB798A162E67B0E090B5826241963713B5C6B63079E",
+          "bytes": 79352
+        }
+      ],
+      "signerThumbprint": "F38EDD5C105095C8342556158CE66253F045965D",
+      "signerSubject": "CN=NabuCameraDev-20260821",
+      "signatureType": "Existing development certificate; Authenticode /pa verified; not Microsoft production/WHQL",
+      "qaSHA256": "D52A5B52A43ACFC88F34332036211790F6024757841F4BF447E31D12F2BD5ECA",
+      "signedPayloadSHA256": "CA39B625DEA311896C91EB82676E9E6E866828C4E896D53D2BB96655827AAAE0",
+      "installed": false,
+      "bootTested": false,
+      "hardwareTested": false,
+      "kernelExecuted": false,
+      "completeChargingFixProven": false,
+      "scope": "TCPM client alert admission/rundown, null-context handling, D0 Start/Stop ordering and CFG registration. All1851 client transport fixes retained.",
+      "knownBlockers": [
+        "PEP2140 lifetime0x13A remains unfixed",
+        "Ghost AC and power-direction repair not included",
+        "No electrical PD, storage continuity or real SMP verification",
+        "Initial pending-alert replay and single-producer audit remain open"
+      ],
+      "deployment": "Offline candidate; no installation script supplied; do not treat as complete hotplug fix",
+      "exclusions": [
+        "PEP",
+        "PMIC1849",
+        "backend1851",
+        "battery manager/miniclass",
+        "URS/xHCI",
+        "camera",
+        "existing rollback"
+      ],
+      "noInstallNoResetNoReboot": true
+    }
+  },
+  "pepLab": {
+    "status": "LAB_OWN_LIFETIME_TESTS_PASSED_EXTERNAL_PROVIDER_COUNTEREXAMPLE_REMAINS",
+    "sourceSHA256": "3761DA161C91E6EBE3C8C4DE71914332B3391DC1372223AD18748D3A44522B2F",
+    "objectSHA256": "3D1A8A1621590D8C3B5BD75AA07BDADFBD68DF6D4F008BD808DC2E8D819ED521",
+    "testScriptSHA256": "9ec6f46588d9a4e161606f859c57233f8e2fe40ed7464b892f92109077046dc5",
+    "savedMachineSHA256": "756c250cc4a6fdcf69c534d8d90ad6139646cae33fd3a50484f836816d4022f7",
+    "coffParserSHA256": "88c55eb8078b289aca091bcfc3febdf3a7cebef1e3c7687e289a6b665f02e1ae",
+    "actualOriginalPEPSHA256": "39fafcd60536c7d36dd95187dc9f51bfc4af661b614bce4a5e9ec0729fe24e01",
+    "actualClientProviderSHA256": "7c63f4a4b8a9ee0f49b427b6ac94867d2475e02f85d92d5fbcfe4a8aa1804067",
+    "cases": 16,
+    "rows": [
+      {
+        "case": "real-PEP-provider-balanced-cycles",
+        "cycles": 1,
+        "allocations": 1,
+        "frees": 1,
+        "references": 1,
+        "dereferences": 1
+      },
+      {
+        "case": "real-PEP-provider-balanced-cycles",
+        "cycles": 2,
+        "allocations": 2,
+        "frees": 2,
+        "references": 2,
+        "dereferences": 2
+      },
+      {
+        "case": "real-PEP-provider-balanced-cycles",
+        "cycles": 10,
+        "allocations": 10,
+        "frees": 10,
+        "references": 10,
+        "dereferences": 10
+      },
+      {
+        "case": "real-PEP-provider-balanced-cycles",
+        "cycles": 100,
+        "allocations": 100,
+        "frees": 100,
+        "references": 100,
+        "dereferences": 100
+      },
+      {
+        "case": "real-PEP-provider-balanced-cycles",
+        "cycles": 256,
+        "allocations": 256,
+        "frees": 256,
+        "references": 256,
+        "dereferences": 256
+      },
+      {
+        "case": "failure-cleanup-and-retry",
+        "field": "createStatus",
+        "status": "0xc0000001"
+      },
+      {
+        "case": "failure-cleanup-and-retry",
+        "field": "openStatus",
+        "status": "0xc00000e5"
+      },
+      {
+        "case": "failure-cleanup-and-retry",
+        "field": "queryStatus",
+        "status": "0xc0000001"
+      },
+      {
+        "case": "failure-cleanup-and-retry",
+        "field": "failAllocation",
+        "status": "0xc000009a"
+      },
+      {
+        "case": "duplicate-arrival-removal-idempotent"
+      },
+      {
+        "case": "name-current-on-first-flag1-and-each-port-change"
+      },
+      {
+        "case": "gate-close-during-provider-defers-free"
+      },
+      {
+        "case": "platform-can-close-admission-with-no-held-lease"
+      },
+      {
+        "case": "removal-waits-before-dereference-and-free"
+      },
+      {
+        "case": "non-TypeC-delegates-original-power",
+        "mode": 0
+      },
+      {
+        "case": "non-TypeC-delegates-original-power",
+        "mode": 3
+      }
+    ],
+    "remainingUnsafeCounterexamples": [
+      {
+        "case": "provider-release-before-pep-notification",
+        "interfaceReferencesStillHeld": 1,
+        "actualUnmapHelperExecuted": true,
+        "unmapCalls": 4,
+        "providerFaultRVA": "0x3240",
+        "runtimePnPOrderingObserved": false,
+        "repairStillRequired": true
+      }
+    ],
+    "noSharedHeapPowerPacket": true,
+    "firstFlag1Initialized": true,
+    "actualPEPNotificationBodyExecuted": true,
+    "actualTCPMProviderExecuted": true,
+    "mockKernelDDIs": true,
+    "mockSecurityHelperABI": true,
+    "physicalSMPTested": false,
+    "finalPEProduced": false,
+    "nativePEPUnwindTested": false,
+    "kernelExecuted": false,
+    "hardwareMMIOExecuted": false,
+    "installed": false,
+    "openItems": [
+      "Provider MMIO lifetime vs ReleaseHardware",
+      "PnP registration and all power call-site integration",
+      "Real PEP IRQL contract",
+      "Shutdown/unregister and unload lifetime",
+      "Full native unwind and CFG/ASLR/package checks"
+    ]
+  },
+  "relocationOracle": {
+    "status": "CORRECTED_RELOCATION_BYTES_MATCH_MICROSOFT_LINK",
+    "cases": [
+      {
+        "offset": 0,
+        "addendBytes": 32
+      },
+      {
+        "offset": 16,
+        "addendBytes": 0
+      },
+      {
+        "offset": 32,
+        "addendBytes": 0
+      }
+    ],
+    "completeTextByteIdentical": true,
+    "historicalAlgorithmCounterexample": true,
+    "probeDLLSHA256": "63c3cc51079e1fcb29e3ec31632b42259c95533c70ea7e4fd3ae283119708b4d",
+    "probeDLLLoaded": false,
+    "driverLoaded": false,
+    "hardwareIO": false
+  },
+  "existingObjectAddends": [
+    {
+      "object": "1852-client",
+      "sha256": "bdfbcb30e7f4f72bd1fe0c92f5689dfbfd45124b930429a69cd635cfa231f2e4",
+      "ADRPRelocations": 52,
+      "allADRPAddendsZero": true,
+      "historicalBytePageAddendDefectAffectsThisObject": false
+    },
+    {
+      "object": "1851-client",
+      "sha256": "e87bc2f923c12792f653726ab1833c2d3271eaf4a3d07f246abde4b361f29f3b",
+      "ADRPRelocations": 8,
+      "allADRPAddendsZero": true,
+      "historicalBytePageAddendDefectAffectsThisObject": false
+    },
+    {
+      "object": "1851-backend",
+      "sha256": "5a7555032605911db001e6cf553834d26d4492974ada0fb120ac04e4d0608af1",
+      "ADRPRelocations": 145,
+      "allADRPAddendsZero": true,
+      "historicalBytePageAddendDefectAffectsThisObject": false
+    }
+  ],
+  "completeChargingFixProven": false,
+  "installedDriverPayloadsUnchanged": true
+}

@@ -1,0 +1,6 @@
+{
+  "originalMachineSHA256": "8617600953d063f0c9cd09a0b442191ecb980f478099aa87be6a0aa7b70842fc",
+  "adaptedMachineSHA256": "756c250cc4a6fdcf69c534d8d90ad6139646cae33fd3a50484f836816d4022f7",
+  "adaptation": "Removed old prototype main; use adjacent pinned PEP image; mocks/class methods preserved",
+  "driverSHA256": "39fafcd60536c7d36dd95187dc9f51bfc4af661b614bce4a5e9ec0729fe24e01"
+}

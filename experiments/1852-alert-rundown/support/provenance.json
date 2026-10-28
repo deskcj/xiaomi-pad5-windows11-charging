@@ -1,0 +1,30 @@
+[
+  {
+    "sha256": "8E320D814AD56DDE1025363A138BEFA848B866746F9A33C9F7857E907C6D09BA",
+    "path": "tools\\repair_client_contract.py"
+  },
+  {
+    "sha256": "1CC4B47281069CCA8E7AF9A536B40FF778A2256198EB2AAC063CDFD06F3765C6",
+    "path": "tests\\test_original_backend.py"
+  },
+  {
+    "sha256": "D8191DD24E370BF9DB9FD8FBC4F891288F418B2224DC0E2A81FB45E986568369",
+    "path": "tests\\test_client_contract_repair.py"
+  },
+  {
+    "sha256": "4D15BC59E39D193E050FF836EBAAF00A506528DBC76809A9185D198BEB140FE8",
+    "path": "tests\\test_original_teardown.py"
+  },
+  {
+    "sha256": "AEAC711A573F78BFA8D0E42423F4EB50DFCC58B24BF3E1989A3728310BB6129C",
+    "path": "reference\\legacy_client_machine.py"
+  },
+  {
+    "sha256": "7C63F4A4B8A9EE0F49B427B6AC94867D2475E02F85D92D5FBCFE4A8AA1804067",
+    "path": "reference\\qcusbctcpm8150.sys"
+  },
+  {
+    "sha256": "BE9850CE5AB8A9E5EAD615DE592FF8177154BDE9496320910210DC503B2B46E9",
+    "path": "reference\\qcpmictcc8150.sys"
+  }
+]
