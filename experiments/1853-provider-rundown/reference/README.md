@@ -1,0 +1,1 @@
+Original Qualcomm SYS/INF are not distributed here. Supply pinned local Charging reference files; see source assertions. Joint testing also requires the saved1852 PEP laboratory source/object/harness. This is not an installation package.

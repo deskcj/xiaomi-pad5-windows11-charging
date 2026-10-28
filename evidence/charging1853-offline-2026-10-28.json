@@ -1,0 +1,487 @@
+{
+  "updatedAt": "2026-10-28T19:39:18.152432+05:00",
+  "status": "1853_CLIENT_SIGNED_OFFLINE_PROVIDER_FIXED_PEP_NATIVE_PENDING",
+  "clientVersion": "1.0.1853.0",
+  "unsignedSHA256": "60a3b32fed79caa18a9d1ddaaa6a4cf7c23dab23c714ffc6f0ac98fd2b11551f",
+  "signedSHA256": "0a48c1493f03df07d11eef85ddbe0187d3fd3c86ebc903c5d761d9363b3c4109",
+  "coverage": {
+    "transport": 3528,
+    "originalCleanup": 90,
+    "originalD0Exit": 270,
+    "alertLifecycle": 96,
+    "providerLifecycle": 57,
+    "jointPepClient": 8,
+    "nativeUnwind": 3535
+  },
+  "provider": {
+    "status": "ACTUAL_1853_PE_OFFLINE_PROVIDER_TESTS_PASSED",
+    "cases": 57,
+    "rows": [
+      {
+        "case": "actual-registered-provider",
+        "base": "0x140000000",
+        "name": "\\_SB.URS0",
+        "enabled": 0
+      },
+      {
+        "case": "actual-registered-provider",
+        "base": "0x140000000",
+        "name": "\\_SB.URS0",
+        "enabled": 1
+      },
+      {
+        "case": "actual-registered-provider",
+        "base": "0x140000000",
+        "name": "\\_SB.URS1",
+        "enabled": 0
+      },
+      {
+        "case": "actual-registered-provider",
+        "base": "0x140000000",
+        "name": "\\_SB.URS1",
+        "enabled": 1
+      },
+      {
+        "case": "release-with-held-interface-no-late-MMIO-and-reprepare",
+        "base": "0x140000000"
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x140000000",
+        "failedAllocation": 1
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x140000000",
+        "failedAllocation": 2
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x140000000",
+        "failedAllocation": 3
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x140000000",
+        "failedAllocation": 4
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x140000000",
+        "failedAllocation": 5
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x140000000",
+        "changes": {
+          "enabled": 2
+        }
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x140000000",
+        "changes": {
+          "length": 0
+        }
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x140000000",
+        "changes": {
+          "maximum": 19
+        }
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x140000000",
+        "changes": {
+          "buffer": 0
+        }
+      },
+      {
+        "case": "close-during-provider-drains-before-unmap",
+        "base": "0x140000000"
+      },
+      {
+        "case": "passive-release-waits-for-owner",
+        "base": "0x140000000"
+      },
+      {
+        "case": "permanent-owner-never-forced-unmapped",
+        "base": "0x140000000"
+      },
+      {
+        "case": "original-prepare-error-propagated",
+        "base": "0x140000000",
+        "status": "0xc0000001"
+      },
+      {
+        "case": "original-prepare-error-propagated",
+        "base": "0x140000000",
+        "status": "0xc0000185"
+      },
+      {
+        "case": "actual-registered-provider",
+        "base": "0x180000000",
+        "name": "\\_SB.URS0",
+        "enabled": 0
+      },
+      {
+        "case": "actual-registered-provider",
+        "base": "0x180000000",
+        "name": "\\_SB.URS0",
+        "enabled": 1
+      },
+      {
+        "case": "actual-registered-provider",
+        "base": "0x180000000",
+        "name": "\\_SB.URS1",
+        "enabled": 0
+      },
+      {
+        "case": "actual-registered-provider",
+        "base": "0x180000000",
+        "name": "\\_SB.URS1",
+        "enabled": 1
+      },
+      {
+        "case": "release-with-held-interface-no-late-MMIO-and-reprepare",
+        "base": "0x180000000"
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x180000000",
+        "failedAllocation": 1
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x180000000",
+        "failedAllocation": 2
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x180000000",
+        "failedAllocation": 3
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x180000000",
+        "failedAllocation": 4
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x180000000",
+        "failedAllocation": 5
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x180000000",
+        "changes": {
+          "enabled": 2
+        }
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x180000000",
+        "changes": {
+          "length": 0
+        }
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x180000000",
+        "changes": {
+          "maximum": 19
+        }
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x180000000",
+        "changes": {
+          "buffer": 0
+        }
+      },
+      {
+        "case": "close-during-provider-drains-before-unmap",
+        "base": "0x180000000"
+      },
+      {
+        "case": "passive-release-waits-for-owner",
+        "base": "0x180000000"
+      },
+      {
+        "case": "permanent-owner-never-forced-unmapped",
+        "base": "0x180000000"
+      },
+      {
+        "case": "original-prepare-error-propagated",
+        "base": "0x180000000",
+        "status": "0xc0000001"
+      },
+      {
+        "case": "original-prepare-error-propagated",
+        "base": "0x180000000",
+        "status": "0xc0000185"
+      },
+      {
+        "case": "actual-registered-provider",
+        "base": "0x7ffb12340000",
+        "name": "\\_SB.URS0",
+        "enabled": 0
+      },
+      {
+        "case": "actual-registered-provider",
+        "base": "0x7ffb12340000",
+        "name": "\\_SB.URS0",
+        "enabled": 1
+      },
+      {
+        "case": "actual-registered-provider",
+        "base": "0x7ffb12340000",
+        "name": "\\_SB.URS1",
+        "enabled": 0
+      },
+      {
+        "case": "actual-registered-provider",
+        "base": "0x7ffb12340000",
+        "name": "\\_SB.URS1",
+        "enabled": 1
+      },
+      {
+        "case": "release-with-held-interface-no-late-MMIO-and-reprepare",
+        "base": "0x7ffb12340000"
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x7ffb12340000",
+        "failedAllocation": 1
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x7ffb12340000",
+        "failedAllocation": 2
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x7ffb12340000",
+        "failedAllocation": 3
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x7ffb12340000",
+        "failedAllocation": 4
+      },
+      {
+        "case": "each-map-failure-cleanup-release-and-retry",
+        "base": "0x7ffb12340000",
+        "failedAllocation": 5
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x7ffb12340000",
+        "changes": {
+          "enabled": 2
+        }
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x7ffb12340000",
+        "changes": {
+          "length": 0
+        }
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x7ffb12340000",
+        "changes": {
+          "maximum": 19
+        }
+      },
+      {
+        "case": "malformed-packet-no-original-provider",
+        "base": "0x7ffb12340000",
+        "changes": {
+          "buffer": 0
+        }
+      },
+      {
+        "case": "close-during-provider-drains-before-unmap",
+        "base": "0x7ffb12340000"
+      },
+      {
+        "case": "passive-release-waits-for-owner",
+        "base": "0x7ffb12340000"
+      },
+      {
+        "case": "permanent-owner-never-forced-unmapped",
+        "base": "0x7ffb12340000"
+      },
+      {
+        "case": "original-prepare-error-propagated",
+        "base": "0x7ffb12340000",
+        "status": "0xc0000001"
+      },
+      {
+        "case": "original-prepare-error-propagated",
+        "base": "0x7ffb12340000",
+        "status": "0xc0000185"
+      }
+    ],
+    "fixtures": 2119,
+    "sha256": "60a3b32fed79caa18a9d1ddaaa6a4cf7c23dab23c714ffc6f0ac98fd2b11551f",
+    "testSourceSHA256": "e5424f588134fbec2657d1bfdaf77d8a773b371c4cc5d2b36eaa3f9ecaba9470",
+    "originalPrepareAndReleaseBodiesExecuted": true,
+    "originalInterfaceRegistrationExecuted": true,
+    "callbackAddressConstructionFragmentChecked": true,
+    "actualOriginalProviderExecuted": true,
+    "heldInterfaceCounterexampleBlocked": true,
+    "failedMapReturnStatusCorrect": true,
+    "nullOrDoubleUnmap": false,
+    "SPNonvolatileX18Checked": true,
+    "mockDDIs": true,
+    "mockMMIO": true,
+    "physicalSMPTested": false,
+    "kernelExecuted": false,
+    "installed": false
+  },
+  "jointPEPClient": {
+    "status": "COMPILED_PEP_AND_ACTUAL_1853_CLIENT_JOINT_OFFLINE_TESTS_PASSED",
+    "clientSHA256": "60a3b32fed79caa18a9d1ddaaa6a4cf7c23dab23c714ffc6f0ac98fd2b11551f",
+    "pepObjectSHA256": "3D1A8A1621590D8C3B5BD75AA07BDADFBD68DF6D4F008BD808DC2E8D819ED521",
+    "pepSourceSHA256": "3761DA161C91E6EBE3C8C4DE71914332B3391DC1372223AD18748D3A44522B2F",
+    "testSourceSHA256": "727b4984f61156af2ce97e40ad00a07cde7d574ffeb879e7e6446280c4ea4775",
+    "harnessSHA256": "9ec6f46588d9a4e161606f859c57233f8e2fe40ed7464b892f92109077046dc5",
+    "cases": 8,
+    "rows": [
+      {
+        "cycles": 1,
+        "heapAllocations": 1,
+        "heapFrees": 1,
+        "references": 1,
+        "dereferences": 1,
+        "mapCalls": 8,
+        "unmapCalls": 8,
+        "actualProviderCalls": 3,
+        "lateCallsBlocked": true
+      },
+      {
+        "cycles": 10,
+        "heapAllocations": 10,
+        "heapFrees": 10,
+        "references": 10,
+        "dereferences": 10,
+        "mapCalls": 80,
+        "unmapCalls": 80,
+        "actualProviderCalls": 30,
+        "lateCallsBlocked": true
+      },
+      {
+        "cycles": 100,
+        "heapAllocations": 100,
+        "heapFrees": 100,
+        "references": 100,
+        "dereferences": 100,
+        "mapCalls": 800,
+        "unmapCalls": 800,
+        "actualProviderCalls": 300,
+        "lateCallsBlocked": true
+      },
+      {
+        "cycles": 256,
+        "heapAllocations": 256,
+        "heapFrees": 256,
+        "references": 256,
+        "dereferences": 256,
+        "mapCalls": 2048,
+        "unmapCalls": 2048,
+        "actualProviderCalls": 768,
+        "lateCallsBlocked": true
+      },
+      {
+        "case": "partial-mapping-failure-and-retry-with-held-PEP-interface",
+        "failure": 1
+      },
+      {
+        "case": "partial-mapping-failure-and-retry-with-held-PEP-interface",
+        "failure": 2
+      },
+      {
+        "case": "partial-mapping-failure-and-retry-with-held-PEP-interface",
+        "failure": 3
+      },
+      {
+        "case": "partial-mapping-failure-and-retry-with-held-PEP-interface",
+        "failure": 4
+      }
+    ],
+    "actualInterfaceRegistrationAndReferenceCallbacks": true,
+    "actualPEPNotifyBody": true,
+    "originalProviderBody": true,
+    "providerLateMMIOCounterexampleBlocked": true,
+    "sharedHeapPEPPacketUsed": false,
+    "ddiAndSecurityMocks": true,
+    "electricalMMIOModeled": false,
+    "physicalSMPTested": false,
+    "kernelExecuted": false,
+    "installed": false,
+    "completeChargingFixProven": false
+  },
+  "manifest": {
+    "schema": 1,
+    "name": "SK-Charging-1853-provider-rundown",
+    "driverVersion": "1.0.1853.0",
+    "hardwareId": "ACPI\\QCOM057D",
+    "status": "TEST_SIGNED_OFFLINE_QA_PASSED_HARDWARE_BLOCKED",
+    "files": [
+      {
+        "path": "package/qcusbctcpm8150.cat",
+        "sha256": "091FB9A0FA58F2E1EF182459FCDFC631E6A4F4836D6A16682E37C563E6D9884E",
+        "bytes": 2543
+      },
+      {
+        "path": "package/qcusbctcpm8150.inf",
+        "sha256": "1F1BC7CD05AF416BC6DB73E204C4495CE708C6F9D4B332800F43626E8237196B",
+        "bytes": 4934
+      },
+      {
+        "path": "package/qcusbctcpm8150.sys",
+        "sha256": "0A48C1493F03DF07D11EEF85DDBE0187D3FD3C86EBC903C5D761D9363B3C4109",
+        "bytes": 83480
+      }
+    ],
+    "signerThumbprint": "F38EDD5C105095C8342556158CE66253F045965D",
+    "signerSubject": "CN=NabuCameraDev-20260821",
+    "signatureType": "Existing development certificate; Authenticode /pa verified; not Microsoft production/WHQL",
+    "qaSHA256": "985C273AC5A8394778083EFBE1F96C1ED59C8F408875975CF9B9BE18AF4AA52D",
+    "signedPayloadSHA256": "C4FD74DF2A591FC0BF5D365CE8B2B438DC209A8940DB9B13780000A58FCA6495",
+    "installed": false,
+    "bootTested": false,
+    "hardwareTested": false,
+    "kernelExecuted": false,
+    "completeChargingFixProven": false,
+    "scope": "1852 client fixes plus independent private-provider MMIO admission/rundown, atomic publication of mappings, guarded cleanup and PrepareHardware failure propagation. No PEP replacement included.",
+    "knownBlockers": [
+      "PEP2140 lifetime0x13A remains unfixed",
+      "Initial pending-alert replay and single-producer audit remain open",
+      "Ghost AC and power-direction repair not included",
+      "No electrical PD, storage continuity or real SMP verification",
+      "Initial PEP power request retry after DEVICE_NOT_READY not implemented"
+    ],
+    "deployment": "Offline candidate; no installation script supplied; do not treat as complete hotplug fix",
+    "exclusions": [
+      "PEP",
+      "PMIC1849",
+      "backend1851",
+      "battery manager/miniclass",
+      "URS/xHCI",
+      "camera",
+      "existing rollback"
+    ],
+    "noInstallNoResetNoReboot": true
+  },
+  "installed": false,
+  "hardwareTested": false,
+  "installedDriverPayloadsUnchanged": true,
+  "completeChargingFixProven": false,
+  "PEPLaboratoryModuleNativeSYSBuilt": false
+}
