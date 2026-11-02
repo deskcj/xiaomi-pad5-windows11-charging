@@ -1,100 +1,149 @@
-> 28.10.2026: собран и подписан офлайн клиент1853: закрыт контрпример позднего MMIO-вызова provider после release, добавлены57 provider и8 совместных PEP/client сценариев;3535 native unwind без ошибок. Не установлен; PEP остаётся лабораторным модулем, полное питание/SSD не приняты. [Отчёт1853](docs/STACK1853-PROVIDER-RUNDOWN-2026-10-28.md), [исходники](experiments/1853-provider-rundown/README-RU.md).
+<h1 align="center">SK-Charging · Xiaomi Pad 5</h1>
+<p align="center"><strong>Charging and USB-C switching for Windows 11 ARM64</strong><br>Community driver pack · build 1868 · tested on nabu</p>
 
-> 28.10.2026: собран и подписан офлайн клиент1852; сохранены исходники и результаты QA. PEP-модуль прошёл16 совместных сценариев, но найден остающийся риск MMIO lifetime. Установок нет, полный ремонт питания не подтверждён. [Отчёт1852](docs/STACK1852-BUILD-2026-10-28.md), [PEP](docs/PEP-LIFETIME-LAB-2026-10-28.md), [чек-лист](docs/FUNCTION-CHECKLIST-1852-RU.md), [исходники](experiments/1852-alert-rundown/README-RU.md).
+<p align="center">
+  <img src="https://img.shields.io/badge/device-Xiaomi_Pad_5-ff6900" alt="Xiaomi Pad 5">
+  <img src="https://img.shields.io/badge/platform-Windows_11_ARM64-0078d4" alt="Windows 11 ARM64">
+  <img src="https://img.shields.io/badge/build-1868-2ea44f" alt="Build 1868">
+  <img src="https://img.shields.io/badge/status-public_preview-orange" alt="Experimental public preview">
+</p>
 
-> 28.10.2026: текущая связка1851 и PMIC1849 проверены. Найден ранее не разобранный BSOD0x7E в client8ABC, добавлены совместные offline проверки callback lifetime и PEP-протокола. Новых установок нет; полный ремонт не подтверждён. [Новый отчёт](docs/STACK1851-PROTOCOL-REVIEW-2026-10-28.md).
+<p align="center"><strong>English</strong> · <a href="README.ru.md">Русский</a><br><a href="#download-and-install">Download & install</a> · <a href="#what-works">Test results</a> · <a href="#known-hub-bug">Known bug</a> · <a href="#diagnostics-and-recovery">Diagnostics</a> · <a href="#support-the-project">Support</a></p>
 
-> 27.10.2026: собран и тестово подписан [PMIC1849 — узкое исправление кодирования параметров](docs/PMIC1849-BUILD-2026-10-27.md). Offline QA пройдена; не установлен, загрузка и hotplug не проверены.
+The goal is practical: plug in a charger and charge; replace it with an SSD or an OTG device and use USB; switch back to charging without rebooting Windows. **Build 1868 gives good results in the tested connection sequences**, including direct USB-C storage, an OTG flash drive, a powerbank, and a powered hub.
 
-> Привязка27.10: текущая DSDT задаёт BMNR=1, SelectPlatform override отсутствует; хеши настроенных SYS совпали с разобранными файлами. Подтверждён выбранный конфигурацией путь146A0/149C0. Только чтение кэша ОС и статический разбор, без исполнения AML, PMIC-обращений, новых тестов или установки. [Доказательства](docs/BMNR-BINDING-2026-10-27.md).
+This download contains the **exact driver bytes currently working on the project tablet**, with a double-click installer, verified backup, and diagnostic script. It is a community preview for **Xiaomi Pad 5 / nabu**, not an official or universally stable driver release.
 
-> Продолжение27.10: разобраны второй charger, battery-события и ограничения восстановления без потери USB-сессии. Подготовлен контракт переходов с картой мест исправления.32 сценария/14 условий ещё не приняты; только статический анализ, без новых сборок/тестов/установок. [Разбор](docs/RECOVERY-AND-PUMP-2026-10-27.md), [контракт](docs/POWER-TRANSITION-CONTRACT-RU.md).
+> **Remaining bug:** removing the charger from an Acer HY41-T9 hub briefly disconnects and reconnects the SSD. Returning the charger resumes charging. Seamless USB continuity during that power change is **not fixed** in this release.
 
-> Продолжение27.10: найден второй писатель suspend и несогласованность его кэша с Type-C; PMIC1840 обрезает код заданного ICL до байта вместо пересчёта по шагу регистра. Только статический анализ;32 сценария и14 условий реализации ещё не подтверждены новой сборкой. [Новый разбор](docs/INPUT-OWNERS-AND-ENCODING-2026-10-27.md), [чек-лист](docs/FUNCTIONAL-CHECKLIST-RU.md).
+## Download and install
 
-> Повторный разбор27.10: готовность порта объявляется до завершения начальной настройки; IRQ-storm прослежен до USBIN/DCIN suspend. Составлены30 функциональных критериев и12 условий реализации. Только статический анализ: новых тестов, сборок и установок нет. [Разбор](docs/BOOT-STORM-REVIEW-2026-10-27.md), [чек-лист](docs/FUNCTIONAL-CHECKLIST-RU.md).
+### [⬇ Download SK-Charging 1868 — ZIP](https://github.com/deskcj/xiaomi-pad5-windows11-charging/raw/refs/heads/main/downloads/SK-Charging-1868.zip)
 
-> Продолжение 27.10: обнаружены несогласованность Sink-команд44/55 с DeviceCap1=61BD и пробел формирования Fault-alert. Разобраны ещё пять функций Android; только статический анализ, без новых тестов/сборок/установок. [Подробности](docs/TYPEC-SINK-FAULT-2026-10-27.md).
+[SHA-256 file](downloads/SK-Charging-1868.zip.sha256) · [English archive instructions](tools/community1868/README.md) · [Русская инструкция](tools/community1868/README.ru.md)
 
-> Продолжение 27.10: найден отложенный запрос OTG через100мс без проверки актуальности и разобрана остановка фонового потока. Только статический анализ, новых тестов/сборок/установок нет. [Новый разбор](docs/TYPEC-WORKER-TIMER-2026-10-27.md).
+```text
+F2A2EEBC8BF730BCFE58E5AD671176D286284B05804A968C0C37AA5C555E5432
+```
 
-# Xiaomi Pad 5 nabu — Windows 11 ARM64 charging / USB investigation
+**Prerequisites:** Xiaomi Pad 5 (nabu), Windows 11 ARM64, the base nabu Windows driver set, and **already active Test Mode**. The pack checks the compatible battery miniclass version/hash; it is not a replacement for the complete base driver pack. See the [nabu Windows boot/signing guide](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/blob/main/guide/English/disable-secureboot-en.md) if your installation is not prepared.
 
-**Уточнение 27.10: fix2/fix3 заблокированы для установки — прежняя модель учитывала только один из двух результатов backend. Продолжен разбор четырёх функций Android и цепочки уведомлений; новых тестов и установок нет. [Доказательства и план исправления](docs/TYPEC-NOTIFICATION-CONTRACT-2026-10-27.md).**
+1. Download and **extract the entire ZIP** to a folder on the tablet's internal Windows drive.
+2. Double-click **`Install.cmd`** and allow the Administrator prompt. It uses native Windows PowerShell; no Python, SDK or manual INF selection is needed.
+3. Wait for **“Driver set staged; reboot manually”**. Save your work, safely eject USB storage, and reboot manually.
+4. Run **`Diagnose.cmd`** after reboot. The five driver rows should show matching versions and hashes, `Running=True`, and `ProblemCode=0`.
 
+If Install reports an error, keep its record and run diagnostics; do not treat a failed run as installed. Repeating Install on the matching stack makes no changes. The installer refuses other models, incomplete payloads, an incompatible base miniclass and automatic driver downgrades.
 
-**Новый этап27.10: в исходном USB-C1680 воспроизведены потеря ошибок backend, нарушение владения WDF wait lock и32-битная запись64-битного тайм-аута. Исправления подготовлены только офлайн, НЕ установлены. [Карта цепочки, контрпримеры и ограничения](docs/TYPEC-BRIDGE-SAFETY-2026-10-27.md).**
+Before staging the four updated packages, Install saves **all five previous INF/SYS/CAT packages** to the internal Windows drive and verifies their hashes. Windows activates the updated set after a manual reboot. The installer imports only the included **public** development certificate into Root/TrustedPublisher when needed. It does not change BCD/Secure Boot, modify camera drivers, or reboot automatically.
 
-**27.10.2026: на планшете возвращён исходный PMIC1840/oem92; хаб/SSD вернулись после повторного подключения. r6/1848 построен и проверен только офлайн, НЕ установлен. Исправлен конкретный побочный эффект r5 в управлении OTG; стабильная зарядка/USB ещё не доказана.**
+Optional preflight, without installing or changing certificates:
 
-[Свежий разбор Android в Ghidra, исправление r6 и ограничения](docs/ANDROID-POLICY-R6-2026-10-27.md).
-Владелец остановил установки и физические тесты. Новая сборка не публикуется как готовое решение.
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Install.ps1 -CheckOnly
+```
 
+## What works
 
-Исследование нестабильной зарядки, USB-C-хаба и накопителей на Xiaomi Pad 5 (nabu). Цель — восстановление после подключения/отключения без перезагрузок. Этот репозиторий не объявляет задачу решённой.
+✅ means **observed in the project tests**, not a promise for every peripheral or Windows configuration. Latest hardware checks: **2 November 2026, build 1868**.
 
-## Экспериментальные пакеты — выявлен сбой перехода питания
+| Status | Scenario | Observed result |
+|:--:|---|---|
+| ✅ | Direct Samsung-labelled charger | Power detected; fixed PD contract confirmed; positive battery telemetry |
+| ✅ | Direct powerbank | Power detected after SSD removal; fixed PD contract and positive telemetry |
+| ✅ | Direct iPhone-labelled charging block | Power detected after the powerbank; fixed PD contract and positive telemetry |
+| ✅ | Charger → direct Kingston XS2000 USB-C SSD | SSD appears without a Windows reboot |
+| ✅ | Safely ejected SSD → direct charger/powerbank | Charging detection returns without a Windows reboot |
+| ✅ | Kingston DataTraveler 3.0 through OTG | USB storage and volume appear; read-only directory check succeeded |
+| ✅ | OTG flash drive → direct Samsung charger | Charging detection returns |
+| ✅ | Acer HY41-T9 + charger + Kingston XS2000 | Charging and SSD both work in the tested setup |
+| ✅ | Return the PD charger to the hub | Charging resumes; user reported SSD stayed connected on return in recent cycles |
+| ⚠️ | Remove the PD charger from the hub | SSD briefly disconnects/reconnects — still reproducible |
+| ⚠️ | Every boot, sleep/resume, load and cable orientation | Full coverage is pending; earlier boot checks were promising |
+| ❌ | PPS / demonstrated seamless FRS handover | Not provided by this release |
+| ⚠️ | Maximum fast-charge wattage | Not established with an external input-power measurement |
 
-| Пакет | Что изменено | Состояние |
+The short version of the current progress:
+
+- [x] Tested direct charging, USB-C SSD and OTG flash-drive switching.
+- [x] Tested simultaneous charging and SSD operation through Acer HY41-T9.
+- [x] Charging returns after the hub's PD cable is reconnected.
+- [x] One-click launchers, read-only diagnostics and verified previous-driver backup.
+- [ ] Keep SSD continuously connected while the hub's charger is removed.
+- [ ] Enable and validate PPS / maximum fast charging.
+- [ ] Complete broader boot, suspend/resume, peripheral and sustained-load testing.
+
+## Is it really charging? What about fast charging?
+
+The investigation uses **USB PD negotiation records plus documented battery-driver telemetry**, rather than the battery icon alone. In the latest build 1868 tests, the battery was already at 100%: power was reported online and battery rates were positive, but capacity was capped at full. Those tests support charging/top-up; they cannot demonstrate a fresh capacity gain or maximum charge rate.
+
+Earlier completed **8-minute tests on build 1867** reported actual battery-energy gains:
+
+| Source | Reported energy gain | Mean battery rate |
+|---|---:|---:|
+| Powerbank | 0.911 Wh | 8.04 W |
+| iPhone-labelled block | 0.945 Wh | 8.43 W |
+| Samsung-labelled block | 0.911 Wh | 8.19 W |
+
+These are battery-driver measurements, **not external USB input-power measurements**, and are not a maximum-speed benchmark for 1868.
+
+In the 1868 traces, the tested powerbank negotiated **9 V × 2 A**; the iPhone-labelled and Samsung-labelled blocks negotiated **12 V × 1.5 A**. Each is an **18 W contract/request limit**, not a claim that 18 W reaches the battery. Tablet load, battery state, thermal policy, the cable and the hub all matter.
+
+The tested Samsung source and powerbank advertised PPS, but **Windows did not request PPS**. A generic Windows charging indication does not establish the charging speed, and an Android “fast charging” label cannot be used as proof of the Windows contract or rate. This release does not promise Android-equivalent maximum fast charging.
+
+## Known hub bug
+
+With **Acer HY41-T9 + Kingston XS2000**, removing only the hub's PD charging cable causes a brief SSD disappearance and reappearance. Returning the cable restores charging; recent user cycles did not show another SSD interruption on return.
+
+The required next improvement is to keep the USB session alive while hub power changes. The interruption is reproduced, but the exact division between hub power handover and the Windows USB-C/role sequence still needs proof. **It is not established that a driver-only change can eliminate it for this hub.** Build 1868 does not add a validated FRS/seamless handover mechanism.
+
+Avoid changing hub power during disk writes; use safe removal when appropriate. A disappearing volume can interrupt an application even when it returns quickly. A possible reconnect on initial hub insertion was also reported, but its exact event sequence has not yet been established.
+
+## What's in build 1868?
+
+The bundle number is **1868**; individual component versions differ:
+
+| Component | INF version | Archive action |
 |---|---|---|
-| [fix20r5-drp 1.0.1847.0](downloads/nabu-pmic-fix20r5-drp-1847-experimental.zip) | Убрана подмена DRP → SOURCE по полному байту 1509; диагностика сохранена | 3907 role + 882 diagnostic + 19 dispatcher + 307 unwind; загрузка PASS, холодный хаб FAIL, прямая/последующий хаб PASS — [отчёт](docs/PMIC-R5-DRP.md) |
-| [fix20r4-diag 1.0.1846.0](downloads/nabu-pmic-fix20r4-diag-1846-experimental.zip) | Чтение 14 регистров; поведение зарядки r3 сохранено | 3907 role + 882 diagnostic + 19 dispatcher + 333 unwind; загрузка/диагностика PASS, первое подключение хаба — зарядка FAIL — [отчёт](docs/PMIC-R4-DIAGNOSTICS.md) |
-| [fix20r3 1.0.1845.0](downloads/nabu-pmic-fix20r3-1845-experimental.zip) | Возвращён путь role=0 для фактического logical index 1; guard/ABI сохранены | 3907 ARM64 + 172 unwind; первая загрузка PASS, цикл зарядки FAIL — [отчёт](docs/PMIC-R3.md) |
-| [fix20r2 1.0.1844.0](downloads/nabu-pmic-fix20r2-1844-experimental.zip) | Исправлен guard выбранного логического порта; сохранены все COFF unwind-секции | 2072 ARM64 + 130 native unwind; oem53: первая загрузка прошла, зарядка после переключений FAIL — [подробности](docs/PMIC-R2.md) |
-| [fix20r1 1.0.1843.0](downloads/fix20r1-experimental-1.0.1843.0.zip) | Исправлены конкретные дефекты измерений, ABI и обработки ошибок fix20 | 1 624 сценария ARM64 + 93 unwind; первая загрузка прошла; отключение зарядки от хаба — FAIL |
-| [Legacy fix20 1.0.1840.20](downloads/fix20-legacy-installer-1.0.1840.20.zip) | Тот же код fix20; новая тестовая подпись/каталог и исправленный установщик | Сохраняет известные дефекты fix20; временный вариант, не исправление стабильности |
+| `qcpmicext` | 1.0.1866.0 | Install |
+| `qcpmictcc` | 1.0.1867.0 | Install |
+| `qcusbctcpm` | 1.0.1853.0 | Install |
+| `qcbattmngr` | 1.0.10732.0 | Install |
+| `qcbattminiclass` | 1.0.1680.0 | Preserve installed driver; exact files in `reference/` |
 
-[SHA-256 архивов](downloads/SHA256SUMS.txt). Пакеты предназначены для nabu `ACPI\QCOM05E5`; база исследования — Windows 11 ARM64 build 26100 и батарейный miniclass **1680**. Каталоги и SYS тестово подписаны; это не Microsoft production/WHQL signing.
+The unchanged miniclass keeps its original community signing identity and is not re-signed or installed. Its exact SYS hash is required as the tested base. The four modified packages carry a development/test signature, not WHQL production signing. The public certificate's historical name contains `NabuCameraDev`; using it here does not install or modify camera drivers.
 
-По умолчанию `install.cmd` / `Install-PmicPackage.ps1` выполняют **только Inspect**. Установщик не удаляет PMIC, не включает host mode, не меняет BCD или сертификаты и не перезагружает устройство. Stage и Activate — отдельные явно выбранные действия; до них нужны доверенный сертификат, тестовый режим и проверенный способ recovery. Подробности внутри архива и в [инструкции кандидата](docs/CANDIDATE-RU.md).
+Compared with 1867, **1868 changes the battery manager's handling of a voltage/power update when the current limit remains unchanged**. That update could previously be ignored. The focused repair preserves the existing special cases and adds no PMIC register writes, new protocol commands, timers or threads. Offline checks passed **1,728 ARM64 callback executions and 563 native unwind cases**, with no failures. The specific unchanged-current voltage transition still needs hardware validation; this is not a hub-disconnect fix.
 
-Не запускать старый авторский install.ps1: в исследованном варианте он выбирал первый каталог DriverStore, заменял PendingFileRenameOperations целиком и автоматически перезагружал систему. Удалять Qualcomm PMIC Extension вручную для этих пакетов не требуется.
+The published pack also passed Windows PowerShell 5.1 preflight, a real diagnostic snapshot, eight SYS/INF catalog-membership checks, and twelve packaging/backup/guard checks. The tests did **not** reinstall drivers on the working tablet. [Version hashes and validation details](docs/BUILD1868.md).
 
-## Что найдено
+## Diagnostics and recovery
 
-- В fix20 четыре чтения констант PMIC продолжают читать адреса, занятые новым машинным кодом. Возвращены исходные константы 122070 / 1000000 / 488281.
-- Обработчик fix20 использовал изменяемые регистры после вызовов, терял индекс и не проверял результат чтения. Выключение OTG могло завершиться без ожидаемого продолжения установки роли.
-- В fix20r1 обработчик собран из [C-исходника](src/role_repair.c); сохранены корректные данные unwinding MSVC. Новых импортов и RWX-секций нет.
-- Проверена обработка ошибок, восстановление стека и сохраняемых регистров. [Машинные результаты](evidence/emulation.json), [native unwind](evidence/native-unwind.json), [Ghidra](evidence/ghidra-candidate.txt).
+**`Diagnose.cmd`** creates a local ZIP under `%LOCALAPPDATA%\SK-Charging-Diagnostics`. It collects driver versions/hashes/states, PnP problems, USB/storage topology, recent relevant System events, and standard battery telemetry. It does not install/reset devices, use private PMIC control IOCTLs, or upload data.
 
-**Ограничение:** эвристика роли по регистру 0x1509 и другие VCONN-изменения fix20 сохранены. Их корректность с реальным PD-хабом не доказана. Это ремонт дефектов реализации, а не законченная USB-PD state machine уровня Android.
+For five minutes of battery samples:
 
-## Фактическая база исследования
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Diagnose.ps1 -Seconds 300
+```
 
-В октябрьском снимке служба указывала на исходный SYS `533C3A…`, а не fix20 `995551…`. Поэтому найденные дефекты fix20 не объясняют автоматически каждый текущий отказ. Во время пяти минут наблюдения хаб и накопитель оставались доступны, но Power API одновременно показывал Charging/Discharging; батарея была почти полной. Тест не доказывает ни реальную мощность, ни стабильность hotplug.
+Review a diagnostic ZIP before sharing it: USB identifiers/event messages can include serial numbers and local paths. When [reporting an issue](https://github.com/deskcj/xiaomi-pad5-windows11-charging/issues), include the bundle number, Windows build, hub/charger/device models and the connection sequence. Share diagnostic evidence you have reviewed; raw memory dumps are not required.
 
-В истории есть BATTC/WMILIB BSOD и откат miniclass 2100→1680. 1680 оставлен базой. Старые generic-батарейные WMI-пробы не используются как обязательная проверка нового пакета. Исходные дампы, реестр, резервные копии и серийные номера здесь не публикуются.
+Install records and verified backups are under `%ProgramData%\SK-Charging\Install-*`. To return to a specific saved stack, safely eject/disconnect USB storage and run **`Restore.cmd` inside that backup's `Previous` folder**. The main archive's Restore launcher chooses the latest backup. Restore may restart the USB/charging stack; reboot manually afterwards. Keep the printed backup path and your normal Windows recovery method in case Windows cannot start. [Full instructions](tools/community1868/README.md).
 
-## Навигация
+## Support the project
 
-- [Расследование и границы выводов](docs/INVESTIGATION.md)
-- [Матрица аппаратных испытаний — пока pending](docs/TEST-MATRIX.md)
-- [Сборка и воспроизводимость](docs/BUILD.md)
-- [Восстановление](docs/RECOVERY.md)
-- [Изменения](CHANGELOG.md)
+If this work helps your tablet, you can support continued investigation and testing:
 
-Официальные Android-ориентиры: [Xiaomi nabu-r-oss](https://github.com/MiCode/Xiaomi_Kernel_OpenSource/tree/nabu-r-oss), [DTS платы](https://github.com/MiCode/Xiaomi_Kernel_OpenSource/blob/71b6effd2dfa8f703dd1ea17acd1323b2fd3cf6c/arch/arm64/boot/dts/qcom/nabu-sm8150.dtsi). Перенос C-файлов Linux в Windows напрямую не выполняется. Отдельно [архитектура Microsoft URS/UCM](https://learn.microsoft.com/en-us/windows-hardware/drivers/usbcon/usb-dual-role-driver-stack-architecture) и [Windows ARM64 unwind](https://learn.microsoft.com/en-us/cpp/build/arm64-exception-handling).
+- [💜 DonationAlerts](https://www.donationalerts.com/r/deskcj)
+- [💙 PayPal](https://paypal.me/vladcj)
 
-Первоначальный этап включал локальные и офлайн-проверки; затем выполнена первая аппаратная проверка. Первоначальная сборка была проверена без установки; затем начат отдельный аппаратный этап, описанный ниже.
+Donations are optional and do not guarantee a feature, compatibility or a delivery date. Testing reports and clear reproduction steps are also valuable.
 
-## Аппаратный этап 26 октября
+Related project: [Xiaomi Pad 5 Windows 11 camera drivers](https://github.com/deskcj/xiaomi-pad5-windows11-camera). The charging installer does not modify that stack.
 
-Предыдущий этап r1: пакет установлен как **oem50.inf / 1.0.1843.0**. Первая перезагрузка прошла; хаб/SSD доступны, показания заряда согласованы, SOC вырос 96→97%. Hotplug и другие сценарии ещё проверяются. [Подробности этапа](docs/HARDWARE-STATUS.md). Установщик/откат обновлены до recovery revision 2; SYS/INF/CAT прежние.
+## Disclaimer and attribution
 
-### Сбой при отключении зарядки
+This independent community project is not affiliated with **Xiaomi, Qualcomm or Microsoft**. Original driver ownership and copyright notices remain with their respective owners; see [NOTICE.md](NOTICE.md). These experimental test-signed kernel drivers are supplied **as-is, without warranty**. Crashes, boot failure and data loss are possible. Keep backups and a recovery method, and install at your own risk. Good results on the project tablet do not guarantee every device, absence of BSODs, seamless hub power changes or maximum fast charging.
 
-После снятия только зарядки из хаба в 17:55:23 планшет перешёл на батарею; к 17:55:25 хаб и SSD исчезли из дерева устройств. USB-контроллеры/Type-C/PMIC остались без ошибок PnP, Windows продолжила работать. Причина потери USB ещё не доказана. Возврат только зарядки восстановил хаб, питание и SSD без перезагрузки; отказ при её отключении остаётся. [Зафиксированный результат](evidence/charger-removal-failure.json).
-
-## Сравнение с nabu-charger
-
-[Разбор FerrisMind/nabu-charger](docs/NABU-CHARGER-REVIEW.md): LN8000/Quick Charge, отсутствующий здесь ACPI-узел QCOM057E, пересечение с fix20 и границы применимости к потере USB при отключении зарядки. Пакет стороннего проекта не устанавливался.
-
-## Продолжение разбора Type-C и OTG
-
-[Непрерывность USB при смене питания и найденная утечка блокировки Type-C](docs/POWER-HANDOVER.md). Отдельная исследовательская правка прошла 576 сравнительных сценариев и 318 native unwind-проверок; она не подписана, не установлена и не доказана как исправление исчезновения хаба.
-
-Текущий этап: **r2 / oem53.inf / 1844**, первая загрузка прошла; зарядка после переключений FAIL. [Отчёт r2](docs/PMIC-R2.md).
-
-Предыдущая версия: **r3 / 1845 / oem138.inf**, первая загрузка прошла, цикл возврата зарядки FAIL. [Исправление ошибки нашего переноса](docs/PMIC-R3.md).
-
-Текущая версия: **r4-diag / 1846 / oem139.inf**, первый Restart pending. [Измеренный отказ роли и диагностический канал](docs/PMIC-R4-DIAGNOSTICS.md).
+Earlier reports and experiments remain in the repository as research history. They describe older builds, not the current downloadable pack; the [previous README](https://github.com/deskcj/xiaomi-pad5-windows11-charging/blob/8166f9350a8de12fd8f0b519e1a9a64fa80cc2d4/README.md) is preserved in Git history.
