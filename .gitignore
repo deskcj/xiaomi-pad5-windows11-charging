@@ -1,9 +1,0 @@
-build/
-__pycache__/
-*.pyc
-*.pfx
-*.p12
-*.pem
-*.dmp
-*.hiv
-*.reg
