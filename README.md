@@ -4,7 +4,7 @@
 
 ![Status: public preview](https://img.shields.io/badge/status-public%20preview-orange?style=for-the-badge) ![Device: Xiaomi Pad 5](https://img.shields.io/badge/device-Xiaomi%20Pad%205-blue?style=for-the-badge) ![Platform: Windows 11 ARM64](https://img.shields.io/badge/platform-Windows%2011%20ARM64-0078D4?style=for-the-badge)
 
-**SK-Charging 1869-PD013-U1** lets the tablet switch between direct charging and USB storage without rebooting in tested scenarios. Charging and an SSD also work together through a hub. A community tester has now confirmed that U1 installs successfully and resolves their OTG → charging failure.
+**SK-Charging 1869-PD013-U1** lets the tablet switch between direct charging and USB storage without rebooting in tested scenarios. Charging and an SSD also work together through a hub.
 
 ## Download
 
@@ -12,9 +12,11 @@
 
 SHA-256: `E95ED137483FC3DCBC8EC45F23E80FAC32AC72B2F6939FC162C5FF72BBDE15EC` · 307,449 bytes
 
-This is the **exact archive that passed the community test**, with no changes after that test. Its bundled notes predate the successful peer result; this page records the updated status. U1 includes the current working drivers, a complete installer, backup and restore, **Verify.cmd**, and **Diagnose.cmd**. No SDK or manual Device Manager installation is required.
+U1 includes the current working drivers, a complete installer, backup and restore, **Verify.cmd**, and **Diagnose.cmd**. No SDK or manual Device Manager installation is required.
 
-[Previous build 1868](https://github.com/deskcj/xiaomi-pad5-windows11-charging/raw/7998b94957dbd4d9da0689191bd7ef8948ac94e1/downloads/SK-Charging-1868.zip) remains available. Use the backup made by your installation to restore your own previous driver set.
+**[Download source archive](https://github.com/deskcj/xiaomi-pad5-windows11-charging/releases/download/1869-PD013-U1/SK-Charging-1869-PD013-U1-Sources.zip)** · SHA-256: `A065F70C93EEED96D362702F6EBFEEC040BEA209BBCCED4ECF4F02143698B0A5`
+
+Sources include the custom PD filter 0.1.3, its EWDK build script and offline tests, and the U1 installer/diagnostic/rollback scripts. Full source for the base Qualcomm binary drivers is not included. Use this separate source ZIP; GitHub's automatic source archives for this tag contain the repository documentation.
 
 ## Compatibility
 
@@ -33,7 +35,7 @@ Use on **Xiaomi Pad 5 / nabu with Windows 11 ARM64** and existing nabu base driv
 4. After Windows loads, run **Verify.cmd** and wait for **PASS**. PASS confirms driver activation and the PD filter's attachment; it does not measure charging speed.
 5. Test OTG/storage → **safe removal and physical disconnection** → direct charging, then the reverse sequence. If installation, Verify, or device operation fails, run **Diagnose.cmd** and share its diagnostic ZIP after reviewing it.
 
-U1 backs up the actual selected INF/SYS/CAT files before staging and recognizes the different original Xiaomi filenames. This fixes CT1's compatibility refusal on Xiaomi miniclass 10730. It also records pending-restart status explicitly, so an accepted install cannot be mistaken for a verified one. U1 uses the same kernel binaries as CT1 and the current project tablet.
+U1 backs up the actual selected INF/SYS/CAT files before staging and recognizes the different original Xiaomi filenames. It records pending-restart status explicitly, so an accepted install cannot be mistaken for a verified one. The included kernel binaries are the current working set used on the project tablet.
 
 | Component | Included version |
 |---|---|
@@ -45,15 +47,15 @@ U1 backs up the actual selected INF/SYS/CAT files before staging and recognizes 
 
 ## What works and what remains
 
-- [x] Direct SSD/OTG ↔ charging switching without reboot worked on the project tablet.
-- [x] U1 installation and post-restart **Verify PASS** were confirmed by a community tester using Xiaomi miniclass 10730 on Windows 11 Pro 25H2, build 26200.8894 (reported Ghost Spectre). They also reported that the original OTG → charging problem is resolved.
-- [x] Startup with a charger or SSD, followed by switching devices, worked in the recorded project-tablet tests.
-- [x] The tested power bank and mains chargers charged the project tablet.
-- [x] **Acer HY41-T9** hub + charging + SSD worked together; returning the charger resumed charging.
-- [x] Samsung accepted a fixed **9 V × 3 A USB PD contract** with filter 0.1.3.
-- [ ] Removing PD power from **Acer HY41-T9** still briefly disconnects/reconnects the SSD. Avoid changing hub power during disk writes.
-- [ ] Uninterrupted hub power handover and **PPS** charging are not implemented.
-- [ ] Maximum actual charging power and Android-equivalent fast charging are not established; other accessories and long-term stability need more testing.
+- ✅ Direct SSD/OTG ↔ charging switching without reboot worked on the project tablet.
+- ✅ The installer automatically selects the audited Qualcomm 1680 or Xiaomi 10730 miniclass baseline and backs up the actual previous driver packages.
+- ✅ Startup with a charger or SSD, followed by switching devices, worked in the recorded project-tablet tests.
+- ✅ The tested power bank and mains chargers charged the project tablet.
+- ✅ **Acer HY41-T9** hub + charging + SSD worked together; returning the charger resumed charging.
+- ✅ Samsung accepted a fixed **9 V × 3 A USB PD contract** with filter 0.1.3.
+- ❌ Removing PD power from **Acer HY41-T9** still briefly disconnects/reconnects the SSD. Avoid changing hub power during disk writes.
+- ❌ Uninterrupted hub power handover and **PPS** charging are not implemented.
+- ❌ Maximum actual charging power and Android-equivalent fast charging are not established; other accessories and long-term stability need more testing.
 
 **Fast charging:** the accepted 9 V × 3 A contract raises the negotiated ceiling to **27 W** when the charger offers it. This is not a measurement of 27 W reaching the battery or the USB input. The current low-battery measurements will check actual battery energy gain and charge rate. PPS/charge-pump work remains open; there is no confirmed delivery date for full fast-charge support. An installation PASS or a charging icon alone does not establish charging speed.
 
