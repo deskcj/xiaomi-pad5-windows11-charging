@@ -4,40 +4,68 @@
 
 ![Status: public preview](https://img.shields.io/badge/status-public%20preview-orange?style=for-the-badge) ![Device: Xiaomi Pad 5](https://img.shields.io/badge/device-Xiaomi%20Pad%205-blue?style=for-the-badge) ![Platform: Windows 11 ARM64](https://img.shields.io/badge/platform-Windows%2011%20ARM64-0078D4?style=for-the-badge)
 
-**SK-Charging 1868** is an experimental community driver pack. In tested scenarios, the tablet switches between charging and USB storage without rebooting Windows; charging and an SSD also work together through a hub. This is not an official driver or a guarantee of compatibility with every accessory.
+**SK-Charging 1869-PD013-U1** lets the tablet switch between direct charging and USB storage without rebooting in tested scenarios. Charging and an SSD also work together through a hub. A community tester has now confirmed that U1 installs successfully and resolves their OTG → charging failure.
 
 ## Download
 
-**[Download SK-Charging-1868.zip](https://github.com/deskcj/xiaomi-pad5-windows11-charging/raw/7998b94957dbd4d9da0689191bd7ef8948ac94e1/downloads/SK-Charging-1868.zip)** · SHA-256: `F2A2EEBC8BF730BCFE58E5AD671176D286284B05804A968C0C37AA5C555E5432`
+**[Download SK-Charging-1869-PD013-Universal-U1.zip](https://github.com/deskcj/xiaomi-pad5-windows11-charging/releases/download/1869-PD013-U1/SK-Charging-1869-PD013-Universal-U1.zip)**
 
-The archive contains four updated `INF/SYS/CAT` driver packages; an unchanged battery miniclass reference used for compatibility checks (**not installed**); a public test certificate; `Install.cmd`, `Diagnose.cmd`, and `Restore.cmd`; instructions; and file hashes. It contains no private signing keys. Before updating drivers, the installer verifies the files and backs up the previous drivers to the tablet's internal drive.
+SHA-256: `E95ED137483FC3DCBC8EC45F23E80FAC32AC72B2F6939FC162C5FF72BBDE15EC` · 307,449 bytes
+
+This is the **exact archive that passed the community test**, with no changes after that test. Its bundled notes predate the successful peer result; this page records the updated status. U1 includes the current working drivers, a complete installer, backup and restore, **Verify.cmd**, and **Diagnose.cmd**. No SDK or manual Device Manager installation is required.
+
+[Previous build 1868](https://github.com/deskcj/xiaomi-pad5-windows11-charging/raw/7998b94957dbd4d9da0689191bd7ef8948ac94e1/downloads/SK-Charging-1868.zip) remains available. Use the backup made by your installation to restore your own previous driver set.
+
+## Compatibility
+
+Use on **Xiaomi Pad 5 / nabu with Windows 11 ARM64** and existing nabu base drivers. U1 automatically recognizes two audited battery-miniclass variants: **Qualcomm 1.0.1680.0** and **Xiaomi 1.0.10730.0**, using their exact selected INF/SYS hashes. The miniclass is preserved; it is never installed or restored.
+
+“Universal” means one installer for these two nabu baselines. Other tablets, unknown driver variants, and every modified Windows image or accessory are not covered by the test results. An unsupported baseline stops before driver installation; run **Diagnose.cmd** to obtain its details.
 
 > [!WARNING]
-> Use this pack only on a Xiaomi Pad 5 (`nabu`) running Windows 11 ARM64 with the base nabu drivers and **Test Mode already enabled**. Back up your data and keep a Windows recovery method before installing.
+> **Active Windows Test Mode is required.** The installer does not enable it or change Secure Boot/BCD. Keep a data backup and a Windows recovery method. See the [nabu setup guide](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/blob/main/guide/English/disable-secureboot-en.md) if your tablet is not already configured for test-signed drivers.
 
 ## Installation
 
-1. Disable Secure Boot and enable Windows **Test Mode** by following [this guide](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/blob/main/guide/English/disable-secureboot-en.md).
-2. Extract the entire ZIP to a folder on the tablet's internal drive.
-3. Double-click `Install.cmd` and approve the administrator prompt. If a compatibility check fails, do not assume the drivers were installed.
-4. After `Driver set staged; reboot manually`, safely eject USB storage and reboot Windows yourself.
-5. Run `Diagnose.cmd` from the archive. Check that versions and hashes match, `Running=True`, and `ProblemCode=0`.
+1. Extract the **entire ZIP to the internal C: drive**, for example `C:\SK-Charging-U1`. Do not run it inside the ZIP or from USB storage.
+2. Double-click **Install.cmd**, approve the administrator prompt, and wait for the result.
+3. At **PendingReboot**, save your work, safely eject USB storage, disconnect USB-C devices, and select **Restart** in Windows once. **PendingReboot means staging succeeded; the new drivers are not yet verified.** Do not reinstall or run Verify before this restart.
+4. After Windows loads, run **Verify.cmd** and wait for **PASS**. PASS confirms driver activation and the PD filter's attachment; it does not measure charging speed.
+5. Test OTG/storage → **safe removal and physical disconnection** → direct charging, then the reverse sequence. If installation, Verify, or device operation fails, run **Diagnose.cmd** and share its diagnostic ZIP after reviewing it.
 
-The installer does not change Secure Boot, BCD, or camera drivers and does not reboot the tablet automatically.
+U1 backs up the actual selected INF/SYS/CAT files before staging and recognizes the different original Xiaomi filenames. This fixes CT1's compatibility refusal on Xiaomi miniclass 10730. It also records pending-restart status explicitly, so an accepted install cannot be mistaken for a verified one. U1 uses the same kernel binaries as CT1 and the current project tablet.
 
-## What was tested
+| Component | Included version |
+|---|---|
+| PMIC extension | 1.0.1869.0 |
+| Type-C backend | 1.0.1867.0 |
+| USB-C client | 1.0.1853.0 |
+| Battery manager | 1.0.10732.0 |
+| Fixed PD profile filter | 0.1.3.0, mode 1 |
 
-- ✅ Direct charging from a USB-C wall charger and a power bank is detected; charging returns after safely ejecting an SSD, without rebooting.
-- ✅ A USB-C SSD and an OTG flash drive work in the tested connection sequences.
-- ✅ With an **Acer HY41-T9** hub, charging and an SSD worked together; charging resumed after reconnecting the power cable.
-- ⚠️ **Removing power from that hub** briefly disconnects and reconnects the SSD. Do not change hub power during disk writes.
-- ❌ Seamless hub power handover and **PPS** fast charging are not implemented. Long-term stability with every hub and charger has not been established.
+## What works and what remains
 
-**Charging speed:** build 1868 negotiated fixed USB PD profiles up to **18 W** (9 V × 2 A or 12 V × 1.5 A). This is a negotiated contract limit, **not measured battery power**. In an earlier eight-minute build 1867 test, battery telemetry showed an energy gain of about 0.91–0.95 Wh, but the maximum speed of build 1868 has not been checked with an external power meter. Android-equivalent fast charging and PPS are not promised.
+- [x] Direct SSD/OTG ↔ charging switching without reboot worked on the project tablet.
+- [x] U1 installation and post-restart **Verify PASS** were confirmed by a community tester using Xiaomi miniclass 10730 on Windows 11 Pro 25H2, build 26200.8894 (reported Ghost Spectre). They also reported that the original OTG → charging problem is resolved.
+- [x] Startup with a charger or SSD, followed by switching devices, worked in the recorded project-tablet tests.
+- [x] The tested power bank and mains chargers charged the project tablet.
+- [x] **Acer HY41-T9** hub + charging + SSD worked together; returning the charger resumed charging.
+- [x] Samsung accepted a fixed **9 V × 3 A USB PD contract** with filter 0.1.3.
+- [ ] Removing PD power from **Acer HY41-T9** still briefly disconnects/reconnects the SSD. Avoid changing hub power during disk writes.
+- [ ] Uninterrupted hub power handover and **PPS** charging are not implemented.
+- [ ] Maximum actual charging power and Android-equivalent fast charging are not established; other accessories and long-term stability need more testing.
+
+**Fast charging:** the accepted 9 V × 3 A contract raises the negotiated ceiling to **27 W** when the charger offers it. This is not a measurement of 27 W reaching the battery or the USB input. The current low-battery measurements will check actual battery energy gain and charge rate. PPS/charge-pump work remains open; there is no confirmed delivery date for full fast-charge support. An installation PASS or a charging icon alone does not establish charging speed.
 
 ## Diagnostics and recovery
 
-`Diagnose.cmd` creates a local report in `%LOCALAPPDATA%\SK-Charging-Diagnostics` and uploads nothing. Review the report before sharing it: it may contain USB identifiers and local paths. Previous drivers and installation records are saved under `%ProgramData%\SK-Charging\Install-*`. To roll back, use `Restore.cmd` from the archive or the `Previous` folder of the appropriate backup; safely eject and disconnect USB storage first. Reboot Windows manually after restoring.
+**Check.cmd** runs compatibility preflight without installing drivers. **Verify.cmd** checks the selected INF/SYS, Running/Code0 state, and actual PD-filter attachment after restart.
+
+**Diagnose.cmd** creates a local ZIP in `%LOCALAPPDATA%\SK-Charging-Diagnostics` and uploads nothing. It includes OS/build, driver identities, installation records, USB/battery state, and the five selected charging/battery INF/SYS/CAT packages with signature information. Review identifiers and local paths before sharing. If reporting a failure, include the Windows build, accessory model, connection sequence, and whether the installation restart was completed.
+
+The installer saves previous base drivers, recognized SK PD extensions, and their prior per-device setting under `%ProgramData%\SK-Charging-Community\...\Previous`. **Restore.cmd** uses the latest backup; the copy in a particular backup selects that reserve. Safely eject and disconnect USB storage, run Restore, then restart manually. Restore requests the four saved base packages and restores the recognized PD configuration while preserving the miniclass.
+
+The pack contains only a **public development certificate**, which may be imported if needed; no private signing key, firmware, camera, or audio update is included. The delivered ZIP's `FILES-SHA256.json` lists its files. Installer/rollback checks and read-only verification passed on the project tablet; successful testing on two audited baselines does not guarantee every configuration.
 
 ## ❤️ Help improve charging and USB-C
 
