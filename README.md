@@ -89,6 +89,10 @@ This is independent work on a real tablet: studying power and USB-C behavior, bu
 
 You can also help **without donating**: star the repository, tell other nabu owners about it, and share reproducible results with your Windows version, hub or charger model, and connection sequence. That feedback helps prioritize fixes. Donations support the research, not a guaranteed result or delivery date. Thank you for helping an independent Windows on ARM project grow!
 
+## Contact me
+
+[![Telegram](https://img.shields.io/badge/Contact-Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/deskcj) [![Send an email](https://img.shields.io/badge/Contact-Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:deskcj@gmail.com)
+
 ## Disclaimer
 
 This is an independent community project, **not affiliated with or endorsed by Xiaomi, Qualcomm, or Microsoft**. Company and product names identify compatible hardware and technologies only; rights to those names belong to their owners. The underlying Qualcomm drivers and their notices remain the property of their owners; the authorship of the original `fix20` has not been established.
