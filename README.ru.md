@@ -1,4 +1,4 @@
-# Зарядка и USB-C на Xiaomi Pad 5 под Windows 11
+# Зарядка и USB-C на Xiaomi Pad 5 (nabu) под Windows 11 ARM64
 
 [English](README.md) · Xiaomi Pad 5 (`nabu`) · Windows 11 ARM64
 
