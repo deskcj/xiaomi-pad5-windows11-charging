@@ -1,15 +1,20 @@
 {
-  "Release": "1871-HQ2-U4",
+  "Build": "1871-HQ2-U4",
+  "Distribution": "Repository downloads",
   "Archives": [
     {
       "Kind": "drivers",
       "Name": "Xiaomi-Pad5-Charging-1871-HQ2-U4.zip",
+      "Path": "downloads/Xiaomi-Pad5-Charging-1871-HQ2-U4.zip",
+      "URL": "https://github.com/deskcj/xiaomi-pad5-windows11-charging/raw/refs/heads/main/downloads/Xiaomi-Pad5-Charging-1871-HQ2-U4.zip",
       "Bytes": 314150,
       "SHA256": "C4491C15E814E4A5840C93FA668941C75E6C47BE1B60EBA52D923CC2F6261386"
     },
     {
       "Kind": "sources",
       "Name": "Xiaomi-Pad5-Charging-1871-HQ2-U4-Sources.zip",
+      "Path": "downloads/Xiaomi-Pad5-Charging-1871-HQ2-U4-Sources.zip",
+      "URL": "https://github.com/deskcj/xiaomi-pad5-windows11-charging/raw/refs/heads/main/downloads/Xiaomi-Pad5-Charging-1871-HQ2-U4-Sources.zip",
       "Bytes": 346211,
       "SHA256": "A7642A0A3735B2C30643088F9BC9789BA6E8A64A7E2BE6C0A63357D41B714AF5"
     }

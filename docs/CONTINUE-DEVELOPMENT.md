@@ -18,7 +18,7 @@ Remaining PPS prerequisites: exclusive native PD3 ownership and quiescence of th
 
 ## Hub link interruption
 
-Removing charger power from Acer HY41-T9 interrupts the upstream link for about 229–231 ms. Re-inserting power usually resumes charging without another SSD interruption. A safely ejected SSD can re-enumerate after loss of the upstream hub session.
+Removing charger power from a tested Acer hub interrupts the upstream link for about 229–231 ms. Another tested hub also showed the SSD interruption. Re-inserting power usually resumes charging without another SSD interruption. A safely ejected SSD can re-enumerate after loss of the upstream hub session.
 
 The measured root link loss precedes PMIC queued work (~0.84 ms), switcher-power-ok work (~0.93 ms), CC DPC (~11.13 ms), and later power enable (~175.33 ms). No earlier PEP disable was observed, but XHCI WPP coverage was absent, so an early controller/PHY reset is not excluded. Current IRQ storm handling and late CC events do not explain or prove a fix for the initial loss. HS PHY VBUS override initialization already matches the reviewed Android behavior. Windows autonomous FRS detector/route, isolation and boost bindings remain unproven. Android switcher-power-ok boost-back handling is not FRS. Masking PnP removal would not preserve a lost physical USB session.
 

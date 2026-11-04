@@ -2,17 +2,17 @@
 
 [Русский](README.ru.md) · Xiaomi Pad 5 (`nabu`) · Windows 11 ARM64
 
-![Release](https://img.shields.io/badge/release-1871--HQ2--U4-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/status-public%20preview-orange?style=for-the-badge) ![Measured charging](https://img.shields.io/badge/accelerated%20charging-measured-brightgreen?style=for-the-badge)
+![Build](https://img.shields.io/badge/build-1871--HQ2--U4-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/status-public%20preview-orange?style=for-the-badge) ![Measured charging](https://img.shields.io/badge/accelerated%20charging-measured-brightgreen?style=for-the-badge)
 
 **1871-HQ2-U4** is the current working charging/USB-C package. Direct charging ↔ SSD/OTG switching and charging + SSD through a hub work in the recorded tests. **Real accelerated charging is measured on compatible chargers.** Removing charger power from the hub still briefly disconnects the SSD; full 33 W and PPS remain unconfirmed.
 
 ## Download
 
-**[Download Xiaomi-Pad5-Charging-1871-HQ2-U4.zip](https://github.com/deskcj/xiaomi-pad5-windows11-charging/releases/download/1871-HQ2-U4/Xiaomi-Pad5-Charging-1871-HQ2-U4.zip)** · 314,150 bytes
+**[Download Xiaomi-Pad5-Charging-1871-HQ2-U4.zip](https://github.com/deskcj/xiaomi-pad5-windows11-charging/raw/refs/heads/main/downloads/Xiaomi-Pad5-Charging-1871-HQ2-U4.zip)** · 314,150 bytes
 
 SHA-256: `C4491C15E814E4A5840C93FA668941C75E6C47BE1B60EBA52D923CC2F6261386`
 
-**[Download development sources](https://github.com/deskcj/xiaomi-pad5-windows11-charging/releases/download/1871-HQ2-U4/Xiaomi-Pad5-Charging-1871-HQ2-U4-Sources.zip)** · 346,211 bytes · 165 files
+**[Download development sources](https://github.com/deskcj/xiaomi-pad5-windows11-charging/raw/refs/heads/main/downloads/Xiaomi-Pad5-Charging-1871-HQ2-U4-Sources.zip)** · 346,211 bytes · 165 files
 
 SHA-256: `A7642A0A3735B2C30643088F9BC9789BA6E8A64A7E2BE6C0A63357D41B714AF5`
 
@@ -25,19 +25,19 @@ The separate source ZIP includes exact U4 installer scripts, the custom PD filte
 - ✅ Direct SSD/OTG ↔ charger switching worked without rebooting in recorded tests.
 - ✅ Startup with a charger or SSD and subsequent device switching worked in recorded tests.
 - ✅ The tested mains chargers and power bank delivered real battery charge.
-- ✅ **Acer HY41-T9** hub, charging and SSD work together; returning charger power resumes charging.
-- ✅ Samsung fixed **USB PD 9 V / 3 A** is confirmed; a sustained 1871 test averaged **13.8 W net battery power**.
-- ✅ A **Xiaomi MDY-11-EZ rated 33 W** produced about **8.6 V at the USB input** and **16–17.4 W average net battery power** across separate recorded runs.
+- ✅ Hub, charging and SSD work together; returning charger power resumes charging.
+- ✅ Fixed **USB PD 9 V / 3 A** is confirmed; a sustained 1871 test averaged **13.8 W net battery power**.
+- ✅ A **33 W-rated charger** produced about **8.6 V at the USB input** and **16–17.4 W average net battery power** across separate recorded runs.
 - ✅ Actual **Install.cmd → restart → Verify.cmd PASS**, plus diagnostics and an already-installed no-op, were verified on the project tablet.
-- ❌ Removing charger power from Acer HY41-T9 still briefly disconnects/reconnects the SSD, including after safe ejection. Avoid this transition during disk writes.
+- ❌ An **Acer hub** and **another tested hub** showed a brief SSD disconnect/reconnect when charger power was removed, including after safe ejection. Other tested functions worked correctly. Avoid changing hub power during disk writes.
 - ❌ Seamless hub power handover is unresolved; **PPS is not implemented in the installed package**.
 - ⏳ Full **33 W input power**, Android-equivalent maximum speed and compatibility with every modified Windows/driver set remain unconfirmed.
 
 ## Fast charging: what the measurements prove
 
-**Accelerated charging is already supported by the measured elevated input voltage and positive battery energy gain.** The Xiaomi MDY-11-EZ runs averaged about 16–17.4 W into the battery; the 180-second follow-up peaked at 17.68 W. A separate voltage capture measured 8.55–8.63 V at the USB input. These figures come from separate captures, not a claimed continuous maximum-power test.
+**Accelerated charging is already supported by the measured elevated input voltage and positive battery energy gain.** The 33 W-rated charger runs averaged about 16–17.4 W into the battery; the 180-second follow-up peaked at 17.68 W. A separate voltage capture measured 8.55–8.63 V at the USB input. These figures come from separate captures, not a claimed continuous maximum-power test.
 
-Samsung negotiated fixed 9 V / 3 A. Its **27 W contract is a ceiling**, not a measurement of 27 W input or battery power. Net battery watts exclude tablet consumption and conversion losses; the Xiaomi test did not capture USB input current or identify the charging protocol. **A 33 W charger rating does not prove 33 W delivery.** PPS and the charge-pump path remain development work. Installer PASS and the charging icon do not measure speed. [Measurement details](docs/FAST-CHARGING.md).
+A tested charger negotiated fixed 9 V / 3 A. Its **27 W contract is a ceiling**, not a measurement of 27 W input or battery power. Net battery watts exclude tablet consumption and conversion losses; the 33 W-rated charger test did not capture USB input current or identify the charging protocol. **A 33 W charger rating does not prove 33 W delivery.** PPS and the charge-pump path remain development work. Installer PASS and the charging icon do not measure speed. [Measurement details](docs/FAST-CHARGING.md).
 
 ## Compatibility
 
@@ -67,7 +67,7 @@ U4 also recognizes one audited **qcpmicext 23.5.57.553** source set using comple
 
 ## What changed in U4
 
-Compared with the older public U1, PMIC is updated from 1869 to **1871**. U4 fixes PowerShell module startup, SHA256 collection without module autoload, empty-event-log handling and diagnostic export-error reporting. **U4's driver INF/SYS/CAT files are unchanged from U3.** A charging-speed or seamless-hub improvement over U1 has not been demonstrated; this release publishes the current verified set and a more reliable installer/diagnostic workflow.
+Compared with the older public U1, PMIC is updated from 1869 to **1871**. U4 fixes PowerShell module startup, SHA256 collection without module autoload, empty-event-log handling and diagnostic export-error reporting. **U4's driver INF/SYS/CAT files are unchanged from U3.** A charging-speed or seamless-hub improvement over U1 has not been demonstrated; this package provides the current verified set and a more reliable installer/diagnostic workflow.
 
 The delivered ZIP is exactly the archive installed and verified on the project tablet, including its file index. The custom filter in the source ZIP was rebuilt with EWDK and passed 4,672 ARM64 parser executions, 40 callback and 22 lifecycle executions in emulation. These are offline checks, not proof of new PPS/FRS hardware support.
 
