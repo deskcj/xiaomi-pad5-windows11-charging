@@ -1,0 +1,26 @@
+{
+  "native-qa.json": {
+    "Passed": true,
+    "ARM64Executions": 4672,
+    "HardwareIO": false,
+    "Installed": false
+  },
+  "callback-qa.json": {
+    "Passed": true,
+    "Executions": 40,
+    "HardwareIO": false,
+    "Installed": false
+  },
+  "lifecycle-qa.json": {
+    "Passed": true,
+    "Executions": 22,
+    "Installed": false
+  },
+  "SourceFilterRebuilt": true,
+  "PhysicalHardwareRetestedForPublication": false,
+  "U4ArchiveUnchanged": true,
+  "LocalU4PostbootVerifyPassed": true,
+  "Full33WInputConfirmed": false,
+  "PPSImplementedInU4": false,
+  "HubContinuityFixed": false
+}
