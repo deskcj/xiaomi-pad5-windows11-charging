@@ -2,7 +2,7 @@
 
 [Русский](README.ru.md) · Xiaomi Pad 5 (`nabu`) · Windows 11 ARM64
 
-![Release](https://img.shields.io/badge/release-1871-HQ2-U4-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/status-public%20preview-orange?style=for-the-badge) ![Measured charging](https://img.shields.io/badge/accelerated%20charging-measured-brightgreen?style=for-the-badge)
+![Release](https://img.shields.io/badge/release-1871--HQ2--U4-blue?style=for-the-badge) ![Status](https://img.shields.io/badge/status-public%20preview-orange?style=for-the-badge) ![Measured charging](https://img.shields.io/badge/accelerated%20charging-measured-brightgreen?style=for-the-badge)
 
 **1871-HQ2-U4** is the current working charging/USB-C package. Direct charging ↔ SSD/OTG switching and charging + SSD through a hub work in the recorded tests. **Real accelerated charging is measured on compatible chargers.** Removing charger power from the hub still briefly disconnects the SSD; full 33 W and PPS remain unconfirmed.
 
