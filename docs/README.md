@@ -6,6 +6,14 @@
 
 **1871-HQ2-U4** is the current working charging/USB-C package. Direct charging ↔ SSD/OTG switching and charging + SSD through a hub work in the recorded tests. **Real accelerated charging is measured on compatible chargers.** Removing charger power from the hub still briefly disconnects the SSD; full 33 W and PPS remain unconfirmed.
 
+## 🎬 Video demo: OTG switching and charging through a hub
+
+The video shows **OTG flash drive → charging → flash drive → charging** switching, followed by a USB-C hub with the flash drive and charger working together on **Xiaomi Pad 5 (nabu) running Windows 11 ARM64**.
+
+[![Watch Xiaomi Pad 5 (nabu) — OTG switching and simultaneous USB storage and charging through a hub](https://img.youtube.com/vi/JUCgrsy8yiQ/hqdefault.jpg)](https://www.youtube.com/watch?v=JUCgrsy8yiQ)
+
+▶️ **[Watch the demonstration on YouTube](https://www.youtube.com/watch?v=JUCgrsy8yiQ)**
+
 ## Download
 
 **[Download Xiaomi-Pad5-Charging-1871-HQ2-U4.zip](https://github.com/deskcj/xiaomi-pad5-windows11-charging/raw/refs/heads/main/downloads/Xiaomi-Pad5-Charging-1871-HQ2-U4.zip)** · 314,150 bytes
@@ -19,14 +27,6 @@ SHA-256: `A7642A0A3735B2C30643088F9BC9789BA6E8A64A7E2BE6C0A63357D41B714AF5`
 The driver ZIP includes **Install.cmd**, compatibility check, verification, backup/restore and local diagnostics. No Python, SDK or manual Device Manager installation is needed.
 
 The separate source ZIP includes exact U4 installer scripts, the custom PD filter 0.1.3 and EWDK build, current C/assembly patch additions and offline tests, and PD/PPS/LN8000/FRS research components. **Full Qualcomm source is unavailable:** the source ZIP cannot rebuild every base driver from scratch. The research components are not installed by U4. Use this separate ZIP; GitHub's automatic source archives contain the repository documentation. See [the development handoff](CONTINUE-DEVELOPMENT.md).
-
-## 🎬 Video demo: OTG switching and charging through a hub
-
-The video shows **OTG flash drive → charging → flash drive → charging** switching, followed by a USB-C hub with the flash drive and charger working together on **Xiaomi Pad 5 (nabu) running Windows 11 ARM64**.
-
-[![Watch Xiaomi Pad 5 (nabu) — OTG switching and simultaneous USB storage and charging through a hub](https://img.youtube.com/vi/JUCgrsy8yiQ/hqdefault.jpg)](https://www.youtube.com/watch?v=JUCgrsy8yiQ)
-
-▶️ **[Watch the demonstration on YouTube](https://www.youtube.com/watch?v=JUCgrsy8yiQ)**
 
 ## What works and what remains
 
