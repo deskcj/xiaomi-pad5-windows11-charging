@@ -20,6 +20,14 @@ The driver ZIP includes **Install.cmd**, compatibility check, verification, back
 
 The separate source ZIP includes exact U4 installer scripts, the custom PD filter 0.1.3 and EWDK build, current C/assembly patch additions and offline tests, and PD/PPS/LN8000/FRS research components. **Full Qualcomm source is unavailable:** the source ZIP cannot rebuild every base driver from scratch. The research components are not installed by U4. Use this separate ZIP; GitHub's automatic source archives contain the repository documentation. See [the development handoff](CONTINUE-DEVELOPMENT.md).
 
+## 🎬 Video demo: OTG switching and charging through a hub
+
+The video shows **OTG flash drive → charging → flash drive → charging** switching, followed by a USB-C hub with the flash drive and charger working together on **Xiaomi Pad 5 (nabu) running Windows 11 ARM64**.
+
+[![Watch Xiaomi Pad 5 (nabu) — OTG switching and simultaneous USB storage and charging through a hub](https://img.youtube.com/vi/JUCgrsy8yiQ/hqdefault.jpg)](https://www.youtube.com/watch?v=JUCgrsy8yiQ)
+
+▶️ **[Watch the demonstration on YouTube](https://www.youtube.com/watch?v=JUCgrsy8yiQ)**
+
 ## What works and what remains
 
 - ✅ Direct SSD/OTG ↔ charger switching worked without rebooting in recorded tests.

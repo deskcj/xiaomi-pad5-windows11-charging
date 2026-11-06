@@ -20,6 +20,14 @@ SHA-256：A7642A0A3735B2C30643088F9BC9789BA6E8A64A7E2BE6C0A63357D41B714AF5
 
 单独的源码 ZIP 包含 U4 安装脚本、项目自制的 PD 筛选驱动 0.1.3 及其 EWDK 构建文件、现存的 C/汇编补丁与离线测试，以及 PD/PPS/LN8000/FRS 研究组件。**不包含 Qualcomm 完整源码**，因此无法仅凭该 ZIP 从零重建所有基础驱动。研究组件不会由 U4 安装。请下载这个单独的 ZIP；GitHub 自动生成的源码归档只包含仓库文档。参见[后续开发说明](CONTINUE-DEVELOPMENT.md)（英文）。
 
+## 🎬 视频演示：OTG 切换与通过集线器充电
+
+视频展示了 **OTG U 盘 → 充电 → U 盘 → 充电**的切换过程，以及在运行 **Windows 11 ARM64 的 Xiaomi Pad 5（nabu）**上通过 USB-C 集线器同时使用 U 盘和充电器。
+
+[![观看 Xiaomi Pad 5（nabu）OTG 切换及通过集线器同时使用 U 盘和充电器的演示](https://img.youtube.com/vi/JUCgrsy8yiQ/hqdefault.jpg)](https://www.youtube.com/watch?v=JUCgrsy8yiQ)
+
+▶️ **[在 YouTube 观看演示](https://www.youtube.com/watch?v=JUCgrsy8yiQ)**
+
 ## 已实现与待解决
 
 - ✅ 在记录的测试中，直连 SSD/OTG ↔ 充电器切换无需重启。
